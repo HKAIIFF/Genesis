@@ -1,0 +1,1797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIF Token Private Sale - World's First AI-Native Film Ecosystem Token</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        }
+        
+        .accent-gradient {
+            background: linear-gradient(135deg, #e94560 0%, #ff5678 100%);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background: linear-gradient(90deg, #e94560, #ff5678);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .hero-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .ecosystem-card {
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        
+        .ecosystem-card:hover {
+            transform: translateY(-5px);
+            border-color: #e94560;
+            box-shadow: 0 10px 25px -5px rgba(233, 69, 96, 0.25);
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            margin: 12px auto 0;
+            background: linear-gradient(90deg, #e94560, #ff5678);
+        }
+        
+        .pillar-card {
+            border-top: 3px solid #e94560;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .pillar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.3);
+        }
+        
+        .stat-card {
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .platform-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #1f2937;
+            margin: 0 auto 1rem;
+            color: #e94560;
+            font-size: 24px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .animated-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+        
+        .animated-bg span {
+            position: absolute;
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            animation: animate 25s linear infinite;
+            bottom: -150px;
+            border-radius: 50%;
+        }
+        
+        @keyframes animate {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        
+        .nav-btn {
+            transition: all 0.3s ease;
+        }
+        
+        .nav-btn:hover {
+            background: #e94560;
+            color: white;
+        }
+
+        .private-sale-banner {
+            background: linear-gradient(135deg, #e94560 0%, #ff5678 100%);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(233, 69, 96, 0.4);
+        }
+
+        .token-highlight {
+            background: linear-gradient(135deg, rgba(233, 69, 96, 0.1), rgba(255, 86, 120, 0.1));
+            border: 2px solid rgba(233, 69, 96, 0.3);
+        }
+
+        .value-prop-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .company-info-card {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(233, 69, 96, 0.2);
+        }
+
+        /* Language toggle styles */
+        .lang-btn {
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .lang-btn.active {
+            background: linear-gradient(45deg, #e94560, #ff5678);
+            border-color: transparent;
+        }
+
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-gray-900 bg-opacity-90 backdrop-filter backdrop-blur-lg shadow-lg">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <a href="#" class="flex items-center">
+                    <span class="text-2xl font-bold"><span class="text-pink-500">AIF</span> TOKEN</span>
+                </a>
+                
+                <div class="hidden md:flex space-x-6 items-center">
+                    <a href="#ecosystem" class="nav-link text-gray-300 hover:text-white transition">Ecosystem</a>
+                    <a href="#tokenomics" class="nav-link text-gray-300 hover:text-white transition">Tokenomics</a>
+                    <a href="#highlights" class="nav-link text-gray-300 hover:text-white transition">Highlights</a>
+                    <a href="#company" class="nav-link text-gray-300 hover:text-white transition">Company</a>
+                    <a href="#contact" class="nav-link text-gray-300 hover:text-white transition">Contact</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <div class="hidden md:flex space-x-2">
+                        <button class="lang-btn active px-3 py-1 rounded-full text-sm" onclick="switchLanguage('en')">EN</button>
+                        <button class="lang-btn px-3 py-1 rounded-full text-sm" onclick="switchLanguage('zh')">中文</button>
+                    </div>
+                    <a href="#participate" class="hidden md:block py-2 px-4 rounded-full text-sm font-medium border border-pink-500 text-pink-500 hover:bg-pink-500 hover:text-white transition nav-btn">
+                        <span class="en-content">Join Private Sale</span>
+                        <span class="zh-content hidden">参与私募</span>
+                    </a>
+                </div>
+                
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-300 hover:text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <div id="mobile-menu" class="md:hidden hidden mt-3 pb-2">
+                <div class="flex space-x-2 mb-3">
+                    <button class="lang-btn active px-3 py-1 rounded-full text-sm" onclick="switchLanguage('en')">EN</button>
+                    <button class="lang-btn px-3 py-1 rounded-full text-sm" onclick="switchLanguage('zh')">中文</button>
+                </div>
+                <a href="#ecosystem" class="block py-2 text-gray-300 hover:text-white">
+                    <span class="en-content">Ecosystem</span>
+                    <span class="zh-content hidden">生态系统</span>
+                </a>
+                <a href="#tokenomics" class="block py-2 text-gray-300 hover:text-white">
+                    <span class="en-content">Tokenomics</span>
+                    <span class="zh-content hidden">代币经济学</span>
+                </a>
+                <a href="#highlights" class="block py-2 text-gray-300 hover:text-white">
+                    <span class="en-content">Highlights</span>
+                    <span class="zh-content hidden">投资亮点</span>
+                </a>
+                <a href="#company" class="block py-2 text-gray-300 hover:text-white">
+                    <span class="en-content">Company</span>
+                    <span class="zh-content hidden">公司信息</span>
+                </a>
+                <a href="#contact" class="block py-2 text-gray-300 hover:text-white">
+                    <span class="en-content">Contact</span>
+                    <span class="zh-content hidden">联系我们</span>
+                </a>
+                <a href="#participate" class="block py-2 mt-2 text-center rounded-full text-sm font-medium bg-pink-500 text-white">
+                    <span class="en-content">Join Private Sale</span>
+                    <span class="zh-content hidden">参与私募</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center gradient-bg pt-20">
+        <div class="animated-bg">
+            <span style="--i:11; left: 10%; animation-delay: 0s;"></span>
+            <span style="--i:17; left: 20%; animation-delay: 2s;"></span>
+            <span style="--i:15; left: 30%; animation-delay: 4s;"></span>
+            <span style="--i:9; left: 40%; animation-delay: 6s;"></span>
+            <span style="--i:13; left: 50%; animation-delay: 8s;"></span>
+            <span style="--i:20; left: 60%; animation-delay: 10s;"></span>
+            <span style="--i:12; left: 70%; animation-delay: 12s;"></span>
+            <span style="--i:18; left: 80%; animation-delay: 14s;"></span>
+            <span style="--i:14; left: 90%; animation-delay: 16s;"></span>
+        </div>
+        
+        <div class="container mx-auto px-6 z-10">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="w-full md:w-1/2 mb-12 md:mb-0">
+                    <div class="md:pr-10">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                            <span class="en-content">AIF TOKEN</span>
+                            <span class="zh-content hidden">AIF代币</span>
+                        </h1>
+                        <p class="text-xl md:text-2xl text-gray-300 mb-6">
+                            <span class="en-content">World's First AI-Native Film Ecosystem Token</span>
+                            <span class="zh-content hidden">全球首个AI原生影视生态系统代币</span>
+                        </p>
+                        <p class="text-gray-400 mb-8 max-w-lg">
+                            <span class="en-content">Revolutionizing entertainment through the HKAIIFF ecosystem - connecting creators, investors, and audiences in the AI film revolution.</span>
+                            <span class="zh-content hidden">通过HKAIIFF生态系统革命化娱乐业——连接创作者、投资者和观众，共创AI影视革命。</span>
+                        </p>
+                        
+                        <!-- Private Sale Banner -->
+                        <div class="private-sale-banner rounded-2xl p-6 mb-8 text-center">
+                            <h3 class="text-2xl font-bold mb-3">
+                                <span class="en-content">🔥 Private Sale Round 1/25</span>
+                                <span class="zh-content hidden">🔥 私募第1/25轮次</span>
+                            </h3>
+                            <div class="grid grid-cols-2 gap-4 text-sm md:text-base">
+                                <div>
+                                    <div class="font-semibold">
+                                        <span class="en-content">First Round</span>
+                                        <span class="zh-content hidden">首轮金额</span>
+                                    </div>
+                                    <div class="text-2xl font-bold">$3M USD</div>
+                                </div>
+                                <div>
+                                    <div class="font-semibold">
+                                        <span class="en-content">Token Price</span>
+                                        <span class="zh-content hidden">代币价格</span>
+                                    </div>
+                                    <div class="text-2xl font-bold">$0.05</div>
+                                </div>
+                            </div>
+                            <p class="mt-3 text-sm opacity-90">
+                                <span class="en-content">⚡ Early Bird Special - Limited Time Opportunity</span>
+                                <span class="zh-content hidden">⚡ 早鸟特惠 - 限时机会</span>
+                            </p>
+                        </div>
+                        
+                        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                            <a href="#ecosystem" class="py-3 px-8 accent-gradient rounded-full font-medium text-white shadow-lg transform transition hover:scale-105 text-center">
+                                <span class="en-content">Explore Ecosystem</span>
+                                <span class="zh-content hidden">探索生态系统</span>
+                            </a>
+                            <a href="#participate" class="py-3 px-8 border border-pink-500 rounded-full font-medium text-white shadow-lg transform transition hover:scale-105 hover:bg-pink-500 hover:bg-opacity-20 text-center">
+                                <span class="en-content">Join Revolution</span>
+                                <span class="zh-content hidden">加入革命</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <div class="relative hero-animation">
+                        <div class="bg-gray-800 bg-opacity-80 backdrop-filter backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-gray-700">
+                            <h3 class="text-2xl font-bold mb-6 text-center">
+                                <span class="en-content">Market Opportunity</span>
+                                <span class="zh-content hidden">市场机会</span>
+                            </h3>
+                            <div class="space-y-6">
+                                <div class="text-center">
+                                    <div class="text-4xl font-bold text-pink-500">$370B+</div>
+                                    <p class="text-sm text-gray-400">
+                                        <span class="en-content">AI Content Market by 2030</span>
+                                        <span class="zh-content hidden">到2030年AI内容市场</span>
+                                    </p>
+                                </div>
+                                <div class="grid grid-cols-2 gap-4 text-center">
+                                    <div>
+                                        <div class="text-2xl font-bold text-pink-500">54%</div>
+                                        <p class="text-xs text-gray-400">
+                                            <span class="en-content">Annual Growth</span>
+                                            <span class="zh-content hidden">年增长率</span>
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <div class="text-2xl font-bold text-pink-500">35%</div>
+                                        <p class="text-xs text-gray-400">
+                                            <span class="en-content">APAC Share</span>
+                                            <span class="zh-content hidden">亚太份额</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-5 -right-5 bg-gray-800 bg-opacity-90 backdrop-filter backdrop-blur-lg rounded-lg p-3 shadow-lg">
+                            <div class="flex items-center">
+                                <div class="h-3 w-3 rounded-full bg-pink-500 animate-pulse mr-2"></div>
+                                <p class="text-sm font-medium">
+                                    <span class="en-content">Launching 2025</span>
+                                    <span class="zh-content hidden">2025年启动</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-0 left-0 right-0">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#0f172a" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,176C384,192,480,192,576,170.7C672,149,768,107,864,101.3C960,96,1056,128,1152,149.3C1248,171,1344,181,1392,186.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Ecosystem Section -->
+    <section id="ecosystem" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold section-title inline-block">
+                    <span class="en-content">Powered by HKAIIFF Ecosystem</span>
+                    <span class="zh-content hidden">由HKAIIFF生态系统驱动</span>
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto mt-4">
+                    <span class="en-content">World's first complete AI-native film and media ecosystem with "4+1+1" architecture</span>
+                    <span class="zh-content hidden">全球首个完整的AI原生影视生态系统，采用"4+1+1"架构</span>
+                </p>
+            </div>
+            
+            <!-- Four Core Pillars -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-center mb-10">
+                    <span class="en-content">Four Core Pillars</span>
+                    <span class="zh-content hidden">四大核心支柱</span>
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-gray-800 rounded-xl p-6 ecosystem-card">
+                        <div class="platform-icon mb-4 mx-auto">
+                            <i class="fas fa-film"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3 text-center">
+                            <span class="en-content">Exhibition & Competition</span>
+                            <span class="zh-content hidden">展映竞赛</span>
+                        </h4>
+                        <p class="text-sm text-gray-400 text-center mb-4">
+                            <span class="en-content">$3M prize pool, discovering outstanding AI-native film works globally</span>
+                            <span class="zh-content hidden">300万美元奖金池，发掘全球优秀AI原生影视作品</span>
+                        </p>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-pink-500">$3M+</div>
+                            <p class="text-xs text-gray-400">
+                                <span class="en-content">Prize Pool</span>
+                                <span class="zh-content hidden">奖金池</span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-800 rounded-xl p-6 ecosystem-card">
+                        <div class="platform-icon mb-4 mx-auto">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3 text-center">
+                            <span class="en-content">AI Film Academy</span>
+                            <span class="zh-content hidden">AI电影学院</span>
+                        </h4>
+                        <p class="text-sm text-gray-400 text-center mb-4">
+                            <span class="en-content">Training 120,000+ AI film professionals by 2030</span>
+                            <span class="zh-content hidden">到2030年培养12万+AI影视专业人才</span>
+                        </p>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-pink-500">120K+</div>
+                            <p class="text-xs text-gray-400">
+                                <span class="en-content">Students Target</span>
+                                <span class="zh-content hidden">学员目标</span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-800 rounded-xl p-6 ecosystem-card">
+                        <div class="platform-icon mb-4 mx-auto">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3 text-center">
+                            <span class="en-content">AI Film Market</span>
+                            <span class="zh-content hidden">AI电影市场</span>
+                        </h4>
+                        <p class="text-sm text-gray-400 text-center mb-4">
+                            <span class="en-content">Blockchain-based transparent financing and trading platform</span>
+                            <span class="zh-content hidden">基于区块链的透明融资交易平台</span>
+                        </p>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-pink-500">24/7</div>
+                            <p class="text-xs text-gray-400">
+                                <span class="en-content">Global Trading</span>
+                                <span class="zh-content hidden">全球交易</span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-800 rounded-xl p-6 ecosystem-card">
+                        <div class="platform-icon mb-4 mx-auto">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3 text-center">
+                            <span class="en-content">Submission Center</span>
+                            <span class="zh-content hidden">征片中心</span>
+                        </h4>
+                        <p class="text-sm text-gray-400 text-center mb-4">
+                            <span class="en-content">Global distribution hub with 50+ nodes worldwide</span>
+                            <span class="zh-content hidden">全球分发中心，在全球设有50+节点</span>
+                        </p>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-pink-500">50+</div>
+                            <p class="text-xs text-gray-400">
+                                <span class="en-content">Global Nodes</span>
+                                <span class="zh-content hidden">全球节点</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Two Expansion Platforms -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-center mb-10">
+                    <span class="en-content">Expansion Platforms</span>
+                    <span class="zh-content hidden">拓展平台</span>
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gray-800 rounded-xl p-6 ecosystem-card">
+                        <div class="platform-icon mb-4 mx-auto">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3 text-center">404.world Platform</h4>
+                        <p class="text-sm text-gray-400 text-center mb-4">
+                            <span class="en-content">Revolutionary interactive streaming creating personalized parallel worlds</span>
+                            <span class="zh-content hidden">革命性互动流媒体，创造个性化平行世界</span>
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 text-center">
+                            <div>
+                                <div class="text-xl font-bold text-pink-500">10M+</div>
+                                <p class="text-xs text-gray-400">
+                                    <span class="en-content">Target Users</span>
+                                    <span class="zh-content hidden">目标用户</span>
+                                </p>
+                            </div>
+                            <div>
+                                <div class="text-xl font-bold text-pink-500">∞</div>
+                                <p class="text-xs text-gray-400">
+                                    <span class="en-content">Possibilities</span>
+                                    <span class="zh-content hidden">无限可能</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-800 rounded-xl p-6 ecosystem-card">
+                        <div class="platform-icon mb-4 mx-auto">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3 text-center">AIF Exchange</h4>
+                        <p class="text-sm text-gray-400 text-center mb-4">
+                            <span class="en-content">Financial infrastructure supporting token circulation and value exchange</span>
+                            <span class="zh-content hidden">支持代币流通和价值交换的金融基础设施</span>
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 text-center">
+                            <div>
+                                <div class="text-xl font-bold text-pink-500">Multi-Chain</div>
+                                <p class="text-xs text-gray-400">
+                                    <span class="en-content">Support</span>
+                                    <span class="zh-content hidden">多链支持</span>
+                                </p>
+                            </div>
+                            <div>
+                                <div class="text-xl font-bold text-pink-500">DeFi</div>
+                                <p class="text-xs text-gray-400">
+                                    <span class="en-content">Features</span>
+                                    <span class="zh-content hidden">功能</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Market Stats -->
+            <div class="bg-gray-800 rounded-xl p-8 shadow-lg">
+                <h3 class="text-2xl font-bold mb-8 text-center">
+                    <span class="en-content">Market Growth Trajectory</span>
+                    <span class="zh-content hidden">市场增长轨迹</span>
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <div class="text-center stat-card bg-gray-700 bg-opacity-40 rounded-lg p-4">
+                        <div class="text-pink-500 text-3xl mb-2">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="text-2xl font-bold text-pink-500 mb-1">$30B</div>
+                        <p class="text-sm text-gray-400">
+                            <span class="en-content">2023 Market Size</span>
+                            <span class="zh-content hidden">2023年市场规模</span>
+                        </p>
+                    </div>
+                    
+                    <div class="text-center stat-card bg-gray-700 bg-opacity-40 rounded-lg p-4">
+                        <div class="text-pink-500 text-3xl mb-2">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="text-2xl font-bold text-pink-500 mb-1">$75B</div>
+                        <p class="text-sm text-gray-400">
+                            <span class="en-content">2025 Projection</span>
+                            <span class="zh-content hidden">2025年预测</span>
+                        </p>
+                    </div>
+                    
+                    <div class="text-center stat-card bg-gray-700 bg-opacity-40 rounded-lg p-4">
+                        <div class="text-pink-500 text-3xl mb-2">
+                            <i class="fas fa-globe-asia"></i>
+                        </div>
+                        <div class="text-2xl font-bold text-pink-500 mb-1">$26B</div>
+                        <p class="text-sm text-gray-400">
+                            <span class="en-content">APAC 2025</span>
+                            <span class="zh-content hidden">亚太2025年</span>
+                        </p>
+                    </div>
+                    
+                    <div class="text-center stat-card bg-gray-700 bg-opacity-40 rounded-lg p-4">
+                        <div class="text-pink-500 text-3xl mb-2">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="text-2xl font-bold text-pink-500 mb-1">180K+</div>
+                        <p class="text-sm text-gray-400">
+                            <span class="en-content">Talent Gap</span>
+                            <span class="zh-content hidden">人才缺口</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tokenomics Section -->
+    <section id="tokenomics" class="py-20 gradient-bg relative">
+        <div class="animated-bg">
+            <span style="--i:15; left: 15%; animation-delay: 2s;"></span>
+            <span style="--i:18; left: 40%; animation-delay: 6s;"></span>
+            <span style="--i:13; left: 65%; animation-delay: 8s;"></span>
+            <span style="--i:16; left: 25%; animation-delay: 11s;"></span>
+            <span style="--i:19; left: 85%; animation-delay: 17s;"></span>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold section-title inline-block">
+                    <span class="en-content">Token Economics & Utility</span>
+                    <span class="zh-content hidden">代币经济学与实用性</span>
+                </h2>
+                <p class="text-gray-300 max-w-2xl mx-auto mt-4">
+                    <span class="en-content">Strong tokenomics designed for sustainable value accrual and ecosystem growth</span>
+                    <span class="zh-content hidden">为可持续价值累积和生态系统增长而设计的强劲代币经济学</span>
+                </p>
+            </div>
+            
+            <!-- Token Fundamentals -->
+            <div class="token-highlight rounded-2xl p-8 mb-16 shadow-xl">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6">
+                            <span class="en-content">🎯 Token Fundamentals</span>
+                            <span class="zh-content hidden">🎯 代币基础</span>
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center p-3 bg-gray-800 bg-opacity-60 rounded-lg">
+                                <span class="font-medium">
+                                    <span class="en-content">Total Supply</span>
+                                    <span class="zh-content hidden">总供应量</span>
+                                </span>
+                                <span class="text-pink-500 font-bold">10 Billion AIF</span>
+                            </div>
+                            <div class="flex justify-between items-center p-3 bg-gray-800 bg-opacity-60 rounded-lg">
+                                <span class="font-medium">
+                                    <span class="en-content">Token Standard</span>
+                                    <span class="zh-content hidden">代币标准</span>
+                                </span>
+                                <span class="text-pink-500 font-bold">ERC-20</span>
+                            </div>
+                            <div class="flex justify-between items-center p-3 bg-gray-800 bg-opacity-60 rounded-lg">
+                                <span class="font-medium">
+                                    <span class="en-content">Initial Price</span>
+                                    <span class="zh-content hidden">初始价格</span>
+                                </span>
+                                <span class="text-pink-500 font-bold">$0.05 USD</span>
+                            </div>
+                            <div class="flex justify-between items-center p-3 bg-gray-800 bg-opacity-60 rounded-lg">
+                                <span class="font-medium">
+                                    <span class="en-content">Networks</span>
+                                    <span class="zh-content hidden">网络</span>
+                                </span>
+                                <span class="text-pink-500 font-bold">ETH, Polygon, BSC</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6">
+                            <span class="en-content">💎 Value Mechanisms</span>
+                            <span class="zh-content hidden">💎 价值机制</span>
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="p-4 bg-gray-800 bg-opacity-60 rounded-lg">
+                                <div class="flex items-center mb-2">
+                                    <i class="fas fa-fire text-pink-500 mr-2"></i>
+                                    <span class="font-bold">
+                                        <span class="en-content">Deflationary Burns</span>
+                                        <span class="zh-content hidden">通缩销毁</span>
+                                    </span>
+                                </div>
+                                <p class="text-sm text-gray-400">
+                                    <span class="en-content">50% of platform fees burned quarterly, 10.5% total supply over 5 years</span>
+                                    <span class="zh-content hidden">平台费用的50%每季度销毁，5年内总供应量10.5%</span>
+                                </p>
+                            </div>
+                            <div class="p-4 bg-gray-800 bg-opacity-60 rounded-lg">
+                                <div class="flex items-center mb-2">
+                                    <i class="fas fa-coins text-pink-500 mr-2"></i>
+                                    <span class="font-bold">
+                                        <span class="en-content">Revenue Sharing</span>
+                                        <span class="zh-content hidden">收益分享</span>
+                                    </span>
+                                </div>
+                                <p class="text-sm text-gray-400">
+                                    <span class="en-content">30-50% of ecosystem revenue flows to token holders</span>
+                                    <span class="zh-content hidden">生态系统收入的30-50%流向代币持有者</span>
+                                </p>
+                            </div>
+                            <div class="p-4 bg-gray-800 bg-opacity-60 rounded-lg">
+                                <div class="flex items-center mb-2">
+                                    <i class="fas fa-lock text-pink-500 mr-2"></i>
+                                    <span class="font-bold">
+                                        <span class="en-content">Staking Rewards</span>
+                                        <span class="zh-content hidden">质押奖励</span>
+                                    </span>
+                                </div>
+                                <p class="text-sm text-gray-400">
+                                    <span class="en-content">8-23% APY based on staking period and participation</span>
+                                    <span class="zh-content hidden">基于质押期间和参与度的8-23%年化收益</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Token Distribution -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                <div class="value-prop-card rounded-xl p-6">
+                    <h3 class="text-xl font-bold mb-4">
+                        <span class="en-content">📊 Token Distribution</span>
+                        <span class="zh-content hidden">📊 代币分配</span>
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm">
+                                <span class="en-content">Ecosystem Development</span>
+                                <span class="zh-content hidden">生态系统发展</span>
+                            </span>
+                            <span class="font-bold text-pink-500">30%</span>
+                        </div>
+                        <div class="h-2 w-full bg-gray-700 rounded-full overflow-hidden">
+                            <div class="h-full rounded-full accent-gradient" style="width: 30%"></div>
+                        </div>
+                        
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm">
+                                <span class="en-content">Team & Advisors</span>
+                                <span class="zh-content hidden">团队与顾问</span>
+                            </span>
+                            <span class="font-bold text-pink-500">20%</span>
+                        </div>
+                        <div class="h-2 w-full bg-gray-700 rounded-full overflow-hidden">
+                            <div class="h-full rounded-full accent-gradient" style="width: 20%"></div>
+                        </div>
+                        
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm">
+                                <span class="en-content">Private Sale</span>
+                                <span class="zh-content hidden">私募</span>
+                            </span>
+                            <span class="font-bold text-pink-500">15%</span>
+                        </div>
+                        <div class="h-2 w-full bg-gray-700 rounded-full overflow-hidden">
+                            <div class="h-full rounded-full accent-gradient" style="width: 15%"></div>
+                        </div>
+                        
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm">
+                                <span class="en-content">Community Incentives</span>
+                                <span class="zh-content hidden">社区激励</span>
+                            </span>
+                            <span class="font-bold text-pink-500">15%</span>
+                        </div>
+                        <div class="h-2 w-full bg-gray-700 rounded-full overflow-hidden">
+                            <div class="h-full rounded-full accent-gradient" style="width: 15%"></div>
+                        </div>
+                        
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm">
+                                <span class="en-content">Public Sale</span>
+                                <span class="zh-content hidden">公募</span>
+                            </span>
+                            <span class="font-bold text-pink-500">10%</span>
+                        </div>
+                        <div class="h-2 w-full bg-gray-700 rounded-full overflow-hidden">
+                            <div class="h-full rounded-full accent-gradient" style="width: 10%"></div>
+                        </div>
+                        
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm">
+                                <span class="en-content">Strategic Partners & Reserve</span>
+                                <span class="zh-content hidden">战略合作伙伴与储备</span>
+                            </span>
+                            <span class="font-bold text-pink-500">10%</span>
+                        </div>
+                        <div class="h-2 w-full bg-gray-700 rounded-full overflow-hidden">
+                            <div class="h-full rounded-full accent-gradient" style="width: 10%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="value-prop-card rounded-xl p-6">
+                    <h3 class="text-xl font-bold mb-4">
+                        <span class="en-content">⏰ Vesting Schedule</span>
+                        <span class="zh-content hidden">⏰ 解锁时间表</span>
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="p-3 bg-gray-800 bg-opacity-40 rounded">
+                            <div class="font-medium mb-1">
+                                <span class="en-content">Private Sale</span>
+                                <span class="zh-content hidden">私募</span>
+                            </div>
+                            <p class="text-xs text-gray-400">
+                                <span class="en-content">6 months cliff, 24 months linear vesting</span>
+                                <span class="zh-content hidden">6个月锁定，24个月线性解锁</span>
+                            </p>
+                        </div>
+                        <div class="p-3 bg-gray-800 bg-opacity-40 rounded">
+                            <div class="font-medium mb-1">
+                                <span class="en-content">Team & Advisors</span>
+                                <span class="zh-content hidden">团队与顾问</span>
+                            </div>
+                            <p class="text-xs text-gray-400">
+                                <span class="en-content">12 months cliff, 36 months linear vesting</span>
+                                <span class="zh-content hidden">12个月锁定，36个月线性解锁</span>
+                            </p>
+                        </div>
+                        <div class="p-3 bg-gray-800 bg-opacity-40 rounded">
+                            <div class="font-medium mb-1">
+                                <span class="en-content">Public Sale</span>
+                                <span class="zh-content hidden">公募</span>
+                            </div>
+                            <p class="text-xs text-gray-400">
+                                <span class="en-content">No vesting - immediate liquidity</span>
+                                <span class="zh-content hidden">无锁定 - 即时流动性</span>
+                            </p>
+                        </div>
+                        <div class="p-3 bg-gray-800 bg-opacity-40 rounded">
+                            <div class="font-medium mb-1">
+                                <span class="en-content">Ecosystem Development</span>
+                                <span class="zh-content hidden">生态系统发展</span>
+                            </div>
+                            <p class="text-xs text-gray-400">
+                                <span class="en-content">No cliff, 48 months gradual release</span>
+                                <span class="zh-content hidden">无锁定，48个月渐进释放</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Revenue Projections -->
+            <div class="value-prop-card rounded-xl p-8">
+                <h3 class="text-2xl font-bold mb-6 text-center">
+                    <span class="en-content">📈 Revenue Projections & Token Value</span>
+                    <span class="zh-content hidden">📈 收入预测与代币价值</span>
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-pink-500">$7.8M</div>
+                        <p class="text-xs text-gray-400">
+                            <span class="en-content">2025 Revenue</span>
+                            <span class="zh-content hidden">2025年收入</span>
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-pink-500">$121M</div>
+                        <p class="text-xs text-gray-400">
+                            <span class="en-content">2027 Revenue</span>
+                            <span class="zh-content hidden">2027年收入</span>
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-pink-500">$1.1B</div>
+                        <p class="text-xs text-gray-400">
+                            <span class="en-content">2030 Revenue</span>
+                            <span class="zh-content hidden">2030年收入</span>
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-pink-500">10M+</div>
+                        <p class="text-xs text-gray-400">
+                            <span class="en-content">Users by 2030</span>
+                            <span class="zh-content hidden">2030年用户数</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-gray-800 bg-opacity-40 rounded-lg p-4">
+                    <h4 class="font-bold mb-2">
+                        <span class="en-content">🎯 Conservative Token Valuation Model</span>
+                        <span class="zh-content hidden">🎯 保守代币估值模型</span>
+                    </h4>
+                    <p class="text-sm text-gray-400 mb-2">
+                        <span class="en-content">Based on 5-10x revenue multiple (growth tech companies standard)</span>
+                        <span class="zh-content hidden">基于5-10倍收入倍数（增长型科技公司标准）</span>
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                        <div>
+                            <span class="en-content">Conservative scenario (5x): $0.166 - $0.552</span>
+                            <span class="zh-content hidden">保守情景（5倍）：$0.166 - $0.552</span>
+                        </div>
+                        <div>
+                            <span class="en-content">Aggressive scenario (15-20x): $0.83 - $2.21</span>
+                            <span class="zh-content hidden">激进情景（15-20倍）：$0.83 - $2.21</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Highlights -->
+    <section id="highlights" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold section-title inline-block">
+                    <span class="en-content">Investment Highlights</span>
+                    <span class="zh-content hidden">投资亮点</span>
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto mt-4">
+                    <span class="en-content">Why AIF Token represents a unique convergence opportunity in AI, blockchain, and entertainment</span>
+                    <span class="zh-content hidden">为什么AIF代币代表了AI、区块链和娱乐领域的独特融合机会</span>
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <div class="pillar-card bg-gray-800 rounded-xl p-6">
+                    <div class="platform-icon mb-4 mx-auto">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center">
+                        <span class="en-content">🚀 First-Mover Advantage</span>
+                        <span class="zh-content hidden">🚀 先发优势</span>
+                    </h3>
+                    <p class="text-sm text-gray-400 text-center mb-4">
+                        <span class="en-content">World's first comprehensive AI-native film ecosystem with established partnerships and regulatory compliance in Hong Kong.</span>
+                        <span class="zh-content hidden">全球首个综合AI原生影视生态系统，在香港建立合作伙伴关系和监管合规。</span>
+                    </p>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-pink-500">
+                            <span class="en-content">Global First</span>
+                            <span class="zh-content hidden">全球首创</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pillar-card bg-gray-800 rounded-xl p-6">
+                    <div class="platform-icon mb-4 mx-auto">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center">
+                        <span class="en-content">💰 Massive Market</span>
+                        <span class="zh-content hidden">💰 巨大市场</span>
+                    </h3>
+                    <p class="text-sm text-gray-400 text-center mb-4">
+                        <span class="en-content">Targeting $370B+ AI content market by 2030, with Asia-Pacific representing 35% share and explosive 54% annual growth.</span>
+                        <span class="zh-content hidden">瞄准到2030年3700亿美元+AI内容市场，亚太地区占35%份额，年增长率高达54%。</span>
+                    </p>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-pink-500">$370B+</div>
+                        <p class="text-xs text-gray-400">
+                            <span class="en-content">Market by 2030</span>
+                            <span class="zh-content hidden">2030年市场</span>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="pillar-card bg-gray-800 rounded-xl p-6">
+                    <div class="platform-icon mb-4 mx-auto">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center">
+                        <span class="en-content">🌐 Network Effects</span>
+                        <span class="zh-content hidden">🌐 网络效应</span>
+                    </h3>
+                    <p class="text-sm text-gray-400 text-center mb-4">
+                        <span class="en-content">Six integrated platforms creating exponential value through network effects, with each new user increasing ecosystem value for all.</span>
+                        <span class="zh-content hidden">六个集成平台通过网络效应创造指数价值，每个新用户都为所有参与者增加生态系统价值。</span>
+                    </p>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-pink-500">6</div>
+                        <p class="text-xs text-gray-400">
+                            <span class="en-content">Integrated Platforms</span>
+                            <span class="zh-content hidden">集成平台</span>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="pillar-card bg-gray-800 rounded-xl p-6">
+                    <div class="platform-icon mb-4 mx-auto">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center">
+                        <span class="en-content">🎓 Talent Pipeline</span>
+                        <span class="zh-content hidden">🎓 人才管道</span>
+                    </h3>
+                    <p class="text-sm text-gray-400 text-center mb-4">
+                        <span class="en-content">AI Film Academy addresses critical 180K+ global talent gap, creating sustainable competitive advantage through education.</span>
+                        <span class="zh-content hidden">AI电影学院解决关键的18万+全球人才缺口，通过教育创造可持续竞争优势。</span>
+                    </p>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-pink-500">180K+</div>
+                        <p class="text-xs text-gray-400">
+                            <span class="en-content">Talent Gap</span>
+                            <span class="zh-content hidden">人才缺口</span>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="pillar-card bg-gray-800 rounded-xl p-6">
+                    <div class="platform-icon mb-4 mx-auto">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center">
+                        <span class="en-content">📊 Strong Tokenomics</span>
+                        <span class="zh-content hidden">📊 强劲代币经济学</span>
+                    </h3>
+                    <p class="text-sm text-gray-400 text-center mb-4">
+                        <span class="en-content">Conservative projections suggest 10-20x returns over 5 years, with aggressive scenarios reaching 40-50x based on ecosystem growth.</span>
+                        <span class="zh-content hidden">保守预测5年内10-20倍回报，基于生态系统增长的激进情景可达40-50倍。</span>
+                    </p>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-pink-500">10-50x</div>
+                        <p class="text-xs text-gray-400">
+                            <span class="en-content">Potential Returns</span>
+                            <span class="zh-content hidden">潜在回报</span>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="pillar-card bg-gray-800 rounded-xl p-6">
+                    <div class="platform-icon mb-4 mx-auto">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center">
+                        <span class="en-content">🏆 Strategic Location</span>
+                        <span class="zh-content hidden">🏆 战略位置</span>
+                    </h3>
+                    <p class="text-sm text-gray-400 text-center mb-4">
+                        <span class="en-content">Hong Kong as Asia-Pacific creative and financial hub, connecting Eastern and Western markets with favorable regulatory environment.</span>
+                        <span class="zh-content hidden">香港作为亚太创意和金融中心，连接东西方市场，监管环境有利。</span>
+                    </p>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-pink-500">
+                            <span class="en-content">APAC Hub</span>
+                            <span class="zh-content hidden">亚太中心</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Risk Management -->
+            <div class="value-prop-card rounded-xl p-8">
+                <h3 class="text-2xl font-bold mb-6 text-center">
+                    <span class="en-content">🛡️ Risk Management Framework</span>
+                    <span class="zh-content hidden">🛡️ 风险管理框架</span>
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <div class="w-16 h-16 rounded-full bg-pink-500 bg-opacity-20 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-shield-alt text-2xl text-pink-500"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">
+                            <span class="en-content">Smart Contract Security</span>
+                            <span class="zh-content hidden">智能合约安全</span>
+                        </h4>
+                        <p class="text-sm text-gray-400">
+                            <span class="en-content">Multiple tier-1 security audits, formal verification, and $500K bug bounty program</span>
+                            <span class="zh-content hidden">多个一级安全审计、形式化验证和50万美元漏洞赏金计划</span>
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 rounded-full bg-pink-500 bg-opacity-20 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-balance-scale text-2xl text-pink-500"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">
+                            <span class="en-content">Regulatory Compliance</span>
+                            <span class="zh-content hidden">监管合规</span>
+                        </h4>
+                        <p class="text-sm text-gray-400">
+                            <span class="en-content">Proactive engagement with Hong Kong SFC and global regulatory frameworks</span>
+                            <span class="zh-content hidden">与香港证监会和全球监管框架的主动接触</span>
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 rounded-full bg-pink-500 bg-opacity-20 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-piggy-bank text-2xl text-pink-500"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">
+                            <span class="en-content">Treasury Management</span>
+                            <span class="zh-content hidden">资金管理</span>
+                        </h4>
+                        <p class="text-sm text-gray-400">
+                            <span class="en-content">Diversified treasury with 60% stablecoins and strategic reserves</span>
+                            <span class="zh-content hidden">多元化资金管理，60%稳定币和战略储备</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Information -->
+    <section id="company" class="py-20 gradient-bg relative">
+        <div class="animated-bg">
+            <span style="--i:14; left: 20%; animation-delay: 3s;"></span>
+            <span style="--i:17; left: 50%; animation-delay: 7s;"></span>
+            <span style="--i:12; left: 80%; animation-delay: 11s;"></span>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold section-title inline-block">
+                    <span class="en-content">Company Information</span>
+                    <span class="zh-content hidden">公司信息</span>
+                </h2>
+                <p class="text-gray-300 max-w-2xl mx-auto mt-4">
+                    <span class="en-content">About the entity behind the HKAIIFF ecosystem and AIF Token</span>
+                    <span class="zh-content hidden">关于HKAIIFF生态系统和AIF代币背后的实体</span>
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                <!-- Company Details -->
+                <div class="company-info-card rounded-xl p-8">
+                    <h3 class="text-2xl font-bold mb-6">
+                        <span class="en-content">🏢 Legal Entity</span>
+                        <span class="zh-content hidden">🏢 法律实体</span>
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="p-4 bg-gray-900 bg-opacity-50 rounded-lg">
+                            <h4 class="font-bold mb-2 text-pink-500">
+                                <span class="en-content">English Name</span>
+                                <span class="zh-content hidden">英文名称</span>
+                            </h4>
+                            <p class="text-sm">HONG KONG AI INTERNATIONAL FILM FESTIVAL LIMITED</p>
+                        </div>
+                        
+                        <div class="p-4 bg-gray-900 bg-opacity-50 rounded-lg">
+                            <h4 class="font-bold mb-2 text-pink-500">
+                                <span class="en-content">Chinese Name</span>
+                                <span class="zh-content hidden">中文名称</span>
+                            </h4>
+                            <p class="text-sm">香港人工智能国际电影节协会有限公司</p>
+                        </div>
+                        
+                        <div class="p-4 bg-gray-900 bg-opacity-50 rounded-lg">
+                            <h4 class="font-bold mb-2 text-pink-500">Business Registration No.</h4>
+                            <p class="text-sm font-mono">77536113-000-12-24-5</p>
+                        </div>
+                        
+                        <div class="p-4 bg-gray-900 bg-opacity-50 rounded-lg">
+                            <h4 class="font-bold mb-2 text-pink-500">
+                                <span class="en-content">Jurisdiction</span>
+                                <span class="zh-content hidden">司法管辖区</span>
+                            </h4>
+                            <p class="text-sm">
+                                <span class="en-content">Hong Kong Special Administrative Region</span>
+                                <span class="zh-content hidden">香港特别行政区</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Company Background -->
+                <div class="company-info-card rounded-xl p-8">
+                    <h3 class="text-2xl font-bold mb-6">
+                        <span class="en-content">🌟 Background</span>
+                        <span class="zh-content hidden">🌟 背景</span>
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="p-4 bg-gray-900 bg-opacity-50 rounded-lg">
+                            <h4 class="font-bold mb-2 text-pink-500">
+                                <span class="en-content">Mission</span>
+                                <span class="zh-content hidden">使命</span>
+                            </h4>
+                            <p class="text-sm text-gray-300">
+                                <span class="en-content">To reshape the film industry through AI technology, creating a symbiotic ecosystem for creators, investors, and audiences.</span>
+                                <span class="zh-content hidden">通过AI技术重塑电影产业，为创作者、投资者和观众创建共生生态系统。</span>
+                            </p>
+                        </div>
+                        
+                        <div class="p-4 bg-gray-900 bg-opacity-50 rounded-lg">
+                            <h4 class="font-bold mb-2 text-pink-500">
+                                <span class="en-content">Vision</span>
+                                <span class="zh-content hidden">愿景</span>
+                            </h4>
+                            <p class="text-sm text-gray-300">
+                                <span class="en-content">To become the global leader in AI-native film industry, building the most influential infrastructure and innovative standards.</span>
+                                <span class="zh-content hidden">成为全球AI原生电影产业的领导者，构建最具影响力的基础设施和创新标准。</span>
+                            </p>
+                        </div>
+                        
+                        <div class="p-4 bg-gray-900 bg-opacity-50 rounded-lg">
+                            <h4 class="font-bold mb-2 text-pink-500">
+                                <span class="en-content">Strategic Position</span>
+                                <span class="zh-content hidden">战略地位</span>
+                            </h4>
+                            <p class="text-sm text-gray-300">
+                                <span class="en-content">Leveraging Hong Kong's unique position as Asia-Pacific's creative and financial hub, connecting Eastern and Western markets.</span>
+                                <span class="zh-content hidden">利用香港作为亚太创意和金融中心的独特地位，连接东西方市场。</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hong Kong Advantages -->
+            <div class="company-info-card rounded-xl p-8 mb-16">
+                <h3 class="text-2xl font-bold mb-6 text-center">
+                    <span class="en-content">🇭🇰 Hong Kong Strategic Advantages</span>
+                    <span class="zh-content hidden">🇭🇰 香港战略优势</span>
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="w-16 h-16 rounded-full bg-pink-500 bg-opacity-20 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-globe text-2xl text-pink-500"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">
+                            <span class="en-content">Global Financial Center</span>
+                            <span class="zh-content hidden">全球金融中心</span>
+                        </h4>
+                        <p class="text-sm text-gray-400">
+                            <span class="en-content">Mature financial infrastructure and international capital convergence</span>
+                            <span class="zh-content hidden">成熟的金融基础设施和国际资本汇聚</span>
+                        </p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-16 h-16 rounded-full bg-pink-500 bg-opacity-20 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-handshake text-2xl text-pink-500"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">
+                            <span class="en-content">East-West Bridge</span>
+                            <span class="zh-content hidden">东西方桥梁</span>
+                        </h4>
+                        <p class="text-sm text-gray-400">
+                            <span class="en-content">Unique cultural fusion point connecting diverse markets</span>
+                            <span class="zh-content hidden">连接多元市场的独特文化融合点</span>
+                        </p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-16 h-16 rounded-full bg-pink-500 bg-opacity-20 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-cogs text-2xl text-pink-500"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">
+                            <span class="en-content">Innovation Hub</span>
+                            <span class="zh-content hidden">创新中心</span>
+                        </h4>
+                        <p class="text-sm text-gray-400">
+                            <span class="en-content">Technology innovation ecosystem with supportive policies</span>
+                            <span class="zh-content hidden">支持性政策的技术创新生态系统</span>
+                        </p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-16 h-16 rounded-full bg-pink-500 bg-opacity-20 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-balance-scale text-2xl text-pink-500"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">
+                            <span class="en-content">Regulatory Clarity</span>
+                            <span class="zh-content hidden">监管清晰</span>
+                        </h4>
+                        <p class="text-sm text-gray-400">
+                            <span class="en-content">Favorable regulatory environment for digital assets and innovation</span>
+                            <span class="zh-content hidden">对数字资产和创新的有利监管环境</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Team & Leadership -->
+            <div class="company-info-card rounded-xl p-8">
+                <h3 class="text-2xl font-bold mb-6 text-center">
+                    <span class="en-content">👥 Leadership Team</span>
+                    <span class="zh-content hidden">👥 领导团队</span>
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="p-4 bg-gray-900 bg-opacity-50 rounded-lg">
+                        <h4 class="font-bold mb-2">
+                            <span class="en-content">Executive Leadership</span>
+                            <span class="zh-content hidden">执行领导层</span>
+                        </h4>
+                        <ul class="text-sm text-gray-300 space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-pink-500 mr-2"></i>
+                                <span class="en-content">15+ years entertainment & blockchain experience</span>
+                                <span class="zh-content hidden">15+年娱乐和区块链经验</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-pink-500 mr-2"></i>
+                                <span class="en-content">Led $500M+ content platforms</span>
+                                <span class="zh-content hidden">领导5亿美元+内容平台</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-pink-500 mr-2"></i>
+                                <span class="en-content">MBA from INSEAD, CS from HKU</span>
+                                <span class="zh-content hidden">INSEAD MBA，香港大学计算机科学</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="p-4 bg-gray-900 bg-opacity-50 rounded-lg">
+                        <h4 class="font-bold mb-2">
+                            <span class="en-content">Advisory Board</span>
+                            <span class="zh-content hidden">顾问委员会</span>
+                        </h4>
+                        <ul class="text-sm text-gray-300 space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-pink-500 mr-2"></i>
+                                <span class="en-content">Academy Award-winning producers</span>
+                                <span class="zh-content hidden">奥斯卡获奖制片人</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-pink-500 mr-2"></i>
+                                <span class="en-content">Blockchain infrastructure co-founders</span>
+                                <span class="zh-content hidden">区块链基础设施联合创始人</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-pink-500 mr-2"></i>
+                                <span class="en-content">AI research professors & experts</span>
+                                <span class="zh-content hidden">AI研究教授和专家</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section id="participate" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold section-title inline-block">
+                    <span class="en-content">Join the AI Entertainment Revolution</span>
+                    <span class="zh-content hidden">加入AI娱乐革命</span>
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto mt-4">
+                    <span class="en-content">Be part of building the future of entertainment while potentially realizing significant returns</span>
+                    <span class="zh-content hidden">参与构建娱乐的未来，同时获得显著回报潜力</span>
+                </p>
+            </div>
+            
+            <!-- Private Sale Highlight -->
+            <div class="private-sale-banner rounded-2xl p-8 mb-16 text-center max-w-4xl mx-auto">
+                <h3 class="text-3xl font-bold mb-6">
+                    <span class="en-content">🔥 Exclusive Private Sale Opportunity</span>
+                    <span class="zh-content hidden">🔥 独家私募机会</span>
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                    <div>
+                        <div class="text-sm opacity-90 mb-2">
+                            <span class="en-content">Round Status</span>
+                            <span class="zh-content hidden">轮次状态</span>
+                        </div>
+                        <div class="text-2xl font-bold">
+                            <span class="en-content">Round 1/25</span>
+                            <span class="zh-content hidden">第1/25轮次</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="text-sm opacity-90 mb-2">
+                            <span class="en-content">Available Amount</span>
+                            <span class="zh-content hidden">可用金额</span>
+                        </div>
+                        <div class="text-2xl font-bold">$3M USD</div>
+                    </div>
+                    <div>
+                        <div class="text-sm opacity-90 mb-2">
+                            <span class="en-content">Token Price</span>
+                            <span class="zh-content hidden">代币价格</span>
+                        </div>
+                        <div class="text-2xl font-bold">$0.05</div>
+                    </div>
+                </div>
+                <p class="text-lg mb-6 opacity-90">
+                    <span class="en-content">⚡ Early bird pricing before public launch - Limited time opportunity</span>
+                    <span class="zh-content hidden">⚡ 公开发行前的早鸟价格 - 限时机会</span>
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="mailto:investors@aif.market" class="py-3 px-8 bg-white text-pink-600 rounded-full font-bold shadow-lg transform transition hover:scale-105">
+                        <span class="en-content">💰 Join Private Sale</span>
+                        <span class="zh-content hidden">💰 参与私募</span>
+                    </a>
+                    <a href="mailto:partnerships@aif.market" class="py-3 px-8 border-2 border-white rounded-full font-bold shadow-lg transform transition hover:scale-105 hover:bg-white hover:text-pink-600">
+                        <span class="en-content">🤝 Partnership Inquiry</span>
+                        <span class="zh-content hidden">🤝 合作咨询</span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Participation Options -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="value-prop-card rounded-xl p-6 text-center">
+                    <div class="platform-icon mb-4 mx-auto">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">
+                        <span class="en-content">For Creators</span>
+                        <span class="zh-content hidden">面向创作者</span>
+                    </h3>
+                    <ul class="text-sm text-gray-400 space-y-2 mb-6 text-left">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-pink-500 mt-1 mr-2"></i>
+                            <span class="en-content">Access AI film creation tools & education</span>
+                            <span class="zh-content hidden">获得AI电影创作工具和教育</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-pink-500 mt-1 mr-2"></i>
+                            <span class="en-content">Submit works to global competitions</span>
+                            <span class="zh-content hidden">向全球竞赛提交作品</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-pink-500 mt-1 mr-2"></i>
+                            <span class="en-content">Get financing through tokenization</span>
+                            <span class="zh-content hidden">通过代币化获得融资</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-pink-500 mt-1 mr-2"></i>
+                            <span class="en-content">Distribute globally via ecosystem</span>
+                            <span class="zh-content hidden">通过生态系统全球分发</span>
+                        </li>
+                    </ul>
+                    <div class="text-center">
+                        <a href="mailto:creators@aif.market" class="py-2 px-6 rounded-full text-sm font-medium border border-pink-500 text-pink-500 hover:bg-pink-500 hover:text-white transition nav-btn">
+                            <span class="en-content">Creator Resources</span>
+                            <span class="zh-content hidden">创作者资源</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="value-prop-card rounded-xl p-6 text-center">
+                    <div class="platform-icon mb-4 mx-auto">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">
+                        <span class="en-content">For Investors</span>
+                        <span class="zh-content hidden">面向投资者</span>
+                    </h3>
+                    <ul class="text-sm text-gray-400 space-y-2 mb-6 text-left">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-pink-500 mt-1 mr-2"></i>
+                            <span class="en-content">Early access to high-growth market</span>
+                            <span class="zh-content hidden">早期进入高增长市场</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-pink-500 mt-1 mr-2"></i>
+                            <span class="en-content">Token-based transparent investments</span>
+                            <span class="zh-content hidden">基于代币的透明投资</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-pink-500 mt-1 mr-2"></i>
+                            <span class="en-content">Diversified portfolio opportunities</span>
+                            <span class="zh-content hidden">多元化投资组合机会</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-pink-500 mt-1 mr-2"></i>
+                            <span class="en-content">Ecosystem governance participation</span>
+                            <span class="zh-content hidden">生态系统治理参与</span>
+                        </li>
+                    </ul>
+                    <div class="text-center">
+                        <a href="mailto:investors@aif.market" class="py-2 px-6 rounded-full text-sm font-medium border border-pink-500 text-pink-500 hover:bg-pink-500 hover:text-white transition nav-btn">
+                            <span class="en-content">Investment Info</span>
+                            <span class="zh-content hidden">投资信息</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="value-prop-card rounded-xl p-6 text-center">
+                    <div class="platform-icon mb-4 mx-auto">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">
+                        <span class="en-content">For Partners</span>
+                        <span class="zh-content hidden">面向合作伙伴</span>
+                    </h3>
+                    <ul class="text-sm text-gray-400 space-y-2 mb-6 text-left">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-pink-500 mt-1 mr-2"></i>
+                            <span class="en-content">Technology integration opportunities</span>
+                            <span class="zh-content hidden">技术集成机会</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-pink-500 mt-1 mr-2"></i>
+                            <span class="en-content">Global distribution partnerships</span>
+                            <span class="zh-content hidden">全球分发合作伙伴关系</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-pink-500 mt-1 mr-2"></i>
+                            <span class="en-content">Educational program collaboration</span>
+                            <span class="zh-content hidden">教育项目合作</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-pink-500 mt-1 mr-2"></i>
+                            <span class="en-content">Revenue sharing models</span>
+                            <span class="zh-content hidden">收益分享模式</span>
+                        </li>
+                    </ul>
+                    <div class="text-center">
+                        <a href="mailto:partnerships@aif.market" class="py-2 px-6 rounded-full text-sm font-medium border border-pink-500 text-pink-500 hover:bg-pink-500 hover:text-white transition nav-btn">
+                            <span class="en-content">Partnership Inquiry</span>
+                            <span class="zh-content hidden">合作咨询</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 gradient-bg relative">
+        <div class="animated-bg">
+            <span style="--i:16; left: 25%; animation-delay: 4s;"></span>
+            <span style="--i:11; left: 65%; animation-delay: 9s;"></span>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold section-title inline-block">
+                    <span class="en-content">Contact Information</span>
+                    <span class="zh-content hidden">联系信息</span>
+                </h2>
+                <p class="text-gray-300 max-w-2xl mx-auto mt-4">
+                    <span class="en-content">Get in touch to learn more about AIF Token and participation opportunities</span>
+                    <span class="zh-content hidden">联系我们了解更多关于AIF代币和参与机会</span>
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="value-prop-card rounded-xl p-6 text-center">
+                    <div class="w-16 h-16 rounded-full bg-pink-500 bg-opacity-20 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-dollar-sign text-2xl text-pink-500"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">
+                        <span class="en-content">Investor Relations</span>
+                        <span class="zh-content hidden">投资者关系</span>
+                    </h3>
+                    <a href="mailto:investors@aif.market" class="text-pink-500 hover:underline">
+                        investors@aif.market
+                    </a>
+                </div>
+                
+                <div class="value-prop-card rounded-xl p-6 text-center">
+                    <div class="w-16 h-16 rounded-full bg-pink-500 bg-opacity-20 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-handshake text-2xl text-pink-500"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">
+                        <span class="en-content">Partnerships</span>
+                        <span class="zh-content hidden">合作伙伴</span>
+                    </h3>
+                    <a href="mailto:partnerships@aif.market" class="text-pink-500 hover:underline">
+                        partnerships@aif.market
+                    </a>
+                </div>
+                
+                <div class="value-prop-card rounded-xl p-6 text-center">
+                    <div class="w-16 h-16 rounded-full bg-pink-500 bg-opacity-20 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-headset text-2xl text-pink-500"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">
+                        <span class="en-content">Technical Support</span>
+                        <span class="zh-content hidden">技术支持</span>
+                    </h3>
+                    <a href="mailto:support@aif.market" class="text-pink-500 hover:underline">
+                        support@aif.market
+                    </a>
+                </div>
+                
+                <div class="value-prop-card rounded-xl p-6 text-center">
+                    <div class="w-16 h-16 rounded-full bg-pink-500 bg-opacity-20 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-newspaper text-2xl text-pink-500"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">
+                        <span class="en-content">Media Inquiries</span>
+                        <span class="zh-content hidden">媒体咨询</span>
+                    </h3>
+                    <a href="mailto:media@aif.market" class="text-pink-500 hover:underline">
+                        media@aif.market
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-white font-bold text-2xl">
+                        <span class="text-pink-500">AIF</span> TOKEN
+                    </a>
+                    <p class="text-sm text-gray-400 mt-2">
+                        <span class="en-content">World's First AI-Native Film Ecosystem Token</span>
+                        <span class="zh-content hidden">全球首个AI原生影视生态系统代币</span>
+                    </p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#ecosystem" class="text-sm text-gray-400 hover:text-white transition">
+                        <span class="en-content">Ecosystem</span>
+                        <span class="zh-content hidden">生态系统</span>
+                    </a>
+                    <a href="#tokenomics" class="text-sm text-gray-400 hover:text-white transition">
+                        <span class="en-content">Tokenomics</span>
+                        <span class="zh-content hidden">代币经济学</span>
+                    </a>
+                    <a href="#highlights" class="text-sm text-gray-400 hover:text-white transition">
+                        <span class="en-content">Highlights</span>
+                        <span class="zh-content hidden">投资亮点</span>
+                    </a>
+                    <a href="#company" class="text-sm text-gray-400 hover:text-white transition">
+                        <span class="en-content">Company</span>
+                        <span class="zh-content hidden">公司信息</span>
+                    </a>
+                    <a href="#contact" class="text-sm text-gray-400 hover:text-white transition">
+                        <span class="en-content">Contact</span>
+                        <span class="zh-content hidden">联系我们</span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Legal Notice -->
+            <div class="bg-gray-800 rounded-xl p-6 mb-8">
+                <h3 class="text-lg font-bold mb-4 text-center">
+                    <span class="en-content">⚠️ Important Legal Notice</span>
+                    <span class="zh-content hidden">⚠️ 重要法律声明</span>
+                </h3>
+                <div class="text-sm text-gray-400 space-y-2">
+                    <p class="en-content">
+                        This document is for informational purposes only and does not constitute investment advice, financial advice, or any other sort of advice. The AIF Token involves substantial risks including total loss of investment. Past performance is not indicative of future results.
+                    </p>
+                    <p class="zh-content hidden">
+                        本文档仅供信息目的，不构成投资建议、财务建议或任何其他类型的建议。AIF代币涉及重大风险，包括投资完全损失。过往表现不代表未来结果。
+                    </p>
+                    
+                    <p class="en-content">
+                        The AIF Token has not been registered under any securities laws and is not intended for sale to residents of certain jurisdictions where such sale would be prohibited by law. Please consult with your legal and financial advisors before making any investment decisions.
+                    </p>
+                    <p class="zh-content hidden">
+                        AIF代币未根据任何证券法进行注册，不适用于在法律禁止此类销售的某些司法管辖区的居民。在做出任何投资决定之前，请咨询您的法律和财务顾问。
+                    </p>
+                    
+                    <p class="en-content">
+                        Forward-looking statements in this document involve risks and uncertainties. Actual results may differ materially from those expressed or implied. All projections are inherently uncertain and may not be achieved.
+                    </p>
+                    <p class="zh-content hidden">
+                        本文档中的前瞻性声明涉及风险和不确定性。实际结果可能与表达或暗示的结果存在重大差异。所有预测本质上都是不确定的，可能无法实现。
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-gray-700 pt-8 text-center">
+                <p class="text-sm text-gray-500 mb-2">
+                    <span class="en-content">© 2025 Hong Kong AI International Film Festival Limited. All rights reserved.</span>
+                    <span class="zh-content hidden">© 2025 香港人工智能国际电影节协会有限公司。保留所有权利。</span>
+                </p>
+                <p class="text-xs text-gray-600">
+                    <span class="en-content">Business Registration No.: 77536113-000-12-24-5 | Hong Kong SAR</span>
+                    <span class="zh-content hidden">商业登记号：77536113-000-12-24-5 | 香港特别行政区</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top" class="fixed bottom-8 right-8 w-12 h-12 rounded-full accent-gradient flex items-center justify-center shadow-lg opacity-0 invisible transition-all z-50">
+        <i class="fas fa-chevron-up text-white"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // Language switching functionality
+        function switchLanguage(lang) {
+            // Remove active class from all buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+            
+            if (lang === 'en') {
+                // Show English, hide Chinese
+                document.querySelectorAll('.en-content').forEach(el => el.classList.remove('hidden'));
+                document.querySelectorAll('.zh-content').forEach(el => el.classList.add('hidden'));
+            } else {
+                // Show Chinese, hide English
+                document.querySelectorAll('.en-content').forEach(el => el.classList.add('hidden'));
+                document.querySelectorAll('.zh-content').forEach(el => el.classList.remove('hidden'));
+            }
+        }
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+        
+        // Scroll to top button
+        const scrollTopButton = document.getElementById('scroll-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopButton.classList.remove('opacity-0', 'invisible');
+                scrollTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                scrollTopButton.classList.remove('opacity-100', 'visible');
+                scrollTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        scrollTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#' || href.startsWith('mailto:')) return;
+                
+                e.preventDefault();
+                
+                const targetElement = document.querySelector(href);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    if (mobileMenu) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80, // Account for fixed header
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards for animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.ecosystem-card, .stat-card, .pillar-card, .value-prop-card, .company-info-card');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+
+        // Add hover effects for mobile touch
+        document.addEventListener('touchstart', function() {}, {passive: true});
+
+        // Performance optimization: Throttle scroll events
+        let ticking = false;
+        function updateScrollPosition() {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            
+            // Update animated background elements
+            const animatedBg = document.querySelectorAll('.animated-bg span');
+            animatedBg.forEach((span, index) => {
+                if (span) {
+                    span.style.transform = `translateY(${rate * (index + 1) * 0.1}px)`;
+                }
+            });
+            
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(updateScrollPosition);
+                ticking = true;
+            }
+        });
+    </script>
+</body>
+</html>
