@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AIF代币 - 香港AI国际电影节</title>
+    <title>AIF代幣 - 香港AI國際電影節</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@700;800&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@
         }
         
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
             background-color: #0a0a0a;
             color: #ffffff;
             overflow-x: hidden;
@@ -416,7 +416,7 @@
         }
         
         .investment-tier.featured:before {
-            content: '当前轮次';
+            content: '當前輪次';
             position: absolute;
             top: 1rem;
             left: 50%;
@@ -588,7 +588,7 @@
             border-bottom: 10px solid transparent;
         }
         
-        /* 响应式调整 */
+        /* 響應式調整 */
         @media (max-width: 768px) {
             .desktop-nav {
                 display: none;
@@ -617,70 +617,130 @@
             .tier-price {
                 font-size: 2rem;
             }
+            
+            /* 繁體中文特定調整 */
+            .hero h1 {
+                font-size: 2.2rem;
+                line-height: 1.2;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .card h3 {
+                font-size: 1.2rem;
+            }
+        }
+        
+        /* 繁體中文優化 */
+        body {
+            line-height: 1.8;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        p {
+            line-height: 1.8;
+        }
+        
+        .hero h1 {
+            line-height: 1.3;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .card p {
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+        
+        .countdown-label {
+            letter-spacing: 1px;
+        }
+        
+        .ecosystem-card h3 {
+            font-size: 1.4rem;
+        }
+        
+        .investment-tier {
+            padding: 1.5rem;
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- AI元素 -->
     <div class="ai-element" style="top: 120px; left: 10%;">
-        AIF价格: $0.05 <br>
-        轮次: 1/25 <br>
-        // 私募进行中
+        AIF價格: $0.05 <br>
+        輪次: 1/25 <br>
+        // 私募進行中
     </div>
     
     <div class="ai-element" style="bottom: 150px; right: 15%;">
-        生态系统: 扩展中 <br>
-        影片: 50+ 已制作 <br>
-        // AI电影革命
+        生態系統: 擴展中 <br>
+        影片: 50+ 已製作 <br>
+        // AI電影革命
     </div>
     
-    <!-- 数据流 -->
+    <!-- 數據流 -->
     <div class="data-stream" style="left: 20%; animation-delay: 0s;"></div>
     <div class="data-stream" style="left: 40%; animation-delay: 0.5s;"></div>
     <div class="data-stream" style="left: 60%; animation-delay: 1s;"></div>
     <div class="data-stream" style="left: 80%; animation-delay: 1.5s;"></div>
 
-    <!-- 导航栏 -->
+    <!-- 導航欄 -->
     <nav class="navbar fixed w-full z-50 px-4 py-3">
         <div class="container mx-auto flex justify-between items-center">
             <a href="#home" class="flex flex-col items-center">
                 <div class="logo-font">AIF</div>
-                <div class="logo-sub">AI电影代币</div>
+                <div class="logo-sub">AI電影代幣</div>
             </a>
             <div class="hidden md:flex space-x-8 desktop-nav">
-                <a href="#ecosystem" class="hover:text-blue-400 transition">生态系统</a>
-                <a href="#about-aif" class="hover:text-blue-400 transition">关于AIF</a>
-                <a href="#tokenomics" class="hover:text-blue-400 transition">代币经济</a>
-                <a href="#private-sale" class="hover:text-blue-400 transition">私募轮次</a>
-                <a href="#roadmap" class="hover:text-blue-400 transition">路线图</a>
-                <a href="#whitepaper" class="hover:text-blue-400 transition">白皮书</a>
+                <a href="#ecosystem" class="hover:text-blue-400 transition">生態系統</a>
+                <a href="#about-aif" class="hover:text-blue-400 transition">關於AIF</a>
+                <a href="#tokenomics" class="hover:text-blue-400 transition">代幣經濟</a>
+                <a href="#private-sale" class="hover:text-blue-400 transition">私募輪次</a>
+                <a href="#roadmap" class="hover:text-blue-400 transition">路線圖</a>
+                <a href="#whitepaper" class="hover:text-blue-400 transition">白皮書</a>
             </div>
             <div class="flex items-center space-x-4">
-                <!-- 语言选择器 -->
+                <!-- 語言選擇器 - 修正為香港特別行政區旗幟 -->
                 <div class="language-selector">
                     <div class="flex items-center cursor-pointer">
-                        <img src="https://flagcdn.com/w40/cn.png" alt="中文" class="w-6 mr-2">
-                        <span>中文</span>
+                        <img src="https://flagcdn.com/w40/hk.png" alt="繁體中文" class="w-6 mr-2">
+                        <span>繁體中文</span>
                         <i class="fas fa-chevron-down ml-2 text-sm"></i>
                     </div>
                     <div class="language-dropdown">
                         <a href="#" class="flex items-center p-3 hover:bg-gray-700">
-                            <img src="https://flagcdn.com/w40/cn.png" alt="中文" class="w-6 mr-2">
-                            中文
+                            <img src="https://flagcdn.com/w40/hk.png" alt="繁體中文" class="w-6 mr-2">
+                            繁體中文
+                        </a>
+                        <a href="#" class="flex items-center p-3 hover:bg-gray-700">
+                            <img src="https://flagcdn.com/w40/cn.png" alt="简体中文" class="w-6 mr-2">
+                            简体中文
                         </a>
                         <a href="#" class="flex items-center p-3 hover:bg-gray-700">
                             <img src="https://flagcdn.com/w40/gb.png" alt="English" class="w-6 mr-2">
                             English
                         </a>
-                        <a href="#" class="flex items-center p-3 hover:bg-gray-700">
-                            <img src="https://flagcdn.com/w40/jp.png" alt="日本語" class="w-6 mr-2">
-                            日本語
-                        </a>
                     </div>
                 </div>
                 
                 <button class="btn-primary px-6 py-2 rounded-full text-sm">
-                    参与私募
+                    參與私募
                 </button>
                 
                 <button class="md:hidden text-white mobile-menu-btn">
@@ -690,89 +750,89 @@
         </div>
     </nav>
 
-    <!-- 移动端菜单 -->
+    <!-- 移動端菜單 -->
     <div class="mobile-menu">
         <div class="absolute top-5 right-5 text-xl cursor-pointer" onclick="closeMobileMenu()">
             <i class="fas fa-times"></i>
         </div>
         
         <div class="mt-12 flex flex-col space-y-6">
-            <a href="#ecosystem" class="text-xl hover:text-blue-400 transition">生态系统</a>
-            <a href="#about-aif" class="text-xl hover:text-blue-400 transition">关于AIF</a>
-            <a href="#tokenomics" class="text-xl hover:text-blue-400 transition">代币经济</a>
-            <a href="#private-sale" class="text-xl hover:text-blue-400 transition">私募轮次</a>
-            <a href="#roadmap" class="text-xl hover:text-blue-400 transition">路线图</a>
-            <a href="#whitepaper" class="text-xl hover:text-blue-400 transition">白皮书</a>
+            <a href="#ecosystem" class="text-xl hover:text-blue-400 transition">生態系統</a>
+            <a href="#about-aif" class="text-xl hover:text-blue-400 transition">關於AIF</a>
+            <a href="#tokenomics" class="text-xl hover:text-blue-400 transition">代幣經濟</a>
+            <a href="#private-sale" class="text-xl hover:text-blue-400 transition">私募輪次</a>
+            <a href="#roadmap" class="text-xl hover:text-blue-400 transition">路線圖</a>
+            <a href="#whitepaper" class="text-xl hover:text-blue-400 transition">白皮書</a>
             
             <div class="pt-6 border-t border-gray-700">
                 <button class="btn-primary w-full py-3 rounded-lg font-medium text-center">
-                    参与私募
+                    參與私募
                 </button>
             </div>
         </div>
     </div>
 
-    <!-- 英雄版块 -->
+    <!-- 英雄版塊 -->
     <section class="hero" id="home">
         <div class="hero-bg"></div>
         <div class="container mx-auto px-4 hero-content">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="animate-fade-in">
                     <h1 class="text-5xl md:text-6xl font-bold mb-6">
-                        <span class="gradient-text">AI电影</span>的未来 
-                        从这里开始
+                        <span class="gradient-text">AI電影</span>的未來 
+                        從這裡開始
                     </h1>
                     <p class="text-xl text-gray-300 mb-8">
-                        加入世界首个综合性AI原生电影生态系统。AIF代币通过香港AI国际电影节平台，为超过3700亿美元的AI内容市场提供动力。
+                        加入世界首個綜合性AI原生電影生態系統。AIF代幣透過香港AI國際電影節平台，為超過3700億美元的AI內容市場提供動力。
                     </p>
                     
                     <div class="private-sale-alert">
                         <div class="flex items-center mb-3">
                             <i class="fas fa-exclamation-triangle text-yellow-400 text-xl mr-3"></i>
-                            <h3 class="text-lg font-bold text-yellow-400">私募第一轮进行中</h3>
+                            <h3 class="text-lg font-bold text-yellow-400">私募第一輪進行中</h3>
                         </div>
                         <p class="text-gray-200">
-                            <strong>当前价格：$0.05/AIF</strong> | 目标筹资：300万美元 | 已完成：65%
+                            <strong>當前價格：$0.05/AIF</strong> | 目標籌資：300萬美元 | 已完成：65%
                         </p>
                         <p class="text-sm text-gray-400 mt-2">
-                            ⏰ 第一轮将于2025年8月8日结束，之后价格上调至$0.055
+                            ⏰ 第一輪將於2025年8月8日結束，之後價格上調至$0.055
                         </p>
                     </div>
                     
                     <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-12">
                         <button class="btn-primary px-8 py-4 rounded-full font-medium text-lg">
-                            立即参与私募
+                            立即參與私募
                         </button>
                         <button class="btn-secondary px-8 py-4 rounded-full font-medium text-lg">
-                            下载白皮书
+                            下載白皮書
                         </button>
                     </div>
                     
-                    <!-- 统计数据 -->
+                    <!-- 統計數據 -->
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                         <div class="text-center">
                             <div class="stats-counter" data-target="6">0</div>
-                            <div class="text-sm opacity-70">个平台</div>
+                            <div class="text-sm opacity-70">個平台</div>
                         </div>
                         <div class="text-center">
                             <div class="stats-counter" data-target="25">0</div>
-                            <div class="text-sm opacity-70">私募轮次</div>
+                            <div class="text-sm opacity-70">私募輪次</div>
                         </div>
                         <div class="text-center">
                             <div class="stats-counter" data-target="3700">0</div>
-                            <div class="text-sm opacity-70">亿美元市场</div>
+                            <div class="text-sm opacity-70">億美元市場</div>
                         </div>
                         <div class="text-center">
                             <div class="stats-counter" data-target="100">0</div>
-                            <div class="text-sm opacity-70">亿代币总量</div>
+                            <div class="text-sm opacity-70">億代幣總量</div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="animate-slide-right">
-                    <!-- 倒计时器 -->
+                    <!-- 倒計時器 -->
                     <div class="countdown mb-8">
-                        <h3 class="text-2xl font-bold mb-4 gradient-text">第一轮结束倒计时：</h3>
+                        <h3 class="text-2xl font-bold mb-4 gradient-text">第一輪結束倒計時：</h3>
                         <div class="flex justify-center space-x-6" id="countdown-timer">
                             <div class="countdown-item">
                                 <div class="countdown-number" id="days">00</div>
@@ -780,11 +840,11 @@
                             </div>
                             <div class="countdown-item">
                                 <div class="countdown-number" id="hours">00</div>
-                                <div class="countdown-label">小时</div>
+                                <div class="countdown-label">小時</div>
                             </div>
                             <div class="countdown-item">
                                 <div class="countdown-number" id="minutes">00</div>
-                                <div class="countdown-label">分钟</div>
+                                <div class="countdown-label">分鐘</div>
                             </div>
                             <div class="countdown-item">
                                 <div class="countdown-number" id="seconds">00</div>
@@ -793,21 +853,21 @@
                         </div>
                     </div>
                     
-                    <!-- 代币价格卡片 -->
+                    <!-- 代幣價格卡片 -->
                     <div class="token-price-card card p-6">
-                        <h3 class="text-xl font-bold mb-4">当前轮次</h3>
+                        <h3 class="text-xl font-bold mb-4">當前輪次</h3>
                         <div class="text-center">
                             <div class="text-4xl font-bold gradient-text mb-2">$0.05</div>
-                            <div class="text-gray-400 mb-4">每个AIF代币</div>
+                            <div class="text-gray-400 mb-4">每個AIF代幣</div>
                             <div class="bg-gray-700 rounded-full h-2 mb-4">
                                 <div class="progress-bar h-2 rounded-full" style="width: 65%"></div>
                             </div>
                             <div class="flex justify-between text-sm mb-6">
-                                <span>已筹集 $195万</span>
-                                <span>目标 $300万</span>
+                                <span>已籌集 $195萬</span>
+                                <span>目標 $300萬</span>
                             </div>
                             <button class="btn-primary w-full py-3 rounded-lg font-medium">
-                                立即投资
+                                立即投資
                             </button>
                         </div>
                     </div>
@@ -816,54 +876,54 @@
         </div>
     </section>
 
-    <!-- 关于AIF代币版块 -->
+    <!-- 關於AIF代幣版塊 -->
     <section class="py-20 bg-gradient-to-b from-transparent to-gray-900" id="about-aif">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16 animate-fade-in">
-                <h2 class="text-4xl font-bold mb-6">关于AIF代币</h2>
+                <h2 class="text-4xl font-bold mb-6">關於AIF代幣</h2>
                 <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                    AIF代币是香港AI国际电影节生态系统的核心，为全球首个综合性AI原生娱乐平台提供动力
+                    AIF代幣是香港AI國際電影節生態系統的核心，為全球首個綜合性AI原生娛樂平台提供動力
                 </p>
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
                 <div class="animate-slide-up">
-                    <h3 class="text-3xl font-bold mb-6 gradient-text">什么是AIF代币？</h3>
+                    <h3 class="text-3xl font-bold mb-6 gradient-text">什麼是AIF代幣？</h3>
                     <div class="space-y-4 text-lg text-gray-300">
                         <p>
-                            <strong class="text-white">AIF（AI Film Token）</strong>是驱动香港AI国际电影节生态系统的原生代币，代表着AI与娱乐产业融合的革命性机会。
+                            <strong class="text-white">AIF（AI Film Token）</strong>是驅動香港AI國際電影節生態系統的原生代幣，代表著AI與娛樂產業融合的革命性機會。
                         </p>
                         <p>
-                            作为ERC-20标准代币，AIF不仅是生态系统内的支付工具，更是参与治理、获得奖励、投资项目的核心资产。
+                            作為ERC-20標準代幣，AIF不僅是生態系統內的支付工具，更是參與治理、獲得獎勵、投資項目的核心資產。
                         </p>
                         <p>
-                            通过持有AIF代币，您将成为<strong class="text-accent">全球首个AI原生电影生态系统</strong>的共建者和受益者。
+                            透過持有AIF代幣，您將成為<strong class="text-accent">全球首個AI原生電影生態系統</strong>的共建者和受益者。
                         </p>
                     </div>
                     
                     <div class="mt-8 grid grid-cols-2 gap-4">
                         <div class="card p-4 text-center">
-                            <div class="text-2xl font-bold text-accent mb-2">100亿</div>
-                            <div class="text-sm text-gray-400">代币总供应量</div>
+                            <div class="text-2xl font-bold text-accent mb-2">100億</div>
+                            <div class="text-sm text-gray-400">代幣總供應量</div>
                         </div>
                         <div class="card p-4 text-center">
                             <div class="text-2xl font-bold text-accent mb-2">$0.05</div>
-                            <div class="text-sm text-gray-400">私募起始价格</div>
+                            <div class="text-sm text-gray-400">私募起始價格</div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="animate-slide-right">
                     <div class="card p-8">
-                        <h4 class="text-xl font-bold mb-6">AIF代币核心功能</h4>
+                        <h4 class="text-xl font-bold mb-6">AIF代幣核心功能</h4>
                         <div class="space-y-4">
                             <div class="flex items-start">
                                 <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-4 mt-1">
                                     <i class="fas fa-key text-sm"></i>
                                 </div>
                                 <div>
-                                    <h5 class="font-bold text-blue-400">平台访问权限</h5>
-                                    <p class="text-sm text-gray-400">电影节提交、学院课程、404.world高级功能</p>
+                                    <h5 class="font-bold text-blue-400">平台訪問權限</h5>
+                                    <p class="text-sm text-gray-400">電影節提交、學院課程、404.world高級功能</p>
                                 </div>
                             </div>
                             
@@ -872,8 +932,8 @@
                                     <i class="fas fa-vote-yea text-sm"></i>
                                 </div>
                                 <div>
-                                    <h5 class="font-bold text-purple-400">生态治理</h5>
-                                    <p class="text-sm text-gray-400">参与平台决策、资源分配投票</p>
+                                    <h5 class="font-bold text-purple-400">生態治理</h5>
+                                    <p class="text-sm text-gray-400">參與平台決策、資源分配投票</p>
                                 </div>
                             </div>
                             
@@ -882,8 +942,8 @@
                                     <i class="fas fa-coins text-sm"></i>
                                 </div>
                                 <div>
-                                    <h5 class="font-bold text-green-400">投资机会</h5>
-                                    <p class="text-sm text-gray-400">参与FilmToken项目投资、二级市场交易</p>
+                                    <h5 class="font-bold text-green-400">投資機會</h5>
+                                    <p class="text-sm text-gray-400">參與FilmToken項目投資、二級市場交易</p>
                                 </div>
                             </div>
                             
@@ -892,8 +952,8 @@
                                     <i class="fas fa-gift text-sm"></i>
                                 </div>
                                 <div>
-                                    <h5 class="font-bold text-yellow-400">质押奖励</h5>
-                                    <p class="text-sm text-gray-400">8-23%年化收益率，收益分享机制</p>
+                                    <h5 class="font-bold text-yellow-400">質押獎勵</h5>
+                                    <p class="text-sm text-gray-400">8-23%年化收益率，收益分享機制</p>
                                 </div>
                             </div>
                         </div>
@@ -901,26 +961,26 @@
                 </div>
             </div>
             
-            <!-- 网络效应价值 -->
+            <!-- 網絡效應價值 -->
             <div class="animate-fade-in">
-                <h3 class="text-3xl font-bold text-center mb-8">网络效应价值增长</h3>
+                <h3 class="text-3xl font-bold text-center mb-8">網絡效應價值增長</h3>
                 <p class="text-xl text-gray-300 text-center mb-12 max-w-4xl mx-auto">
-                    HKAIIFF生态系统的价值随着参与者数量的增加而指数级增长，遵循<strong class="text-accent">梅特卡夫定律</strong>：
-                    网络价值 = n × (n-1) × 内容质量 × 技术采用率
+                    HKAIIFF生態系統的價值隨著參與者數量的增加而指數級增長，遵循<strong class="text-accent">梅特卡夫定律</strong>：
+                    網絡價值 = n × (n-1) × 內容質量 × 技術採用率
                 </p>
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                     <div class="network-value-card">
                         <div class="relative z-10">
                             <div class="text-center">
-                                <div class="text-3xl font-bold gradient-text mb-4">1万用户</div>
-                                <div class="text-xl text-gray-300 mb-2">网络价值：1000万美元</div>
-                                <div class="text-sm text-gray-400">基础效用价值阶段</div>
+                                <div class="text-3xl font-bold gradient-text mb-4">1萬用戶</div>
+                                <div class="text-xl text-gray-300 mb-2">網絡價值：1000萬美元</div>
+                                <div class="text-sm text-gray-400">基礎效用價值階段</div>
                                 <div class="mt-4 p-3 bg-gray-800 rounded-lg">
                                     <div class="text-sm text-gray-300">
-                                        • 平台功能基础使用<br>
-                                        • 初期创作者社区<br>
-                                        • 基本代币流通
+                                        • 平台功能基礎使用<br>
+                                        • 初期創作者社區<br>
+                                        • 基本代幣流通
                                     </div>
                                 </div>
                             </div>
@@ -930,14 +990,14 @@
                     <div class="network-value-card">
                         <div class="relative z-10">
                             <div class="text-center">
-                                <div class="text-3xl font-bold gradient-text mb-4">10万用户</div>
-                                <div class="text-xl text-gray-300 mb-2">网络价值：10亿美元</div>
-                                <div class="text-sm text-gray-400">100倍效用 + 投机价值</div>
+                                <div class="text-3xl font-bold gradient-text mb-4">10萬用戶</div>
+                                <div class="text-xl text-gray-300 mb-2">網絡價值：10億美元</div>
+                                <div class="text-sm text-gray-400">100倍效用 + 投機價值</div>
                                 <div class="mt-4 p-3 bg-gray-800 rounded-lg">
                                     <div class="text-sm text-gray-300">
-                                        • 内容生态繁荣<br>
-                                        • 活跃投资市场<br>
-                                        • 强网络效应显现
+                                        • 內容生態繁榮<br>
+                                        • 活躍投資市場<br>
+                                        • 強網絡效應顯現
                                     </div>
                                 </div>
                             </div>
@@ -947,14 +1007,14 @@
                     <div class="network-value-card">
                         <div class="relative z-10">
                             <div class="text-center">
-                                <div class="text-3xl font-bold gradient-text mb-4">100万用户</div>
-                                <div class="text-xl text-gray-300 mb-2">网络价值：1000亿美元</div>
-                                <div class="text-sm text-gray-400">10,000倍效用 + 行业标准</div>
+                                <div class="text-3xl font-bold gradient-text mb-4">100萬用戶</div>
+                                <div class="text-xl text-gray-300 mb-2">網絡價值：1000億美元</div>
+                                <div class="text-sm text-gray-400">10,000倍效用 + 行業標準</div>
                                 <div class="mt-4 p-3 bg-gray-800 rounded-lg">
                                     <div class="text-sm text-gray-300">
-                                        • 全球生态系统<br>
-                                        • 行业标准制定者<br>
-                                        • 主流媒体采用
+                                        • 全球生態系統<br>
+                                        • 行業標準制定者<br>
+                                        • 主流媒體採用
                                     </div>
                                 </div>
                             </div>
@@ -963,26 +1023,26 @@
                 </div>
                 
                 <div class="card p-8 text-center">
-                    <h4 class="text-xl font-bold mb-4 text-accent">网络效应驱动价值创造</h4>
+                    <h4 class="text-xl font-bold mb-4 text-accent">網絡效應驅動價值創造</h4>
                     <p class="text-gray-300 mb-6">
-                        每个新用户的加入不仅为自己创造价值，更为整个网络的所有参与者增加价值。
-                        这种指数级增长模式是AIF代币长期价值增长的核心驱动力。
+                        每個新用戶的加入不僅為自己創造價值，更為整個網絡的所有參與者增加價值。
+                        這種指數級增長模式是AIF代幣長期價值增長的核心驅動力。
                     </p>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div>
                             <i class="fas fa-users text-3xl text-blue-400 mb-3"></i>
-                            <h5 class="font-bold mb-2">用户增长</h5>
-                            <p class="text-sm text-gray-400">更多创作者和观众加入平台</p>
+                            <h5 class="font-bold mb-2">用戶增長</h5>
+                            <p class="text-sm text-gray-400">更多創作者和觀眾加入平台</p>
                         </div>
                         <div>
                             <i class="fas fa-film text-3xl text-purple-400 mb-3"></i>
-                            <h5 class="font-bold mb-2">内容丰富</h5>
-                            <p class="text-sm text-gray-400">高质量AI原生内容持续产出</p>
+                            <h5 class="font-bold mb-2">內容豐富</h5>
+                            <p class="text-sm text-gray-400">高質量AI原生內容持續產出</p>
                         </div>
                         <div>
                             <i class="fas fa-chart-line text-3xl text-green-400 mb-3"></i>
-                            <h5 class="font-bold mb-2">价值增长</h5>
-                            <p class="text-sm text-gray-400">生态系统价值和代币价值同步提升</p>
+                            <h5 class="font-bold mb-2">價值增長</h5>
+                            <p class="text-sm text-gray-400">生態系統價值和代幣價值同步提升</p>
                         </div>
                     </div>
                 </div>
@@ -990,34 +1050,34 @@
         </div>
     </section>
 
-    <!-- 生态系统版块 -->
+    <!-- 生態系統版塊 -->
     <section class="py-20" id="ecosystem">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16 animate-fade-in">
-                <h2 class="text-4xl font-bold mb-6">HKAIIFF生态系统</h2>
+                <h2 class="text-4xl font-bold mb-6">HKAIIFF生態系統</h2>
                 <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                    六个集成平台创建AI原生娱乐的完整价值链，驱动网络效应和可持续价值创造
+                    六個集成平台創建AI原生娛樂的完整價值鏈，驅動網絡效應和可持續價值創造
                 </p>
             </div>
             
-            <!-- 生态系统优势 -->
+            <!-- 生態系統優勢 -->
             <div class="mb-16 animate-fade-in">
-                <h3 class="text-2xl font-bold text-center mb-8">生态系统核心优势</h3>
+                <h3 class="text-2xl font-bold text-center mb-8">生態系統核心優勢</h3>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="card p-6 text-center">
                         <i class="fas fa-rocket text-4xl text-blue-400 mb-4"></i>
-                        <h4 class="text-lg font-bold mb-3">先发优势</h4>
-                        <p class="text-gray-400">全球首个综合性AI原生电影生态系统，抢占市场先机</p>
+                        <h4 class="text-lg font-bold mb-3">先發優勢</h4>
+                        <p class="text-gray-400">全球首個綜合性AI原生電影生態系統，搶佔市場先機</p>
                     </div>
                     <div class="card p-6 text-center">
                         <i class="fas fa-link text-4xl text-purple-400 mb-4"></i>
-                        <h4 class="text-lg font-bold mb-3">完整生态链</h4>
-                        <p class="text-gray-400">从教育到制作、从融资到分发的全价值链覆盖</p>
+                        <h4 class="text-lg font-bold mb-3">完整生態鏈</h4>
+                        <p class="text-gray-400">從教育到製作、從融資到分發的全價值鏈覆蓋</p>
                     </div>
                     <div class="card p-6 text-center">
                         <i class="fas fa-globe-asia text-4xl text-green-400 mb-4"></i>
-                        <h4 class="text-lg font-bold mb-3">地理优势</h4>
-                        <p class="text-gray-400">香港作为亚太创意和金融中心，连接东西方市场</p>
+                        <h4 class="text-lg font-bold mb-3">地理優勢</h4>
+                        <p class="text-gray-400">香港作為亞太創意和金融中心，連接東西方市場</p>
                     </div>
                 </div>
             </div>
@@ -1028,14 +1088,14 @@
                     <div class="ecosystem-icon">
                         <i class="fas fa-trophy"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">展映竞赛平台</h3>
+                    <h3 class="text-xl font-bold mb-3">展映競賽平台</h3>
                     <p class="text-gray-300 mb-4">
-                        AI原生内容的全球展示舞台，设立100万美元+奖金池，建立质量标准并认可行业创新。
+                        AI原生內容的全球展示舞台，設立100萬美元+獎金池，建立質量標準並認可行業創新。
                     </p>
                     <ul class="text-sm space-y-2">
-                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> 独角兽金奖：100万美元</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> 全球12个主要城市</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> 全球流媒体访问</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> 獨角獸金獎：100萬美元</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> 全球12個主要城市</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> 全球流媒體訪問</li>
                     </ul>
                 </div>
                 
@@ -1044,14 +1104,14 @@
                     <div class="ecosystem-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">AI电影学院</h3>
+                    <h3 class="text-xl font-bold mb-3">AI電影學院</h3>
                     <p class="text-gray-300 mb-4">
-                        AI电影制作的专业教育和认证，通过全面的课程体系解决关键技能缺口。
+                        AI電影製作的專業教育和認證，透過全面的課程體系解決關鍵技能缺口。
                     </p>
                     <ul class="text-sm space-y-2">
                         <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> 2030年100+中心</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> 预计12万+学生</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> 行业导师项目</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> 預計12萬+學生</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> 行業導師項目</li>
                     </ul>
                 </div>
                 
@@ -1060,13 +1120,13 @@
                     <div class="ecosystem-icon">
                         <i class="fas fa-coins"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">AI电影市场</h3>
+                    <h3 class="text-xl font-bold mb-3">AI電影市場</h3>
                     <p class="text-gray-300 mb-4">
-                        通过代币化众筹和智能合约，为电影项目融资创建去中心化透明市场。
+                        透過代幣化眾籌和智能合約，為電影項目融資創建去中心化透明市場。
                     </p>
                     <ul class="text-sm space-y-2">
-                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> FilmToken投资</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> 多轮融资机制</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> FilmToken投資</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> 多輪融資機制</li>
                         <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> 透明收益分享</li>
                     </ul>
                 </div>
@@ -1076,14 +1136,14 @@
                     <div class="ecosystem-icon">
                         <i class="fas fa-upload"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">征片中心</h3>
+                    <h3 class="text-xl font-bold mb-3">徵片中心</h3>
                     <p class="text-gray-300 mb-4">
-                        全球内容门户，通过AI分析、人工策展，向全球主要平台分发内容。
+                        全球內容門戶，透過AI分析、人工策展，向全球主要平台分發內容。
                     </p>
                     <ul class="text-sm space-y-2">
                         <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> Netflix、Disney+集成</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> AI质量评分</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> 全球分发网络</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> AI質量評分</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> 全球分發網絡</li>
                     </ul>
                 </div>
                 
@@ -1094,12 +1154,12 @@
                     </div>
                     <h3 class="text-xl font-bold mb-3">404.world平台</h3>
                     <p class="text-gray-300 mb-4">
-                        通过AI驱动的个性化，将被动观看转变为主动参与的交互式流媒体平台。
+                        透過AI驅動的個性化，將被動觀看轉變為主動參與的交互式流媒體平台。
                     </p>
                     <ul class="text-sm space-y-2">
-                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> 个人平行世界</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> 实时情节适应</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> 社区叙事</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> 個人平行世界</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> 實時情節適應</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> 社區敘事</li>
                     </ul>
                 </div>
                 
@@ -1110,19 +1170,19 @@
                     </div>
                     <h3 class="text-xl font-bold mb-3">AIF交易所</h3>
                     <p class="text-gray-300 mb-4">
-                        生态系统的金融心脏，为所有代币提供流动性、价格发现和交易基础设施。
+                        生態系統的金融心臟，為所有代幣提供流動性、價格發現和交易基礎設施。
                     </p>
                     <ul class="text-sm space-y-2">
-                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> 高级交易功能</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> 流动性挖矿奖励</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> 跨链原子交换</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> 高級交易功能</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> 流動性挖礦獎勵</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> 跨鏈原子交換</li>
                     </ul>
                 </div>
             </div>
             
-            <!-- 平台协同效应 -->
+            <!-- 平台協同效應 -->
             <div class="mt-16 animate-fade-in">
-                <h3 class="text-2xl font-bold text-center mb-8">平台协同效应</h3>
+                <h3 class="text-2xl font-bold text-center mb-8">平台協同效應</h3>
                 <div class="card p-8">
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         <div class="text-center">
@@ -1131,7 +1191,7 @@
                                 <i class="fas fa-arrow-right text-gray-400 mx-2"></i>
                                 <i class="fas fa-graduation-cap text-blue-400"></i>
                             </div>
-                            <p class="text-sm text-gray-300">获奖者成为讲师和案例研究</p>
+                            <p class="text-sm text-gray-300">獲獎者成為講師和案例研究</p>
                         </div>
                         <div class="text-center">
                             <div class="flex items-center justify-center mb-3">
@@ -1139,7 +1199,7 @@
                                 <i class="fas fa-arrow-right text-gray-400 mx-2"></i>
                                 <i class="fas fa-coins text-green-400"></i>
                             </div>
-                            <p class="text-sm text-gray-300">毕业生获得优先融资渠道</p>
+                            <p class="text-sm text-gray-300">畢業生獲得優先融資渠道</p>
                         </div>
                         <div class="text-center">
                             <div class="flex items-center justify-center mb-3">
@@ -1147,7 +1207,7 @@
                                 <i class="fas fa-arrow-right text-gray-400 mx-2"></i>
                                 <i class="fas fa-upload text-purple-400"></i>
                             </div>
-                            <p class="text-sm text-gray-300">获资助项目得到分发支持</p>
+                            <p class="text-sm text-gray-300">獲資助項目得到分發支持</p>
                         </div>
                         <div class="text-center">
                             <div class="flex items-center justify-center mb-3">
@@ -1155,7 +1215,7 @@
                                 <i class="fas fa-arrow-right text-gray-400 mx-2"></i>
                                 <i class="fas fa-play-circle text-red-400"></i>
                             </div>
-                            <p class="text-sm text-gray-300">内容流向交互式平台</p>
+                            <p class="text-sm text-gray-300">內容流向交互式平台</p>
                         </div>
                         <div class="text-center">
                             <div class="flex items-center justify-center mb-3">
@@ -1163,7 +1223,7 @@
                                 <i class="fas fa-arrow-right text-gray-400 mx-2"></i>
                                 <i class="fas fa-exchange-alt text-orange-400"></i>
                             </div>
-                            <p class="text-sm text-gray-300">用户数据驱动代币价值</p>
+                            <p class="text-sm text-gray-300">用戶數據驅動代幣價值</p>
                         </div>
                         <div class="text-center">
                             <div class="flex items-center justify-center mb-3">
@@ -1171,7 +1231,7 @@
                                 <i class="fas fa-arrow-right text-gray-400 mx-2"></i>
                                 <i class="fas fa-trophy text-yellow-400"></i>
                             </div>
-                            <p class="text-sm text-gray-300">代币奖励资助更大奖金池</p>
+                            <p class="text-sm text-gray-300">代幣獎勵資助更大獎金池</p>
                         </div>
                     </div>
                 </div>
@@ -1179,73 +1239,73 @@
         </div>
     </section>
 
-    <!-- 代币经济版块 -->
+    <!-- 代幣經濟版塊 -->
     <section class="py-20 bg-gradient-to-b from-transparent to-gray-900" id="tokenomics">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16 animate-fade-in">
-                <h2 class="text-4xl font-bold mb-6">AIF代币经济</h2>
+                <h2 class="text-4xl font-bold mb-6">AIF代幣經濟</h2>
                 <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                    通缩代币经济模型，具有多重效用驱动因素和可持续价值累积机制
+                    通縮代幣經濟模型，具有多重效用驅動因素和可持續價值累積機制
                 </p>
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="animate-slide-up">
-                    <h3 class="text-2xl font-bold mb-6">代币分配方案</h3>
+                    <h3 class="text-2xl font-bold mb-6">代幣分配方案</h3>
                     <div class="space-y-4">
                         <div class="flex justify-between items-center p-4 bg-gray-800 rounded-lg">
-                            <span>生态系统发展 (30%)</span>
-                            <span class="text-accent font-bold">30亿 AIF</span>
+                            <span>生態系統發展 (30%)</span>
+                            <span class="text-accent font-bold">30億 AIF</span>
                         </div>
                         <div class="flex justify-between items-center p-4 bg-gray-800 rounded-lg">
-                            <span>团队与顾问 (20%)</span>
-                            <span class="text-accent font-bold">20亿 AIF</span>
+                            <span>團隊與顧問 (20%)</span>
+                            <span class="text-accent font-bold">20億 AIF</span>
                         </div>
                         <div class="flex justify-between items-center p-4 bg-gray-800 rounded-lg">
-                            <span>私募销售 (15%)</span>
-                            <span class="text-accent font-bold">15亿 AIF</span>
+                            <span>私募銷售 (15%)</span>
+                            <span class="text-accent font-bold">15億 AIF</span>
                         </div>
                         <div class="flex justify-between items-center p-4 bg-gray-800 rounded-lg">
-                            <span>社区激励 (15%)</span>
-                            <span class="text-accent font-bold">15亿 AIF</span>
+                            <span>社區激勵 (15%)</span>
+                            <span class="text-accent font-bold">15億 AIF</span>
                         </div>
                         <div class="flex justify-between items-center p-4 bg-gray-800 rounded-lg">
-                            <span>公开销售 (10%)</span>
-                            <span class="text-accent font-bold">10亿 AIF</span>
+                            <span>公開銷售 (10%)</span>
+                            <span class="text-accent font-bold">10億 AIF</span>
                         </div>
                         <div class="flex justify-between items-center p-4 bg-gray-800 rounded-lg">
-                            <span>战略合作伙伴 (5%)</span>
-                            <span class="text-accent font-bold">5亿 AIF</span>
+                            <span>戰略合作夥伴 (5%)</span>
+                            <span class="text-accent font-bold">5億 AIF</span>
                         </div>
                         <div class="flex justify-between items-center p-4 bg-gray-800 rounded-lg">
-                            <span>储备基金 (5%)</span>
-                            <span class="text-accent font-bold">5亿 AIF</span>
+                            <span>儲備基金 (5%)</span>
+                            <span class="text-accent font-bold">5億 AIF</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="animate-slide-right">
-                    <h3 class="text-2xl font-bold mb-6">价值累积机制</h3>
+                    <h3 class="text-2xl font-bold mb-6">價值累積機制</h3>
                     <div class="space-y-6">
                         <div class="card p-6">
                             <div class="flex items-center mb-3">
                                 <i class="fas fa-fire text-red-400 text-xl mr-3"></i>
-                                <h4 class="text-lg font-bold">通缩销毁</h4>
+                                <h4 class="text-lg font-bold">通縮銷毀</h4>
                             </div>
-                            <p class="text-gray-300 mb-3">每季度销毁50%平台费用</p>
+                            <p class="text-gray-300 mb-3">每季度銷毀50%平台費用</p>
                             <div class="text-sm text-gray-400">
-                                预计5年销毁: <span class="text-accent font-bold">10.5亿 AIF (10.5%)</span>
+                                預計5年銷毀: <span class="text-accent font-bold">10.5億 AIF (10.5%)</span>
                             </div>
                         </div>
                         
                         <div class="card p-6">
                             <div class="flex items-center mb-3">
                                 <i class="fas fa-lock text-blue-400 text-xl mr-3"></i>
-                                <h4 class="text-lg font-bold">质押奖励</h4>
+                                <h4 class="text-lg font-bold">質押獎勵</h4>
                             </div>
-                            <p class="text-gray-300 mb-3">基于锁定期的8-23%年化收益率</p>
+                            <p class="text-gray-300 mb-3">基於鎖定期的8-23%年化收益率</p>
                             <div class="text-sm text-gray-400">
-                                预期质押: <span class="text-accent font-bold">50%流通供应量</span>
+                                預期質押: <span class="text-accent font-bold">50%流通供應量</span>
                             </div>
                         </div>
                         
@@ -1254,66 +1314,66 @@
                                 <i class="fas fa-chart-line text-green-400 text-xl mr-3"></i>
                                 <h4 class="text-lg font-bold">收益分享</h4>
                             </div>
-                            <p class="text-gray-300 mb-3">30-50%生态系统收益流向持有者</p>
+                            <p class="text-gray-300 mb-3">30-50%生態系統收益流向持有者</p>
                             <div class="text-sm text-gray-400">
-                                2030年预测: <span class="text-accent font-bold">11亿美元年收入</span>
+                                2030年預測: <span class="text-accent font-bold">11億美元年收入</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <!-- 代币效用框架 -->
+            <!-- 代幣效用框架 -->
             <div class="mt-16 animate-fade-in">
-                <h3 class="text-2xl font-bold text-center mb-8">代币效用框架</h3>
+                <h3 class="text-2xl font-bold text-center mb-8">代幣效用框架</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div class="card p-6 text-center">
                         <i class="fas fa-key text-3xl text-blue-400 mb-4"></i>
-                        <h4 class="font-bold mb-2">平台访问</h4>
-                        <p class="text-sm text-gray-400">电影节提交、学院课程、高级功能</p>
+                        <h4 class="font-bold mb-2">平台訪問</h4>
+                        <p class="text-sm text-gray-400">電影節提交、學院課程、高級功能</p>
                     </div>
                     <div class="card p-6 text-center">
                         <i class="fas fa-vote-yea text-3xl text-purple-400 mb-4"></i>
                         <h4 class="font-bold mb-2">治理投票</h4>
-                        <p class="text-sm text-gray-400">生态系统决策、资源分配、平台参数</p>
+                        <p class="text-sm text-gray-400">生態系統決策、資源分配、平台參數</p>
                     </div>
                     <div class="card p-6 text-center">
                         <i class="fas fa-coins text-3xl text-yellow-400 mb-4"></i>
-                        <h4 class="font-bold mb-2">投资交易</h4>
-                        <p class="text-sm text-gray-400">FilmToken项目、二级交易、投资组合多元化</p>
+                        <h4 class="font-bold mb-2">投資交易</h4>
+                        <p class="text-sm text-gray-400">FilmToken項目、二級交易、投資組合多元化</p>
                     </div>
                     <div class="card p-6 text-center">
                         <i class="fas fa-gift text-3xl text-green-400 mb-4"></i>
-                        <h4 class="font-bold mb-2">奖励机制</h4>
-                        <p class="text-sm text-gray-400">创作者激励、忠诚度计划、流动性挖矿</p>
+                        <h4 class="font-bold mb-2">獎勵機制</h4>
+                        <p class="text-sm text-gray-400">創作者激勵、忠誠度計劃、流動性挖礦</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 私募轮次版块 -->
+    <!-- 私募輪次版塊 -->
     <section class="py-20" id="private-sale">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16 animate-fade-in">
-                <h2 class="text-4xl font-bold mb-6">私募轮次详情</h2>
+                <h2 class="text-4xl font-bold mb-6">私募輪次詳情</h2>
                 <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                    25轮独家私募销售，每轮筹资300万美元。早期参与可获得最优价格和专属权益。
+                    25輪獨家私募銷售，每輪籌資300萬美元。早期參與可獲得最優價格和專屬權益。
                 </p>
             </div>
             
-            <!-- 价格递增机制 -->
+            <!-- 價格遞增機制 -->
             <div class="price-evolution mb-12 animate-fade-in">
-                <h3 class="text-2xl font-bold text-center mb-8 gradient-text">价格递增机制</h3>
+                <h3 class="text-2xl font-bold text-center mb-8 gradient-text">價格遞增機制</h3>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div class="price-step current">
                         <div class="flex justify-between items-center">
                             <div>
-                                <div class="text-lg font-bold text-accent">第1轮 (当前)</div>
+                                <div class="text-lg font-bold text-accent">第1輪 (當前)</div>
                                 <div class="text-3xl font-bold text-white">$0.05</div>
-                                <div class="text-sm text-gray-400">最优价格 • 立即可投</div>
+                                <div class="text-sm text-gray-400">最優價格 • 立即可投</div>
                             </div>
-                            <div class="text-green-400 font-bold">进行中</div>
+                            <div class="text-green-400 font-bold">進行中</div>
                         </div>
                         <div class="price-arrow"></div>
                     </div>
@@ -1321,11 +1381,11 @@
                     <div class="price-step upcoming">
                         <div class="flex justify-between items-center">
                             <div>
-                                <div class="text-lg font-bold text-yellow-400">第2-5轮</div>
+                                <div class="text-lg font-bold text-yellow-400">第2-5輪</div>
                                 <div class="text-3xl font-bold text-white">$0.055</div>
-                                <div class="text-sm text-gray-400">涨幅+10% • 即将开启</div>
+                                <div class="text-sm text-gray-400">漲幅+10% • 即將開啟</div>
                             </div>
-                            <div class="text-yellow-400 font-bold">待开启</div>
+                            <div class="text-yellow-400 font-bold">待開啟</div>
                         </div>
                         <div class="price-arrow" style="border-left-color: #ffc107;"></div>
                     </div>
@@ -1333,52 +1393,52 @@
                     <div class="price-step">
                         <div class="flex justify-between items-center">
                             <div>
-                                <div class="text-lg font-bold text-gray-400">第6-25轮</div>
+                                <div class="text-lg font-bold text-gray-400">第6-25輪</div>
                                 <div class="text-3xl font-bold text-white">$0.06+</div>
-                                <div class="text-sm text-gray-400">持续上涨 • 里程碑驱动</div>
+                                <div class="text-sm text-gray-400">持續上漲 • 里程碑驅動</div>
                             </div>
-                            <div class="text-gray-400 font-bold">未来轮次</div>
+                            <div class="text-gray-400 font-bold">未來輪次</div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="text-center mt-8 p-6 bg-red-900 bg-opacity-30 border border-red-500 rounded-lg">
-                    <div class="text-xl font-bold text-red-400 mb-2">⚠️ 价格警告</div>
+                    <div class="text-xl font-bold text-red-400 mb-2">⚠️ 價格警告</div>
                     <p class="text-gray-200">
-                        第一轮结束后，价格将从 <strong class="text-accent">$0.05</strong> 上涨至 <strong class="text-yellow-400">$0.055</strong>，
-                        涨幅达 <strong class="text-red-400">10%</strong>。后续轮次价格将持续上涨。
+                        第一輪結束後，價格將從 <strong class="text-accent">$0.05</strong> 上漲至 <strong class="text-yellow-400">$0.055</strong>，
+                        漲幅達 <strong class="text-red-400">10%</strong>。後續輪次價格將持續上漲。
                     </p>
                 </div>
             </div>
             
-            <!-- 私募轮次提醒 -->
+            <!-- 私募輪次提醒 -->
             <div class="private-sale-alert mb-12">
                 <div class="relative z-10">
                     <div class="text-center">
                         <div class="flex items-center justify-center mb-4">
                             <i class="fas fa-clock text-yellow-400 text-2xl mr-3"></i>
-                            <h3 class="text-2xl font-bold text-yellow-400">第一轮私募即将结束！</h3>
+                            <h3 class="text-2xl font-bold text-yellow-400">第一輪私募即將結束！</h3>
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
                             <div>
-                                <div class="text-lg font-bold text-white mb-2">当前价格</div>
+                                <div class="text-lg font-bold text-white mb-2">當前價格</div>
                                 <div class="text-3xl font-bold text-accent">$0.05</div>
-                                <div class="text-sm text-gray-400">每个AIF代币</div>
+                                <div class="text-sm text-gray-400">每個AIF代幣</div>
                             </div>
                             <div>
-                                <div class="text-lg font-bold text-white mb-2">下轮价格</div>
+                                <div class="text-lg font-bold text-white mb-2">下輪價格</div>
                                 <div class="text-3xl font-bold text-red-400">$0.055</div>
-                                <div class="text-sm text-gray-400">涨幅 +10%</div>
+                                <div class="text-sm text-gray-400">漲幅 +10%</div>
                             </div>
                             <div>
-                                <div class="text-lg font-bold text-white mb-2">剩余时间</div>
-                                <div class="text-xl font-bold text-yellow-400" id="mini-countdown">计算中...</div>
-                                <div class="text-sm text-gray-400">第一轮结束</div>
+                                <div class="text-lg font-bold text-white mb-2">剩餘時間</div>
+                                <div class="text-xl font-bold text-yellow-400" id="mini-countdown">計算中...</div>
+                                <div class="text-sm text-gray-400">第一輪結束</div>
                             </div>
                         </div>
                         <div class="mt-6">
                             <button class="btn-primary px-12 py-4 rounded-lg font-medium text-lg">
-                                立即锁定$0.05价格
+                                立即鎖定$0.05價格
                             </button>
                         </div>
                     </div>
@@ -1386,165 +1446,165 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-                <!-- 第1轮 - 当前轮次 -->
+                <!-- 第1輪 - 當前輪次 -->
                 <div class="investment-tier featured">
-                    <h3 class="text-xl font-bold mb-4 mt-8">第1轮</h3>
+                    <h3 class="text-xl font-bold mb-4 mt-8">第1輪</h3>
                     <div class="tier-price">$0.05</div>
-                    <div class="tier-amount">目标300万美元</div>
+                    <div class="tier-amount">目標300萬美元</div>
                     <div class="bg-gray-700 rounded-full h-2 mb-4">
                         <div class="progress-bar h-2 rounded-full" style="width: 65%"></div>
                     </div>
                     <div class="text-center mb-4">
-                        <div class="text-sm text-gray-400 mb-2">已筹集 $195万</div>
+                        <div class="text-sm text-gray-400 mb-2">已籌集 $195萬</div>
                         <div class="text-accent font-bold">完成度 65%</div>
                     </div>
                     <button class="btn-primary w-full py-3 rounded-lg font-medium mb-4">
-                        立即投资
+                        立即投資
                     </button>
                     <div class="text-sm text-gray-400">
-                        • 最优入场价格<br>
-                        • 创始投资者身份<br>
-                        • 最大奖励分配
+                        • 最優入場價格<br>
+                        • 創始投資者身份<br>
+                        • 最大獎勵分配
                     </div>
                 </div>
                 
-                <!-- 第2-5轮 -->
+                <!-- 第2-5輪 -->
                 <div class="investment-tier">
-                    <h3 class="text-xl font-bold mb-4">第2-5轮</h3>
+                    <h3 class="text-xl font-bold mb-4">第2-5輪</h3>
                     <div class="tier-price">$0.055</div>
-                    <div class="tier-amount">总计1200万美元</div>
+                    <div class="tier-amount">總計1200萬美元</div>
                     <div class="text-center">
-                        <div class="text-yellow-400 font-bold mb-4">即将开启</div>
+                        <div class="text-yellow-400 font-bold mb-4">即將開啟</div>
                         <div class="text-sm text-gray-400">
-                            • 早期采用者定价<br>
-                            • 平台测试版访问<br>
-                            • 社区治理权利
+                            • 早期採用者定價<br>
+                            • 平台測試版訪問<br>
+                            • 社區治理權利
                         </div>
                     </div>
                 </div>
                 
-                <!-- 第6-25轮 -->
+                <!-- 第6-25輪 -->
                 <div class="investment-tier">
-                    <h3 class="text-xl font-bold mb-4">第6-25轮</h3>
+                    <h3 class="text-xl font-bold mb-4">第6-25輪</h3>
                     <div class="tier-price">$0.06+</div>
-                    <div class="tier-amount">总计6000万美元</div>
+                    <div class="tier-amount">總計6000萬美元</div>
                     <div class="text-center">
-                        <div class="text-gray-400 font-bold mb-4">未来轮次</div>
+                        <div class="text-gray-400 font-bold mb-4">未來輪次</div>
                         <div class="text-sm text-gray-400">
-                            • 标准定价<br>
-                            • 平台访问权限<br>
-                            • 标准权益
+                            • 標準定價<br>
+                            • 平台訪問權限<br>
+                            • 標準權益
                         </div>
                     </div>
                 </div>
             </div>
             
-            <!-- 完整销售概览 -->
+            <!-- 完整銷售概覽 -->
             <div class="card p-8 mb-16 animate-fade-in">
-                <h3 class="text-2xl font-bold text-center mb-8">完整私募销售概览</h3>
+                <h3 class="text-2xl font-bold text-center mb-8">完整私募銷售概覽</h3>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                     <div class="text-center">
-                        <div class="text-lg font-bold mb-2 text-green-400">第1轮 (进行中)</div>
+                        <div class="text-lg font-bold mb-2 text-green-400">第1輪 (進行中)</div>
                         <div class="tier-price text-2xl">$0.05</div>
-                        <div class="text-sm text-gray-400">300万美元 • 8月8日结束</div>
+                        <div class="text-sm text-gray-400">300萬美元 • 8月8日結束</div>
                         <div class="mt-3 bg-green-500 bg-opacity-20 border border-green-500 rounded-lg p-2">
-                            <div class="text-sm text-green-400 font-bold">⏰ 限时优惠</div>
+                            <div class="text-sm text-green-400 font-bold">⏰ 限時優惠</div>
                         </div>
                     </div>
                     <div class="text-center">
-                        <div class="text-lg font-bold mb-2 text-blue-400">第2-5轮</div>
+                        <div class="text-lg font-bold mb-2 text-blue-400">第2-5輪</div>
                         <div class="tier-price text-2xl">$0.055</div>
-                        <div class="text-sm text-gray-400">1200万美元 • 待定时间表</div>
+                        <div class="text-sm text-gray-400">1200萬美元 • 待定時間表</div>
                         <div class="mt-3 bg-blue-500 bg-opacity-20 border border-blue-500 rounded-lg p-2">
-                            <div class="text-sm text-blue-400 font-bold">📈 价格上涨10%</div>
+                            <div class="text-sm text-blue-400 font-bold">📈 價格上漲10%</div>
                         </div>
                     </div>
                     <div class="text-center">
-                        <div class="text-lg font-bold mb-2 text-purple-400">第6-25轮</div>
+                        <div class="text-lg font-bold mb-2 text-purple-400">第6-25輪</div>
                         <div class="tier-price text-2xl">$0.06+</div>
-                        <div class="text-sm text-gray-400">6000万美元 • 里程碑驱动</div>
+                        <div class="text-sm text-gray-400">6000萬美元 • 里程碑驅動</div>
                         <div class="mt-3 bg-purple-500 bg-opacity-20 border border-purple-500 rounded-lg p-2">
-                            <div class="text-sm text-purple-400 font-bold">🚀 渐进式定价</div>
+                            <div class="text-sm text-purple-400 font-bold">🚀 漸進式定價</div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="text-center p-6 bg-gray-800 rounded-lg">
-                    <div class="text-lg font-bold mb-2">私募销售总计</div>
-                    <div class="text-4xl font-bold gradient-text mb-2">7500万美元</div>
+                    <div class="text-lg font-bold mb-2">私募銷售總計</div>
+                    <div class="text-4xl font-bold gradient-text mb-2">7500萬美元</div>
                     <div class="text-sm text-gray-400">
-                        25轮私募 • 渐进式定价 • 限时窗口期
+                        25輪私募 • 漸進式定價 • 限時窗口期
                     </div>
                     <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                         <div class="bg-gray-700 rounded-lg p-3">
-                            <div class="font-bold text-white">投资门槛</div>
+                            <div class="font-bold text-white">投資門檻</div>
                             <div class="text-gray-300">最低 $1,000</div>
                         </div>
                         <div class="bg-gray-700 rounded-lg p-3">
-                            <div class="font-bold text-white">单轮上限</div>
-                            <div class="text-gray-300">最高 $10万</div>
+                            <div class="font-bold text-white">單輪上限</div>
+                            <div class="text-gray-300">最高 $10萬</div>
                         </div>
                         <div class="bg-gray-700 rounded-lg p-3">
-                            <div class="font-bold text-white">解锁时间</div>
-                            <div class="text-gray-300">6个月锁定期</div>
+                            <div class="font-bold text-white">解鎖時間</div>
+                            <div class="text-gray-300">6個月鎖定期</div>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <!-- 投资流程 -->
+            <!-- 投資流程 -->
             <div class="card p-8 animate-fade-in">
-                <h3 class="text-2xl font-bold text-center mb-8">如何参与投资</h3>
+                <h3 class="text-2xl font-bold text-center mb-8">如何參與投資</h3>
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
                     <div class="text-center">
                         <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
                             <span class="text-xl font-bold">1</span>
                         </div>
-                        <h4 class="font-bold mb-2">注册验证</h4>
-                        <p class="text-sm text-gray-400">完成KYC验证并创建您的投资者账户</p>
+                        <h4 class="font-bold mb-2">註冊驗證</h4>
+                        <p class="text-sm text-gray-400">完成KYC驗證並創建您的投資者賬戶</p>
                     </div>
                     <div class="text-center">
                         <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
                             <span class="text-xl font-bold">2</span>
                         </div>
-                        <h4 class="font-bold mb-2">选择金额</h4>
-                        <p class="text-sm text-gray-400">选择您的投资金额（最低1000美元）</p>
+                        <h4 class="font-bold mb-2">選擇金額</h4>
+                        <p class="text-sm text-gray-400">選擇您的投資金額（最低1000美元）</p>
                     </div>
                     <div class="text-center">
                         <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
                             <span class="text-xl font-bold">3</span>
                         </div>
                         <h4 class="font-bold mb-2">完成支付</h4>
-                        <p class="text-sm text-gray-400">通过加密货币(USDT/USDC)或银行转账支付</p>
+                        <p class="text-sm text-gray-400">透過加密貨幣(USDT/USDC)或銀行轉賬支付</p>
                     </div>
                     <div class="text-center">
                         <div class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4">
                             <span class="text-xl font-bold">4</span>
                         </div>
-                        <h4 class="font-bold mb-2">接收代币</h4>
-                        <p class="text-sm text-gray-400">轮次完成后分发AIF代币</p>
+                        <h4 class="font-bold mb-2">接收代幣</h4>
+                        <p class="text-sm text-gray-400">輪次完成後分發AIF代幣</p>
                     </div>
                 </div>
                 
                 <div class="text-center mt-8">
                     <button class="btn-primary px-12 py-4 rounded-lg font-medium text-lg">
-                        开始投资流程
+                        開始投資流程
                     </button>
                     <p class="text-sm text-gray-400 mt-4">
-                        最低投资：$1,000 | 单轮最高：$100,000 | 支持多轮累计投资
+                        最低投資：$1,000 | 單輪最高：$100,000 | 支持多輪累計投資
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 路线图版块 -->
+    <!-- 路線圖版塊 -->
     <section class="py-20 bg-gradient-to-b from-gray-900 to-transparent" id="roadmap">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16 animate-fade-in">
-                <h2 class="text-4xl font-bold mb-6">发展路线图</h2>
+                <h2 class="text-4xl font-bold mb-6">發展路線圖</h2>
                 <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                    推动生态系统迈向AI原生娱乐全球领导地位的战略里程碑
+                    推動生態系統邁向AI原生娛樂全球領導地位的戰略里程碑
                 </p>
             </div>
             
@@ -1552,26 +1612,26 @@
                 <!-- 2025年第2-4季度 -->
                 <div class="roadmap-item">
                     <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-xl font-bold">2025年第2-4季度：基础启动</h3>
-                        <span class="bg-green-500 text-black px-3 py-1 rounded-full text-sm font-bold">进行中</span>
+                        <h3 class="text-xl font-bold">2025年第2-4季度：基礎啟動</h3>
+                        <span class="bg-green-500 text-black px-3 py-1 rounded-full text-sm font-bold">進行中</span>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <h4 class="font-bold mb-2 text-blue-400">平台开发</h4>
+                            <h4 class="font-bold mb-2 text-blue-400">平台開發</h4>
                             <ul class="text-sm space-y-1">
-                                <li>• 私募第一轮完成</li>
-                                <li>• AI电影学院测试版启动</li>
-                                <li>• 智能合约部署</li>
-                                <li>• 首届香港AI电影节举办</li>
+                                <li>• 私募第一輪完成</li>
+                                <li>• AI電影學院測試版啟動</li>
+                                <li>• 智能合約部署</li>
+                                <li>• 首屆香港AI電影節舉辦</li>
                             </ul>
                         </div>
                         <div>
-                            <h4 class="font-bold mb-2 text-purple-400">生态系统增长</h4>
+                            <h4 class="font-bold mb-2 text-purple-400">生態系統增長</h4>
                             <ul class="text-sm space-y-1">
-                                <li>• 建立5个合作中心</li>
-                                <li>• 学院注册1000+学生</li>
-                                <li>• 首轮筹资300万美元+</li>
-                                <li>• 制作20+部AI电影</li>
+                                <li>• 建立5個合作中心</li>
+                                <li>• 學院註冊1000+學生</li>
+                                <li>• 首輪籌資300萬美元+</li>
+                                <li>• 製作20+部AI電影</li>
                             </ul>
                         </div>
                     </div>
@@ -1579,24 +1639,24 @@
                 
                 <!-- 2026年 -->
                 <div class="roadmap-item">
-                    <h3 class="text-xl font-bold mb-4">2026年：扩张年</h3>
+                    <h3 class="text-xl font-bold mb-4">2026年：擴張年</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <h4 class="font-bold mb-2 text-blue-400">全球覆盖</h4>
+                            <h4 class="font-bold mb-2 text-blue-400">全球覆蓋</h4>
                             <ul class="text-sm space-y-1">
-                                <li>• 全球20个合作中心</li>
-                                <li>• 进入欧洲市场（伦敦）</li>
-                                <li>• 北美业务（洛杉矶）</li>
-                                <li>• 平台用户50万+</li>
+                                <li>• 全球20個合作中心</li>
+                                <li>• 進入歐洲市場（倫敦）</li>
+                                <li>• 北美業務（洛杉磯）</li>
+                                <li>• 平台用戶50萬+</li>
                             </ul>
                         </div>
                         <div>
-                            <h4 class="font-bold mb-2 text-purple-400">技术发展</h4>
+                            <h4 class="font-bold mb-2 text-purple-400">技術發展</h4>
                             <ul class="text-sm space-y-1">
                                 <li>• 404.world交互平台</li>
-                                <li>• 跨链桥接实施</li>
-                                <li>• 高级AI模型集成</li>
-                                <li>• 移动应用程序发布</li>
+                                <li>• 跨鏈橋接實施</li>
+                                <li>• 高級AI模型集成</li>
+                                <li>• 移動應用程序發佈</li>
                             </ul>
                         </div>
                     </div>
@@ -1604,24 +1664,24 @@
                 
                 <!-- 2027-2028年 -->
                 <div class="roadmap-item">
-                    <h3 class="text-xl font-bold mb-4">2027-2028年：市场领导地位</h3>
+                    <h3 class="text-xl font-bold mb-4">2027-2028年：市場領導地位</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <h4 class="font-bold mb-2 text-blue-400">行业认可</h4>
+                            <h4 class="font-bold mb-2 text-blue-400">行業認可</h4>
                             <ul class="text-sm space-y-1">
-                                <li>• 制作100+部AI电影</li>
-                                <li>• 促成1亿美元+项目融资</li>
-                                <li>• 传统工作室合作伙伴关系</li>
-                                <li>• 监管框架领导地位</li>
+                                <li>• 製作100+部AI電影</li>
+                                <li>• 促成1億美元+項目融資</li>
+                                <li>• 傳統工作室合作夥伴關係</li>
+                                <li>• 監管框架領導地位</li>
                             </ul>
                         </div>
                         <div>
-                            <h4 class="font-bold mb-2 text-purple-400">规模成就</h4>
+                            <h4 class="font-bold mb-2 text-purple-400">規模成就</h4>
                             <ul class="text-sm space-y-1">
-                                <li>• 月活跃用户100万+</li>
-                                <li>• 50个全球合作中心</li>
-                                <li>• AIF协议成为行业标准</li>
-                                <li>• 跨行业扩展</li>
+                                <li>• 月活躍用戶100萬+</li>
+                                <li>• 50個全球合作中心</li>
+                                <li>• AIF協議成為行業標準</li>
+                                <li>• 跨行業擴展</li>
                             </ul>
                         </div>
                     </div>
@@ -1629,24 +1689,24 @@
                 
                 <!-- 2029-2030年 -->
                 <div class="roadmap-item">
-                    <h3 class="text-xl font-bold mb-4">2029-2030年：全球生态系统</h3>
+                    <h3 class="text-xl font-bold mb-4">2029-2030年：全球生態系統</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <h4 class="font-bold mb-2 text-blue-400">生态系统成熟</h4>
+                            <h4 class="font-bold mb-2 text-blue-400">生態系統成熟</h4>
                             <ul class="text-sm space-y-1">
-                                <li>• 100+个合作中心</li>
-                                <li>• 1000万+平台用户</li>
-                                <li>• 10亿美元+年度生态系统收入</li>
-                                <li>• 多语言平台支持</li>
+                                <li>• 100+個合作中心</li>
+                                <li>• 1000萬+平台用戶</li>
+                                <li>• 10億美元+年度生態系統收入</li>
+                                <li>• 多語言平台支持</li>
                             </ul>
                         </div>
                         <div>
-                            <h4 class="font-bold mb-2 text-purple-400">未来创新</h4>
+                            <h4 class="font-bold mb-2 text-purple-400">未來創新</h4>
                             <ul class="text-sm space-y-1">
                                 <li>• 下一代AI集成（AGI）</li>
-                                <li>• 量子计算应用</li>
+                                <li>• 量子計算應用</li>
                                 <li>• 元宇宙集成</li>
-                                <li>• 可持续生态系统经济学</li>
+                                <li>• 可持續生態系統經濟學</li>
                             </ul>
                         </div>
                     </div>
@@ -1655,103 +1715,103 @@
         </div>
     </section>
 
-    <!-- 市场机会版块 -->
+    <!-- 市場機會版塊 -->
     <section class="py-20">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16 animate-fade-in">
-                <h2 class="text-4xl font-bold mb-6">巨大市场机会</h2>
+                <h2 class="text-4xl font-bold mb-6">巨大市場機會</h2>
                 <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                    AI与娱乐的融合代表着创意产业中最大的技术变革之一
+                    AI與娛樂的融合代表著創意產業中最大的技術變革之一
                 </p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
                 <div class="card p-6 text-center">
-                    <div class="text-3xl font-bold gradient-text mb-2">$2.3万亿</div>
-                    <div class="text-lg text-gray-300 mb-2">全球娱乐市场</div>
-                    <div class="text-sm text-gray-400">2024年市场规模</div>
+                    <div class="text-3xl font-bold gradient-text mb-2">$2.3萬億</div>
+                    <div class="text-lg text-gray-300 mb-2">全球娛樂市場</div>
+                    <div class="text-sm text-gray-400">2024年市場規模</div>
                 </div>
                 <div class="card p-6 text-center">
-                    <div class="text-3xl font-bold gradient-text mb-2">$3700亿+</div>
-                    <div class="text-lg text-gray-300 mb-2">AI内容市场</div>
-                    <div class="text-sm text-gray-400">2030年预测</div>
+                    <div class="text-3xl font-bold gradient-text mb-2">$3700億+</div>
+                    <div class="text-lg text-gray-300 mb-2">AI內容市場</div>
+                    <div class="text-sm text-gray-400">2030年預測</div>
                 </div>
                 <div class="card p-6 text-center">
                     <div class="text-3xl font-bold gradient-text mb-2">54%</div>
-                    <div class="text-lg text-gray-300 mb-2">年增长率</div>
-                    <div class="text-sm text-gray-400">AI内容复合年增长率</div>
+                    <div class="text-lg text-gray-300 mb-2">年增長率</div>
+                    <div class="text-sm text-gray-400">AI內容複合年增長率</div>
                 </div>
                 <div class="card p-6 text-center">
                     <div class="text-3xl font-bold gradient-text mb-2">35%</div>
-                    <div class="text-lg text-gray-300 mb-2">亚太份额</div>
-                    <div class="text-sm text-gray-400">2030年1290亿美元</div>
+                    <div class="text-lg text-gray-300 mb-2">亞太份額</div>
+                    <div class="text-sm text-gray-400">2030年1290億美元</div>
                 </div>
             </div>
             
-            <!-- 价值主张 -->
+            <!-- 價值主張 -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <div class="card p-8">
-                    <h3 class="text-xl font-bold mb-4 text-blue-400">对创作者</h3>
+                    <h3 class="text-xl font-bold mb-4 text-blue-400">對創作者</h3>
                     <ul class="space-y-3">
                         <li class="flex items-start">
                             <i class="fas fa-check text-green-400 mr-3 mt-1"></i>
-                            <span>通过AI工具降低90%的制作成本</span>
+                            <span>透過AI工具降低90%的製作成本</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-green-400 mr-3 mt-1"></i>
-                            <span>直接获得全球融资和分发渠道</span>
+                            <span>直接獲得全球融資和分發渠道</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-green-400 mr-3 mt-1"></i>
-                            <span>通过智能合约实现透明收益分配</span>
+                            <span>透過智能合約實現透明收益分配</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-green-400 mr-3 mt-1"></i>
-                            <span>专业AI电影制作教育</span>
+                            <span>專業AI電影製作教育</span>
                         </li>
                     </ul>
                 </div>
                 
                 <div class="card p-8">
-                    <h3 class="text-xl font-bold mb-4 text-green-400">对观众</h3>
+                    <h3 class="text-xl font-bold mb-4 text-green-400">對觀眾</h3>
                     <ul class="space-y-3">
                         <li class="flex items-start">
                             <i class="fas fa-check text-green-400 mr-3 mt-1"></i>
-                            <span>个性化、互动的内容体验</span>
+                            <span>個性化、互動的內容體驗</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-green-400 mr-3 mt-1"></i>
-                            <span>直接参与内容创作</span>
+                            <span>直接參與內容創作</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-green-400 mr-3 mt-1"></i>
-                            <span>获得前沿AI原生娱乐内容</span>
+                            <span>獲得前沿AI原生娛樂內容</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-green-400 mr-3 mt-1"></i>
-                            <span>社区驱动的平台治理</span>
+                            <span>社區驅動的平台治理</span>
                         </li>
                     </ul>
                 </div>
                 
                 <div class="card p-8">
-                    <h3 class="text-xl font-bold mb-4 text-purple-400">对投资者</h3>
+                    <h3 class="text-xl font-bold mb-4 text-purple-400">對投資者</h3>
                     <ul class="space-y-3">
                         <li class="flex items-start">
                             <i class="fas fa-check text-green-400 mr-3 mt-1"></i>
-                            <span>高潜力内容的分割所有权</span>
+                            <span>高潛力內容的分割所有權</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-green-400 mr-3 mt-1"></i>
-                            <span>娱乐资产的流动二级市场</span>
+                            <span>娛樂資產的流動二級市場</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-green-400 mr-3 mt-1"></i>
-                            <span>透明的项目跟踪和收益分配</span>
+                            <span>透明的項目跟踪和收益分配</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-green-400 mr-3 mt-1"></i>
-                            <span>跨全球内容的投资组合多元化</span>
+                            <span>跨全球內容的投資組合多元化</span>
                         </li>
                     </ul>
                 </div>
@@ -1759,38 +1819,38 @@
         </div>
     </section>
 
-    <!-- 订阅版块 -->
+    <!-- 訂閱版塊 -->
     <section class="py-16 bg-gradient-to-r from-blue-900 to-purple-900">
         <div class="container mx-auto px-4">
             <div class="max-w-3xl mx-auto text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">加入AI电影革命</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">加入AI電影革命</h2>
                 <p class="text-xl text-gray-200 mb-8">
-                    订阅我们的新闻通讯，获取独家私募更新、平台功能早期访问权限，以及AI生成娱乐未来的洞察。
+                    訂閱我們的新聞通訊，獲取獨家私募更新、平台功能早期訪問權限，以及AI生成娛樂未來的洞察。
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
-                    <input type="email" placeholder="输入您的邮箱地址" class="input-field rounded-full px-6 py-3 w-full">
+                    <input type="email" placeholder="輸入您的郵箱地址" class="input-field rounded-full px-6 py-3 w-full">
                     <button class="btn-primary px-8 py-3 rounded-full font-medium">
-                        立即订阅
+                        立即訂閱
                     </button>
                 </div>
                 <p class="text-sm text-gray-300 mt-4">
-                    当新的私募轮次开放和平台里程碑达成时获得通知。
+                    當新的私募輪次開放和平台里程碑達成時獲得通知。
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- 页脚 -->
+    <!-- 頁腳 -->
     <footer class="py-12 bg-gray-900">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
                     <a href="#home" class="flex flex-col items-start mb-4">
                         <div class="logo-font">AIF</div>
-                        <div class="logo-sub">AI电影代币</div>
+                        <div class="logo-sub">AI電影代幣</div>
                     </a>
                     <p class="text-gray-400 mb-4">
-                        通过AI和区块链技术革新电影产业，构建全球首个综合性AI原生娱乐生态系统。
+                        透過AI和區塊鏈技術革新電影產業，構建全球首個綜合性AI原生娛樂生態系統。
                     </p>
                     <div class="flex space-x-4">
                         <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
@@ -1815,77 +1875,77 @@
                 </div>
                 
                 <div>
-                    <h3 class="text-lg font-semibold mb-4 text-white">生态系统</h3>
+                    <h3 class="text-lg font-semibold mb-4 text-white">生態系統</h3>
                     <ul class="space-y-2">
-                        <li><a href="#ecosystem" class="text-gray-400 hover:text-blue-400 transition-colors">展映竞赛平台</a></li>
-                        <li><a href="#ecosystem" class="text-gray-400 hover:text-blue-400 transition-colors">AI电影学院</a></li>
-                        <li><a href="#ecosystem" class="text-gray-400 hover:text-blue-400 transition-colors">AI电影市场</a></li>
-                        <li><a href="#ecosystem" class="text-gray-400 hover:text-blue-400 transition-colors">征片中心</a></li>
+                        <li><a href="#ecosystem" class="text-gray-400 hover:text-blue-400 transition-colors">展映競賽平台</a></li>
+                        <li><a href="#ecosystem" class="text-gray-400 hover:text-blue-400 transition-colors">AI電影學院</a></li>
+                        <li><a href="#ecosystem" class="text-gray-400 hover:text-blue-400 transition-colors">AI電影市場</a></li>
+                        <li><a href="#ecosystem" class="text-gray-400 hover:text-blue-400 transition-colors">徵片中心</a></li>
                         <li><a href="#ecosystem" class="text-gray-400 hover:text-blue-400 transition-colors">404.world平台</a></li>
                         <li><a href="#ecosystem" class="text-gray-400 hover:text-blue-400 transition-colors">AIF交易所</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h3 class="text-lg font-semibold mb-4 text-white">资源</h3>
+                    <h3 class="text-lg font-semibold mb-4 text-white">資源</h3>
                     <ul class="space-y-2">
-                        <li><a href="#whitepaper" class="text-gray-400 hover:text-blue-400 transition-colors">白皮书下载</a></li>
-                        <li><a href="#tokenomics" class="text-gray-400 hover:text-blue-400 transition-colors">代币经济学</a></li>
-                        <li><a href="#roadmap" class="text-gray-400 hover:text-blue-400 transition-colors">发展路线图</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">技术文档</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">常见问题</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">API文档</a></li>
+                        <li><a href="#whitepaper" class="text-gray-400 hover:text-blue-400 transition-colors">白皮書下載</a></li>
+                        <li><a href="#tokenomics" class="text-gray-400 hover:text-blue-400 transition-colors">代幣經濟學</a></li>
+                        <li><a href="#roadmap" class="text-gray-400 hover:text-blue-400 transition-colors">發展路線圖</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">技術文檔</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">常見問題</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">API文檔</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h3 class="text-lg font-semibold mb-4 text-white">法律与支持</h3>
+                    <h3 class="text-lg font-semibold mb-4 text-white">法律與支援</h3>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">服务条款</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">隐私政策</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">风险披露</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">合规声明</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">投资者关系</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">联系我们</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">服務條款</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">隱私政策</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">風險披露</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">合規聲明</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">投資者關係</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">聯繫我們</a></li>
                     </ul>
                 </div>
             </div>
             
-            <!-- 联系信息 -->
+            <!-- 聯繫信息 -->
             <div class="border-t border-gray-800 mt-12 pt-8">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                     <div>
-                        <h4 class="text-lg font-semibold mb-4 text-white">联系方式</h4>
+                        <h4 class="text-lg font-semibold mb-4 text-white">聯繫方式</h4>
                         <div class="space-y-2 text-gray-400">
-                            <p><i class="fas fa-envelope mr-2"></i> 投资者关系：investors@aif.market</p>
-                            <p><i class="fas fa-handshake mr-2"></i> 合作咨询：partnerships@aif.market</p>
-                            <p><i class="fas fa-headset mr-2"></i> 技术支持：support@aif.market</p>
-                            <p><i class="fas fa-newspaper mr-2"></i> 媒体咨询：media@aif.market</p>
+                            <p><i class="fas fa-envelope mr-2"></i> 投資者關係：investors@aif.market</p>
+                            <p><i class="fas fa-handshake mr-2"></i> 合作諮詢：partnerships@aif.market</p>
+                            <p><i class="fas fa-headset mr-2"></i> 技術支援：support@aif.market</p>
+                            <p><i class="fas fa-newspaper mr-2"></i> 媒體諮詢：media@aif.market</p>
                         </div>
                     </div>
                     <div>
-                        <h4 class="text-lg font-semibold mb-4 text-white">全球办公室</h4>
+                        <h4 class="text-lg font-semibold mb-4 text-white">全球辦公室</h4>
                         <div class="space-y-2 text-gray-400">
-                            <p><i class="fas fa-map-marker-alt mr-2"></i> 香港总部：中环金融街</p>
-                            <p><i class="fas fa-map-marker-alt mr-2"></i> 新加坡：滨海湾金融区</p>
-                            <p><i class="fas fa-map-marker-alt mr-2"></i> 伦敦：金丝雀码头</p>
-                            <p><i class="fas fa-map-marker-alt mr-2"></i> 洛杉矶：好莱坞</p>
+                            <p><i class="fas fa-map-marker-alt mr-2"></i> 香港總部：中環金融街</p>
+                            <p><i class="fas fa-map-marker-alt mr-2"></i> 新加坡：濱海灣金融區</p>
+                            <p><i class="fas fa-map-marker-alt mr-2"></i> 倫敦：金絲雀碼頭</p>
+                            <p><i class="fas fa-map-marker-alt mr-2"></i> 洛杉磯：好萊塢</p>
                         </div>
                     </div>
                 </div>
                 
-                <!-- 版权信息 -->
+                <!-- 版權信息 -->
                 <div class="text-center text-gray-500 text-sm border-t border-gray-800 pt-8">
-                    <p class="mb-2">© 2025 香港AI国际电影节协会。保留所有权利。</p>
-                    <p class="mb-4">本网站不构成投资建议。投资前请进行自己的研究并咨询专业财务顾问。</p>
+                    <p class="mb-2">© 2025 香港AI國際電影節協會。保留所有權利。</p>
+                    <p class="mb-4">本網站不構成投資建議。投資前請進行自己的研究並諮詢專業財務顧問。</p>
                     <div class="flex flex-wrap justify-center items-center space-x-4 text-xs">
-                        <span>代币符号：AIF</span>
+                        <span>代幣符號：AIF</span>
                         <span>•</span>
-                        <span>代币标准：ERC-20</span>
+                        <span>代幣標準：ERC-20</span>
                         <span>•</span>
-                        <span>总供应量：100亿</span>
+                        <span>總供應量：100億</span>
                         <span>•</span>
-                        <span>网络：以太坊、Polygon</span>
+                        <span>網絡：以太坊、Polygon</span>
                     </div>
                 </div>
             </div>
@@ -1893,7 +1953,7 @@
     </footer>
 
     <script>
-        // 修正的倒计时器函数
+        // 修正的倒計時器函數
         function updateCountdown() {
             const targetDate = new Date('2025-08-08T23:59:59').getTime();
             const now = new Date().getTime();
@@ -1905,7 +1965,7 @@
                 const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((difference % (1000 * 60)) / 1000);
                 
-                // 更新主倒计时
+                // 更新主倒計時
                 const daysEl = document.getElementById('days');
                 const hoursEl = document.getElementById('hours');
                 const minutesEl = document.getElementById('minutes');
@@ -1916,13 +1976,13 @@
                 if (minutesEl) minutesEl.textContent = minutes.toString().padStart(2, '0');
                 if (secondsEl) secondsEl.textContent = seconds.toString().padStart(2, '0');
                 
-                // 更新迷你倒计时
+                // 更新迷你倒計時
                 const miniCountdown = document.getElementById('mini-countdown');
                 if (miniCountdown) {
-                    miniCountdown.textContent = `${days}天 ${hours}时 ${minutes}分`;
+                    miniCountdown.textContent = `${days}天 ${hours}時 ${minutes}分`;
                 }
             } else {
-                // 倒计时结束
+                // 倒計時結束
                 const elements = ['days', 'hours', 'minutes', 'seconds'];
                 elements.forEach(id => {
                     const el = document.getElementById(id);
@@ -1931,12 +1991,12 @@
                 
                 const miniCountdown = document.getElementById('mini-countdown');
                 if (miniCountdown) {
-                    miniCountdown.textContent = '已结束';
+                    miniCountdown.textContent = '已結束';
                 }
             }
         }
 
-        // 修正的统计数据动画函数
+        // 修正的統計數據動畫函數
         function animateCounters() {
             const counters = document.querySelectorAll('.stats-counter');
             
@@ -1956,14 +2016,14 @@
                     }
                 };
                 
-                // 确保元素可见时才开始动画
+                // 確保元素可見時才開始動畫
                 if (counter.getBoundingClientRect().top < window.innerHeight) {
                     updateCounter();
                 }
             });
         }
 
-        // 添加随机数据流
+        // 添加隨機數據流
         function createDataStreams() {
             for (let i = 0; i < 5; i++) {
                 setTimeout(() => {
@@ -1980,7 +2040,7 @@
             }
         }
 
-        // 移动端菜单功能
+        // 移動端菜單功能
         function closeMobileMenu() {
             const mobileMenu = document.querySelector('.mobile-menu');
             if (mobileMenu) {
@@ -1990,15 +2050,15 @@
 
         // 初始化所有功能
         document.addEventListener('DOMContentLoaded', function() {
-            // 启动倒计时
+            // 啟動倒計時
             updateCountdown();
             setInterval(updateCountdown, 1000);
             
-            // 启动数据流
+            // 啟動數據流
             createDataStreams();
             setInterval(createDataStreams, 15000);
             
-            // 添加滚动动画观察器
+            // 添加滾動動畫觀察器
             const animatedElements = document.querySelectorAll('.animate-fade-in, .animate-slide-up, .animate-slide-right');
             
             const observer = new IntersectionObserver((entries) => {
@@ -2016,7 +2076,7 @@
                             entry.target.style.transform = 'scale(1)';
                         }
                         
-                        // 当统计数据部分可见时触发计数器动画
+                        // 當統計數據部分可見時觸發計數器動畫
                         if (entry.target.querySelector('.stats-counter')) {
                             setTimeout(animateCounters, 500);
                         }
@@ -2024,7 +2084,7 @@
                 });
             }, { threshold: 0.1 });
             
-            // 初始化动画元素
+            // 初始化動畫元素
             animatedElements.forEach(el => {
                 el.style.opacity = '0';
                 el.style.transition = 'all 0.8s ease-in-out';
@@ -2042,7 +2102,7 @@
                 observer.observe(el);
             });
             
-            // 移动端菜单
+            // 移動端菜單
             const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
             const mobileMenu = document.querySelector('.mobile-menu');
             
@@ -2052,7 +2112,7 @@
                 });
             }
             
-            // 平滑滚动导航链接
+            // 平滑滾動導航鏈接
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
@@ -2063,7 +2123,7 @@
                             behavior: 'smooth',
                             block: 'start'
                         });
-                        // 关闭移动端菜单
+                        // 關閉移動端菜單
                         if (mobileMenu) {
                             mobileMenu.classList.remove('open');
                         }
@@ -2071,57 +2131,57 @@
                 });
             });
             
-            // 投资按钮事件
+            // 投資按鈕事件
             document.querySelectorAll('button').forEach(btn => {
                 const text = btn.textContent.toLowerCase();
-                if (text.includes('投资') || 
+                if (text.includes('投資') || 
                     text.includes('私募') || 
-                    text.includes('参与') ||
-                    text.includes('锁定') ||
-                    text.includes('开始投资流程')) {
+                    text.includes('參與') ||
+                    text.includes('鎖定') ||
+                    text.includes('開始投資流程')) {
                     btn.addEventListener('click', () => {
-                        alert('正在跳转到安全投资门户...\n\n投资详情：\n• 最低投资额：$1,000\n• 当前价格：$0.05/AIF\n• 锁定期：6个月\n• 支付方式：USDT/USDC/银行转账');
+                        alert('正在跳轉到安全投資門戶...\n\n投資詳情：\n• 最低投資額：$1,000\n• 當前價格：$0.05/AIF\n• 鎖定期：6個月\n• 支付方式：USDT/USDC/銀行轉賬');
                     });
                 }
             });
 
-            // 白皮书下载按钮
+            // 白皮書下載按鈕
             document.querySelectorAll('button').forEach(btn => {
                 const text = btn.textContent.toLowerCase();
-                if (text.includes('白皮书') || text.includes('下载')) {
+                if (text.includes('白皮書') || text.includes('下載')) {
                     btn.addEventListener('click', () => {
-                        alert('AIF代币白皮书下载即将开始...\n\n白皮书包含：\n• 完整代币经济学模型\n• 技术架构详解\n• 团队与顾问介绍\n• 详细路线图\n• 风险披露');
+                        alert('AIF代幣白皮書下載即將開始...\n\n白皮書包含：\n• 完整代幣經濟學模型\n• 技術架構詳解\n• 團隊與顧問介紹\n• 詳細路線圖\n• 風險披露');
                     });
                 }
             });
 
-            // 订阅按钮
+            // 訂閱按鈕
             document.querySelectorAll('button').forEach(btn => {
                 const text = btn.textContent.toLowerCase();
-                if (text.includes('订阅')) {
+                if (text.includes('訂閱')) {
                     btn.addEventListener('click', () => {
                         const emailInput = document.querySelector('input[type="email"]');
                         if (emailInput && emailInput.value && emailInput.value.includes('@')) {
-                            alert(`感谢订阅！\n\n邮箱：${emailInput.value}\n\n您将收到：\n• 私募轮次开放通知\n• 平台里程碑更新\n• 独家投资机会\n• AI电影行业洞察`);
+                            alert(`感謝訂閱！\n\n郵箱：${emailInput.value}\n\n您將收到：\n• 私募輪次開放通知\n• 平台里程碑更新\n• 獨家投資機會\n• AI電影行業洞察`);
                             emailInput.value = '';
                         } else {
-                            alert('请输入有效的邮箱地址。');
+                            alert('請輸入有效的郵箱地址。');
                             if (emailInput) emailInput.focus();
                         }
                     });
                 }
             });
 
-            // 语言切换功能
+            // 語言切換功能
             document.querySelectorAll('.language-dropdown a').forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
                     const selectedLang = link.textContent.trim();
-                    alert(`语言切换到：${selectedLang}\n\n（功能开发中，敬请期待多语言版本）`);
+                    alert(`語言切換到：${selectedLang}\n\n（功能開發中，敬請期待多語言版本）`);
                 });
             });
 
-            // 增强卡片交互效果
+            // 增強卡片交互效果
             document.querySelectorAll('.ecosystem-card, .investment-tier, .card').forEach(card => {
                 card.addEventListener('mouseenter', () => {
                     card.style.transform = 'translateY(-10px) scale(1.02)';
@@ -2132,7 +2192,7 @@
                 });
             });
 
-            // 进度条动画
+            // 進度條動畫
             const progressBars = document.querySelectorAll('.progress-bar');
             const progressObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -2152,12 +2212,12 @@
                 progressObserver.observe(bar);
             });
 
-            // 社交媒体链接
+            // 社交媒體鏈接
             document.querySelectorAll('footer a[href="#"]').forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
                     const iconClass = link.querySelector('i').className;
-                    let platform = '社交媒体';
+                    let platform = '社交媒體';
                     
                     if (iconClass.includes('twitter')) platform = 'Twitter';
                     else if (iconClass.includes('telegram')) platform = 'Telegram';
@@ -2166,25 +2226,25 @@
                     else if (iconClass.includes('github')) platform = 'GitHub';
                     else if (iconClass.includes('linkedin')) platform = 'LinkedIn';
                     
-                    alert(`${platform}链接即将开放，敬请关注我们的官方账号！`);
+                    alert(`${platform}鏈接即將開放，敬請關注我們的官方賬號！`);
                 });
             });
 
-            // 页脚链接处理
+            // 頁腳鏈接處理
             document.querySelectorAll('footer a[href="#"]').forEach(link => {
-                if (!link.querySelector('i')) { // 不是社交媒体图标
+                if (!link.querySelector('i')) { // 不是社交媒體圖標
                     link.addEventListener('click', (e) => {
                         e.preventDefault();
                         const linkText = link.textContent.trim();
-                        alert(`${linkText}页面正在开发中，敬请期待！`);
+                        alert(`${linkText}頁面正在開發中，敬請期待！`);
                     });
                 }
             });
 
-            console.log('AIF代币网站已成功加载 🚀');
-            console.log('当前私募轮次：第1轮');
-            console.log('代币价格：$0.05');
-            console.log('网站版本：v1.0');
+            console.log('AIF代幣網站已成功加載 🚀');
+            console.log('當前私募輪次：第1輪');
+            console.log('代幣價格：$0.05');
+            console.log('網站版本：v1.0');
         });
     </script>
 </body>
