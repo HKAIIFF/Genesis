@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AIF代幣 - 引領AI娛樂革命的數字資產</title>
+    <title>Genesis 創世會員 - 限量10,000名 | AIF.Market</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@700;800;900&display=swap" rel="stylesheet">
@@ -12,7 +12,9 @@
             --primary: #3498db;
             --secondary: #8e44ad;
             --accent: #00ff9d;
-            --gold: #ffd700;
+            --gold: #FFD700;
+            --dark-bg: #0a0a0a;
+            --card-bg: rgba(26, 32, 44, 0.8);
         }
         
         * {
@@ -23,302 +25,722 @@
         
         body {
             font-family: 'Inter', 'Noto Sans TC', sans-serif;
-            background-color: #0a0a0a;
+            background-color: var(--dark-bg);
             color: #ffffff;
             overflow-x: hidden;
             line-height: 1.6;
         }
         
-        /* Logo 样式 */
-        .logo-font {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 900;
-            letter-spacing: 4px;
-            background: linear-gradient(135deg, var(--primary), var(--accent), var(--secondary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            font-size: 2rem;
-            text-shadow: 0 0 30px rgba(0, 255, 157, 0.5);
-            animation: logoGlow 3s ease-in-out infinite alternate;
+        /* 动态背景 */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(255, 215, 0, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(52, 152, 219, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(0, 255, 157, 0.1) 0%, transparent 50%);
+            animation: bgFloat 20s ease-in-out infinite;
         }
         
-        @keyframes logoGlow {
-            0% { filter: brightness(1) drop-shadow(0 0 10px rgba(0, 255, 157, 0.3)); }
-            100% { filter: brightness(1.2) drop-shadow(0 0 25px rgba(0, 255, 157, 0.6)); }
+        @keyframes bgFloat {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(30px, 30px) scale(1.1); }
+        }
+        
+        /* 顶部栏 */
+        .top-banner {
+            background: linear-gradient(135deg, var(--gold), #FFA500);
+            color: #000;
+            text-align: center;
+            padding: 1rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 100;
         }
         
         /* 导航栏 */
         .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
             background: rgba(10, 10, 10, 0.95);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(0, 255, 157, 0.1);
-            z-index: 1000;
-            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 99;
         }
         
-        .navbar.scrolled {
-            background: rgba(10, 10, 10, 0.98);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
-        .nav-link {
-            color: #ffffff;
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            font-size: 1.8rem;
+            background: linear-gradient(135deg, var(--gold), #FFA500);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: white;
             text-decoration: none;
-            padding: 0.5rem 1rem;
-            transition: all 0.3s ease;
-            position: relative;
-            font-weight: 500;
+            font-weight: 600;
+            transition: color 0.3s;
         }
         
-        .nav-link:hover {
-            color: var(--accent);
+        .nav-links a:hover {
+            color: var(--gold);
         }
         
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: var(--accent);
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-        }
-        
-        .nav-link:hover::after {
-            width: 80%;
-        }
-        
-        /* 汉堡菜单 */
-        .hamburger {
+        /* 移动端菜单按钮 */
+        .mobile-menu-btn {
             display: none;
-            flex-direction: column;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: white;
             cursor: pointer;
-            padding: 0.5rem;
-        }
-        
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: var(--accent);
-            margin: 3px 0;
-            transition: all 0.3s ease;
-            border-radius: 2px;
-        }
-        
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(8px, 8px);
-        }
-        
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-        
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
         }
         
         .mobile-menu {
             display: none;
             position: fixed;
-            top: 70px;
-            left: 0;
+            top: 0;
+            right: 0;
             width: 100%;
+            max-width: 350px;
+            height: 100vh;
             background: rgba(10, 10, 10, 0.98);
             backdrop-filter: blur(20px);
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(0, 255, 157, 0.1);
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
+            z-index: 2000;
+            padding: 2rem;
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+            overflow-y: auto;
         }
         
         .mobile-menu.active {
-            max-height: 500px;
+            transform: translateX(0);
         }
         
-        .mobile-menu a {
-            display: block;
-            padding: 1rem 2rem;
-            color: #ffffff;
-            text-decoration: none;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s ease;
-        }
-        
-        .mobile-menu a:hover {
-            background: rgba(0, 255, 157, 0.05);
-            color: var(--accent);
-            padding-left: 2.5rem;
+        .mobile-menu-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
         }
         
         /* Hero Section */
         .hero {
-            min-height: 100vh;
+            min-height: 90vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            text-align: center;
+            padding: 4rem 2rem;
             position: relative;
             overflow: hidden;
-            padding-top: 80px;
-            background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(142, 68, 173, 0.1) 100%);
         }
         
-        .hero-bg {
+        .hero::before {
+            content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:rgb(52,152,219);stop-opacity:0.1" /><stop offset="100%" style="stop-color:rgb(142,68,173);stop-opacity:0.1" /></linearGradient></defs><rect width="1200" height="800" fill="url(%23grad1)"/></svg>') center/cover;
-            opacity: 0.3;
-            animation: bgMove 20s ease-in-out infinite;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.2) 0%, transparent 70%);
+            animation: pulse 3s ease-in-out infinite;
         }
         
-        @keyframes bgMove {
-            0%, 100% { transform: scale(1) translate(0, 0); }
-            50% { transform: scale(1.1) translate(-5%, -5%); }
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+            50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.8; }
         }
         
-        .gradient-text {
-            background: linear-gradient(135deg, var(--primary), var(--accent), var(--secondary));
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #FFA500);
+            color: #000;
+            padding: 0.5rem 2rem;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            letter-spacing: 2px;
+            animation: glow 2s ease-in-out infinite;
+        }
+        
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); }
+            50% { box-shadow: 0 0 40px rgba(255, 215, 0, 0.8), 0 0 60px rgba(255, 215, 0, 0.4); }
+        }
+        
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 6rem);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            background: linear-gradient(135deg, var(--gold), #FFA500, var(--gold));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            font-weight: 800;
         }
         
-        /* 按钮样式 */
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            font-weight: 700;
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .hero-description {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+        
+        /* 按钮 */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 35px;
             font-size: 1.1rem;
-            border: none;
-            cursor: pointer;
+            font-weight: 800;
+            border-radius: 50px;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(52, 152, 219, 0.3);
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn-gold {
+            background: linear-gradient(135deg, var(--gold), #FFA500);
+            color: #000;
+            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.5);
+        }
+        
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(255, 215, 0, 0.7);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 3px solid var(--gold);
+            color: var(--gold);
+        }
+        
+        .btn-outline:hover {
+            background: rgba(255, 215, 0, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        .lang-switch {
+            background: rgba(255, 215, 0, 0.1);
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+        
+        .lang-switch:hover {
+            background: var(--gold);
+            color: #000;
+        }
+        
+        /* 统计数据 */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem auto;
+            max-width: 1000px;
+        }
+        
+        .stat-card {
+            background: rgba(255, 215, 0, 0.1);
+            border: 2px solid var(--gold);
+            border-radius: 20px;
+            padding: 1.5rem;
+            text-align: center;
             position: relative;
             overflow: hidden;
         }
         
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(52, 152, 219, 0.5);
-        }
-        
-        .btn-primary::before {
+        .stat-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.5s ease;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.3), transparent);
+            transition: left 0.5s;
         }
         
-        .btn-primary:hover::before {
+        .stat-card:hover::before {
             left: 100%;
         }
         
-        .btn-secondary {
-            background: transparent;
-            color: var(--accent);
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            border: 2px solid var(--accent);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-secondary:hover {
-            background: rgba(0, 255, 157, 0.1);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 255, 157, 0.2);
-        }
-        
-        /* 卡片样式 */
-        .card {
-            background: rgba(26, 32, 44, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-            height: 100%;
-        }
-        
-        .card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(0, 255, 157, 0.3);
-            box-shadow: 0 20px 40px rgba(0, 255, 157, 0.2);
-        }
-        
-        .icon-box {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 10px 30px rgba(52, 152, 219, 0.3);
-        }
-        
-        /* 统计数字动画 */
         .stat-number {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 900;
-            background: linear-gradient(135deg, var(--accent), var(--primary));
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* Section */
+        section {
+            padding: 80px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--gold), #FFA500);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
         
-        /* 代币分配饼图 */
-        .tokenomics-chart {
+        .section-subtitle {
+            text-align: center;
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+        
+        /* 权益卡片 */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .benefit-card {
+            background: var(--card-bg);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
             position: relative;
+            overflow: hidden;
+        }
+        
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            max-width: 500px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold), #FFA500);
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(255, 215, 0, 0.4);
+            border-color: var(--gold);
+        }
+        
+        .benefit-number {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 3rem;
+            font-weight: 900;
+            color: rgba(255, 215, 0, 0.1);
+            line-height: 1;
+        }
+        
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .benefit-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: var(--gold);
+        }
+        
+        .benefit-description {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .benefit-value {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid var(--gold);
+            border-radius: 10px;
+            padding: 0.8rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        /* 进度条 */
+        .progress-section {
+            background: var(--card-bg);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 25px;
+            padding: 2.5rem;
+            margin: 3rem auto;
+            max-width: 900px;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 35px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 1.5rem 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--gold), #FFA500);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 1rem;
+            font-weight: 700;
+            color: #000;
+            transition: width 1s ease;
+        }
+        
+        /* FAQ */
+        .faq-item {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .faq-item:hover {
+            border-color: var(--gold);
+        }
+        
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--gold);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            margin-top: 0;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            margin-top: 1rem;
+        }
+        
+        .faq-answer p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+        }
+        
+        /* 购买流程 */
+        .purchase-steps {
+            max-width: 1000px;
             margin: 0 auto;
         }
         
-        /* 时间轴 */
-        .timeline {
-            position: relative;
-            padding: 2rem 0;
+        .step-card {
+            background: var(--card-bg);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
         }
         
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .step-number {
+            background: linear-gradient(135deg, var(--gold), #FFA500);
+            color: #000;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 900;
+        }
+        
+        .step-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+        
+        .payment-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .payment-btn {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 165, 0, 0.2));
+            border: 2px solid var(--gold);
+            color: white;
+            padding: 1rem;
+            border-radius: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .payment-btn:hover {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(255, 165, 0, 0.3));
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
             top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(180deg, var(--primary), var(--accent), var(--secondary));
-            transform: translateX(-50%);
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 3000;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
         }
         
-        .timeline-item {
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: rgba(26, 32, 44, 0.95);
+            border: 2px solid var(--gold);
+            border-radius: 25px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2.5rem;
             position: relative;
-            margin-bottom: 3rem;
-            opacity: 0;
-            animation: fadeInUp 0.6s ease forwards;
+            backdrop-filter: blur(20px);
         }
         
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            font-size: 1.5rem;
+        }
+        
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .wallet-address-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid var(--gold);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            word-break: break-all;
+        }
+        
+        .copy-btn {
+            background: var(--gold);
+            color: #000;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 1rem;
+        }
+        
+        .copy-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.5);
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.95);
+            padding: 3rem 2rem 2rem;
+            border-top: 1px solid rgba(255, 215, 0, 0.3);
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--gold);
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.6rem;
+        }
+        
+        .footer-section ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-section ul li a:hover {
+            color: var(--gold);
+            padding-left: 5px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero {
+                min-height: auto;
+                padding: 3rem 1.5rem;
+            }
+            
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .payment-buttons {
+                grid-template-columns: 1fr;
+            }
+            
+            .top-banner {
+                font-size: 0.9rem;
+                padding: 0.8rem;
+            }
+        }
+        
+        /* 动画 */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -330,1029 +752,851 @@
             }
         }
         
-        .timeline-dot {
-            position: absolute;
-            left: 50%;
-            top: 0;
-            width: 20px;
-            height: 20px;
-            background: var(--accent);
-            border-radius: 50%;
-            transform: translateX(-50%);
-            box-shadow: 0 0 20px var(--accent);
-            z-index: 1;
-        }
-        
-        /* 语言切换 */
-        .lang-switch {
-            background: rgba(26, 32, 44, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 30px;
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .lang-switch:hover {
-            border-color: var(--accent);
-            background: rgba(0, 255, 157, 0.05);
-        }
-        
-        /* 响应式设计 */
-        @media (max-width: 768px) {
-            .hamburger {
-                display: flex;
-            }
-            
-            .desktop-menu {
-                display: none;
-            }
-            
-            .mobile-menu {
-                display: block;
-            }
-            
-            .logo-font {
-                font-size: 1.5rem;
-            }
-            
-            .stat-number {
-                font-size: 2rem;
-            }
-            
-            .timeline::before {
-                left: 20px;
-            }
-            
-            .timeline-dot {
-                left: 20px;
-            }
-            
-            h1 {
-                font-size: 2rem !important;
-            }
-            
-            h2 {
-                font-size: 1.75rem !important;
-            }
-        }
-        
-        /* 粒子效果 */
-        .particles {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            pointer-events: none;
-        }
-        
-        .particle {
-            position: absolute;
-            width: 3px;
-            height: 3px;
-            background: var(--accent);
-            border-radius: 50%;
-            opacity: 0.6;
-            animation: float 15s infinite ease-in-out;
-        }
-        
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0) translateX(0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.6;
-            }
-            90% {
-                opacity: 0.6;
-            }
-            100% {
-                transform: translateY(-100vh) translateX(100px);
-                opacity: 0;
-            }
-        }
-        
-        /* 滚动动画 */
-        .scroll-animate {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.6s ease;
-        }
-        
-        .scroll-animate.active {
-            opacity: 1;
-            transform: translateY(0);
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out;
         }
     </style>
 </head>
 <body>
+    <!-- 动态背景 -->
+    <div class="animated-bg"></div>
+
+    <!-- 顶部横幅 -->
+    <div class="top-banner">
+        <i class="fas fa-crown"></i> <span data-translate="banner">限量10,000名創世會員招募中 | 僅剩 <span id="remaining">9,500</span> 個名額</span>
+    </div>
+
     <!-- 导航栏 -->
-    <nav class="navbar" id="navbar">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="logo-font">AIF TOKEN</div>
-            
-            <!-- 桌面菜单 -->
-            <div class="desktop-menu hidden md:flex items-center gap-8">
-                <a href="#home" class="nav-link">首頁</a>
-                <a href="#about" class="nav-link">關於AIF</a>
-                <a href="#ecosystem" class="nav-link">生態系統</a>
-                <a href="#tokenomics" class="nav-link">代幣經濟</a>
-                <a href="#roadmap" class="nav-link">發展路線</a>
-                <a href="#sale" class="nav-link">參與私募</a>
-                
-                <!-- 语言切换 -->
-                <div class="lang-switch" onclick="toggleLanguage()">
-                    <i class="fas fa-globe"></i>
-                    <span id="currentLang">繁體中文</span>
-                    <i class="fas fa-chevron-down text-xs"></i>
-                </div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-crown"></i> GENESIS
             </div>
             
-            <!-- 汉堡菜单按钮 -->
-            <div class="hamburger md:hidden" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="nav-links">
+                <a href="#benefits" data-translate="nav_benefits">權益詳情</a>
+                <a href="#purchase" data-translate="nav_purchase">購買流程</a>
+                <a href="#faq" data-translate="nav_faq">常見問題</a>
+                <button class="lang-switch" onclick="toggleLanguage()">
+                    <i class="fas fa-language"></i> <span id="langText">EN</span>
+                </button>
+                <button class="btn btn-gold" onclick="openPurchaseModal()" style="padding: 12px 25px; font-size: 1rem;">
+                    <span data-translate="btn_buy_aif">購買AIF</span>
+                </button>
             </div>
-        </div>
-        
-        <!-- 移动端菜单 -->
-        <div class="mobile-menu" id="mobileMenu">
-            <a href="#home" onclick="closeMenu()">首頁</a>
-            <a href="#about" onclick="closeMenu()">關於AIF</a>
-            <a href="#ecosystem" onclick="closeMenu()">生態系統</a>
-            <a href="#tokenomics" onclick="closeMenu()">代幣經濟</a>
-            <a href="#roadmap" onclick="closeMenu()">發展路線</a>
-            <a href="#sale" onclick="closeMenu()">參與私募</a>
-            <a href="#" onclick="toggleLanguage(); closeMenu();">
-                <i class="fas fa-globe mr-2"></i><span id="mobileLang">切換語言</span>
-            </a>
+            
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </nav>
 
+    <!-- 移动端菜单 -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" onclick="toggleMobileMenu()">
+            <i class="fas fa-times"></i>
+        </button>
+        <div style="margin-top: 4rem;">
+            <a href="#benefits" style="display: block; padding: 1rem 0; color: white; font-size: 1.2rem;" onclick="toggleMobileMenu()" data-translate="nav_benefits">權益詳情</a>
+            <a href="#purchase" style="display: block; padding: 1rem 0; color: white; font-size: 1.2rem;" onclick="toggleMobileMenu()" data-translate="nav_purchase">購買流程</a>
+            <a href="#faq" style="display: block; padding: 1rem 0; color: white; font-size: 1.2rem;" onclick="toggleMobileMenu()" data-translate="nav_faq">常見問題</a>
+            <button class="lang-switch" onclick="toggleLanguage()" style="width: 100%; margin-top: 1.5rem; padding: 1rem;">
+                <i class="fas fa-language"></i> <span id="langTextMobile">EN</span>
+            </button>
+            <button class="btn btn-gold" onclick="openPurchaseModal(); toggleMobileMenu();" style="width: 100%; margin-top: 1rem; justify-content: center;">
+                <span data-translate="btn_buy_aif">購買AIF</span>
+            </button>
+        </div>
+    </div>
+
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-bg"></div>
-        <div class="particles" id="particles"></div>
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="text-center max-w-5xl mx-auto">
-                <h1 class="text-5xl md:text-7xl font-black mb-6 gradient-text leading-tight" data-en="The Future of AI-Native Entertainment">
-                    AI原生娛樂的未來
-                </h1>
-                <p class="text-xl md:text-2xl mb-8 text-gray-300" data-en="Join the world's first comprehensive AI film ecosystem. AIF Token powers creation, distribution, and monetization of AI-generated content across 6 integrated platforms.">
-                    加入全球首個綜合性AI電影生態系統<br>
-                    AIF代幣驅動AI內容的創作、分發與變現
+    <section class="hero fade-in">
+        <div class="hero-content">
+            <div class="badge">
+                <i class="fas fa-crown"></i> <span data-translate="badge">GENESIS 創世會員計劃</span>
+            </div>
+            <h1 class="hero-title" data-translate="hero_title">成為創世會員</h1>
+            <p class="hero-subtitle" data-translate="hero_subtitle">
+                尋找10,000名HKAIIFF生態系統的創始成員
+            </p>
+            <p class="hero-description" data-translate="hero_desc">
+                加入全球首個綜合性AI原生電影生態系統的創世之旅，享受9大獨家權益，共同塑造AI娛樂的未來
+            </p>
+            
+            <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 3rem;">
+                <button class="btn btn-gold" onclick="openPurchaseModal()">
+                    <i class="fas fa-rocket"></i> <span data-translate="hero_btn">購買AIF</span>
+                </button>
+            </div>
+            
+            <!-- 统计数据 -->
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number">10,000</div>
+                    <div class="stat-label" data-translate="stat_1">限量名額</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$0.05</div>
+                    <div class="stat-label" data-translate="stat_2">AIF原始價格</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">9</div>
+                    <div class="stat-label" data-translate="stat_3">專屬權益</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4X</div>
+                    <div class="stat-label" data-translate="stat_4">潛在收益倍數</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 进度条 -->
+    <section>
+        <div class="progress-section">
+            <h3 style="font-size: 1.8rem; font-weight: 800; color: var(--gold); text-align: center; margin-bottom: 0.8rem;" data-translate="progress_title">
+                創世會員招募進度
+            </h3>
+            <p style="text-align: center; color: rgba(255, 255, 255, 0.7); margin-bottom: 1.5rem;" data-translate="progress_desc">
+                已有 500 名創世會員加入，還剩 9,500 個名額
+            </p>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 5%;">5%</div>
+            </div>
+            <div style="display: flex; justify-content: space-between; color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">
+                <span>0</span>
+                <span data-translate="progress_max">10,000名額已滿</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9大权益 -->
+    <section id="benefits">
+        <h2 class="section-title" data-translate="benefits_title">創世會員9大專屬權益</h2>
+        <p class="section-subtitle" data-translate="benefits_subtitle">
+            成為HKAIIFF生態系統的創始成員，終身享受獨家特權
+        </p>
+        
+        <div class="benefits-grid">
+            <!-- 权益1 -->
+            <div class="benefit-card">
+                <div class="benefit-number">01</div>
+                <span class="benefit-icon">🪙</span>
+                <h3 class="benefit-title" data-translate="benefit_1_title">原始代幣購買權</h3>
+                <p class="benefit-description" data-translate="benefit_1_desc">
+                    以 $0.05/AIF 的創世價格購買AIF代幣，這是最初的私募輪價格，比公開發售價格低75%
+                </p>
+                <div class="benefit-value" data-translate="benefit_1_value">
+                    價值：$0.05/AIF (公開發售 $0.20/AIF)
+                </div>
+            </div>
+            
+            <!-- 权益2 -->
+            <div class="benefit-card">
+                <div class="benefit-number">02</div>
+                <span class="benefit-icon">💎</span>
+                <h3 class="benefit-title" data-translate="benefit_2_title">公開上市前優先購買權</h3>
+                <p class="benefit-description" data-translate="benefit_2_desc">
+                    在公開發售前，獲得一次額外的 $0.05/AIF 優先購買機會，鎖定最優惠價格
+                </p>
+                <div class="benefit-value" data-translate="benefit_2_value">
+                    獨家：公開上市前最後優惠價
+                </div>
+            </div>
+            
+            <!-- 权益3 -->
+            <div class="benefit-card">
+                <div class="benefit-number">03</div>
+                <span class="benefit-icon">🎬</span>
+                <h3 class="benefit-title" data-translate="benefit_3_title">生態項目優先推送</h3>
+                <p class="benefit-description" data-translate="benefit_3_desc">
+                    HKAIIFF生態系統內所有新項目、活動、合作機會優先推送給創世會員，搶先參與
+                </p>
+                <div class="benefit-value" data-translate="benefit_3_value">
+                    特權：永久優先訪問權
+                </div>
+            </div>
+            
+            <!-- 权益4 -->
+            <div class="benefit-card">
+                <div class="benefit-number">04</div>
+                <span class="benefit-icon">⏰</span>
+                <h3 class="benefit-title" data-translate="benefit_4_title">電影市場項目優先購買</h3>
+                <p class="benefit-description" data-translate="benefit_4_desc">
+                    在HKAIFM香港電影市場，比普通用戶提前12小時優先購買上市項目的FilmToken
+                </p>
+                <div class="benefit-value" data-translate="benefit_4_value">
+                    時間優勢：提前12小時
+                </div>
+            </div>
+            
+            <!-- 权益5 -->
+            <div class="benefit-card">
+                <div class="benefit-number">05</div>
+                <span class="benefit-icon">💰</span>
+                <h3 class="benefit-title" data-translate="benefit_5_title">交易手續費減半</h3>
+                <p class="benefit-description" data-translate="benefit_5_desc">
+                    在HKAIFM香港電影市場進行FilmToken交易，永久享受50%手續費折扣
+                </p>
+                <div class="benefit-value" data-translate="benefit_5_value">
+                    節省：交易手續費減半 (終身)
+                </div>
+            </div>
+            
+            <!-- 权益6 -->
+            <div class="benefit-card">
+                <div class="benefit-number">06</div>
+                <span class="benefit-icon">🎓</span>
+                <h3 class="benefit-title" data-translate="benefit_6_title">電影學院獎學金</h3>
+                <p class="benefit-description" data-translate="benefit_6_desc">
+                    獲得HKAIFA香港電影學院獎學金，根據職業認證不同，獎學金從1萬到10萬AIF不等
+                </p>
+                <div class="benefit-value" data-translate="benefit_6_value">
+                    獎學金：10,000 - 100,000 AIF
+                </div>
+            </div>
+            
+            <!-- 权益7 -->
+            <div class="benefit-card">
+                <div class="benefit-number">07</div>
+                <span class="benefit-icon">🌟</span>
+                <h3 class="benefit-title" data-translate="benefit_7_title">生態活動VIP權益</h3>
+                <p class="benefit-description" data-translate="benefit_7_desc">
+                    參加HKAIIFF電影節及所有生態活動時，享受VIP待遇，包括優先座位、專屬社交活動等
+                </p>
+                <div class="benefit-value" data-translate="benefit_7_value">
+                    尊享：永久VIP待遇
+                </div>
+            </div>
+            
+            <!-- 权益8 -->
+            <div class="benefit-card">
+                <div class="benefit-number">08</div>
+                <span class="benefit-icon">🏆</span>
+                <h3 class="benefit-title" data-translate="benefit_8_title">A2CLUB會費減半</h3>
+                <p class="benefit-description" data-translate="benefit_8_desc">
+                    加入A2CLUB高端社群，創世會員享受50%會費折扣，與行業精英建立深度連接
+                </p>
+                <div class="benefit-value" data-translate="benefit_8_value">
+                    優惠：A2CLUB會費減半
+                </div>
+            </div>
+            
+            <!-- 权益9 -->
+            <div class="benefit-card">
+                <div class="benefit-number">09</div>
+                <span class="benefit-icon">💳</span>
+                <h3 class="benefit-title" data-translate="benefit_9_title">AIFcard聯名卡年費減半</h3>
+                <p class="benefit-description" data-translate="benefit_9_desc">
+                    AIFcard x Mastercard聯名Ucard年費享受50%折扣，尊享全球支付便利和專屬權益
+                </p>
+                <div class="benefit-value" data-translate="benefit_9_value">
+                    優惠：AIFcard年費減半
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 购买流程 -->
+    <section id="purchase">
+        <h2 class="section-title" data-translate="purchase_title">AIF代幣獲取流程</h2>
+        <p class="section-subtitle" data-translate="purchase_subtitle">
+            簡單3步驟完成AIF代幣購買
+        </p>
+        
+        <div class="purchase-steps">
+            <!-- 步骤1: 支付订单 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title" data-translate="step1_title">支付訂單</h3>
+                </div>
+                
+                <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 1rem; line-height: 1.7;" data-translate="step1_intro">
+                    選擇您的支付幣種，點擊按鈕完成支付：
                 </p>
                 
-                <div class="flex flex-wrap justify-center gap-4 mb-12">
-                    <button class="btn-primary" onclick="scrollToSection('sale')" data-en="Join Private Sale">
-                        <i class="fas fa-rocket mr-2"></i>立即參與私募
-                    </button>
-                    <button class="btn-secondary" onclick="downloadWhitepaper()" data-en="Download Whitepaper">
-                        <i class="fas fa-file-pdf mr-2"></i>下載白皮書
-                    </button>
+                <div style="background: rgba(255, 215, 0, 0.1); border: 1px solid var(--gold); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                    <p style="color: var(--gold); font-weight: 700; margin-bottom: 0.8rem;">
+                        💳 <span data-translate="accept_cards">接受 MASTERCARD、VISA 和 APPLE PAY</span>
+                    </p>
+                    <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.95rem; line-height: 1.6;" data-translate="payment_info">
+                        在線收款。手續費低，免費註冊，不凍結資金。這是運作方式
+                    </p>
+                    <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; margin-top: 1rem;" data-translate="fee_info">
+                        手續費一目了然，基於所用銀行卡：
+                    </p>
+                    <ul style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; margin-top: 0.5rem; padding-left: 1.5rem;">
+                        <li data-translate="fee_domestic">國內卡2.78% + 1.98 HKD</li>
+                        <li data-translate="fee_foreign">境外卡3.58% + 1.98 HKD</li>
+                        <li data-translate="fee_business">商務卡3.58% + 1.98 HKD</li>
+                    </ul>
                 </div>
                 
-                <!-- 关键数据展示 -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
-                    <div class="scroll-animate">
-                        <div class="stat-number">$3,700億+</div>
-                        <p class="text-gray-400" data-en="AI Content Market by 2030">2030年AI內容市場</p>
-                    </div>
-                    <div class="scroll-animate" style="animation-delay: 0.1s;">
-                        <div class="stat-number">100億</div>
-                        <p class="text-gray-400" data-en="Total AIF Token Supply">AIF代幣總供應量</p>
-                    </div>
-                    <div class="scroll-animate" style="animation-delay: 0.2s;">
-                        <div class="stat-number">6大</div>
-                        <p class="text-gray-400" data-en="Integrated Platforms">整合平台</p>
-                    </div>
-                    <div class="scroll-animate" style="animation-delay: 0.3s;">
-                        <div class="stat-number">54%</div>
-                        <p class="text-gray-400" data-en="Annual Growth Rate">年複合增長率</p>
-                    </div>
+                <div class="payment-buttons">
+                    <button class="payment-btn" onclick="openCryptoModal()">
+                        <div style="font-size: 1.5rem; margin-bottom: 0.3rem;">💎</div>
+                        <div data-translate="crypto_pay">USDT/USDC</div>
+                    </button>
+                    <a href="https://wise.com/pay/business/uj6hyy?currency=USD&amount=518.18&description=AIF-USD" target="_blank" class="payment-btn">
+                        <div style="font-size: 1.5rem; margin-bottom: 0.3rem;">💵</div>
+                        <div data-translate="usd_pay">美元支付 ($518.18)</div>
+                    </a>
+                    <a href="https://wise.com/pay/business/uj6hyy?currency=HKD&amount=4026&description=AIF-HKD" target="_blank" class="payment-btn">
+                        <div style="font-size: 1.5rem; margin-bottom: 0.3rem;">🇭🇰</div>
+                        <div data-translate="hkd_pay">港元支付 (HK$4,026)</div>
+                    </a>
+                    <a href="https://wise.com/pay/business/uj6hyy?currency=CNY&amount=3690&description=AIF-CNY" target="_blank" class="payment-btn">
+                        <div style="font-size: 1.5rem; margin-bottom: 0.3rem;">🇨🇳</div>
+                        <div data-translate="cny_pay">人民币支付 (¥3,690)</div>
+                    </a>
+                    <a href="https://wise.com/pay/business/uj6hyy?currency=JPY&amount=79214&description=AIF-JPY" target="_blank" class="payment-btn">
+                        <div style="font-size: 1.5rem; margin-bottom: 0.3rem;">🇯🇵</div>
+                        <div data-translate="jpy_pay">日元支付 (¥79,214)</div>
+                    </a>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 关于 AIF Section -->
-    <section id="about" class="py-20 relative overflow-hidden">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16 scroll-animate">
-                <h2 class="text-4xl md:text-5xl font-black mb-6 gradient-text" data-en="What is AIF Token?">
-                    什麼是AIF代幣?
-                </h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto" data-en="AIF is the native utility token powering the Hong Kong AI International Film Festival (HKAIIFF) ecosystem - the world's first comprehensive AI-native entertainment infrastructure.">
-                    AIF是驅動香港AI國際電影節(HKAIIFF)生態系統的原生實用代幣<br>
-                    全球首個綜合性AI原生娛樂基礎設施
+                
+                <p style="color: var(--gold); font-size: 0.9rem; margin-top: 1rem; text-align: center;">
+                    💡 <span data-translate="wise_redirect">点击支付按钮后，您将跳转到Wise安全支付页面完成支付</span>
                 </p>
             </div>
-
-            <div class="grid md:grid-cols-3 gap-8 mb-16">
-                <div class="card scroll-animate">
-                    <div class="icon-box">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4" data-en="Innovation Pioneer">創新先鋒</h3>
-                    <p class="text-gray-300" data-en="Leading the revolution in AI-native content creation with cutting-edge technology and creative vision.">
-                        以尖端技術和創意願景引領AI原生內容創作革命,打造前所未有的娛樂體驗。
+            
+            <!-- 步骤2: 发送凭证 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title" data-translate="step2_title">發送憑證及錢包地址</h3>
+                </div>
+                
+                <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 1rem;" data-translate="step2_desc">
+                    將支付憑證和接收AIF代幣的錢包地址發送至：
+                </p>
+                
+                <div style="background: rgba(255, 215, 0, 0.1); border: 2px solid var(--gold); border-radius: 12px; padding: 1.5rem; text-align: center;">
+                    <p style="color: var(--gold); font-weight: 700; font-size: 1.1rem; margin-bottom: 0.5rem;">
+                        📧 <span data-translate="email_label">郵件發送至:</span>
+                    </p>
+                    <a href="mailto:Genesis@aif.market" style="color: white; font-size: 1.3rem; font-weight: 700; text-decoration: none;">
+                        Genesis@aif.market
+                    </a>
+                </div>
+                
+                <div style="background: rgba(255, 0, 0, 0.1); border: 1px solid rgba(255, 0, 0, 0.5); border-radius: 10px; padding: 1rem; margin-top: 1.5rem;">
+                    <p style="color: #ff6b6b; font-weight: 700; margin-bottom: 0.5rem;">
+                        ⚠️ <span data-translate="important_note">重要提示：</span>
+                    </p>
+                    <p style="color: rgba(255, 255, 255, 0.8);" data-translate="solana_address">
+                        錢包地址必須為 Solana地址
+                    </p>
+                </div>
+            </div>
+            
+            <!-- 步骤3: 接收代币 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title" data-translate="step3_title">接收AIF代幣</h3>
+                </div>
+                
+                <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 1rem;" data-translate="step3_intro">
+                    郵件信息驗證後：
+                </p>
+                
+                <div style="background: rgba(0, 255, 157, 0.1); border: 1px solid var(--accent); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                    <p style="color: var(--accent); font-weight: 700; font-size: 1.1rem; margin-bottom: 0.5rem;">
+                        ⏱️ <span data-translate="delivery_time">10-30分鐘左右AIF代幣發送至用戶錢包</span>
+                    </p>
+                    <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;" data-translate="network_note">
+                        (跟隨Solana網絡情況略有浮動)
                     </p>
                 </div>
                 
-                <div class="card scroll-animate" style="animation-delay: 0.1s;">
-                    <div class="icon-box">
-                        <i class="fas fa-network-wired"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4" data-en="Ecosystem Value">生態價值</h3>
-                    <p class="text-gray-300" data-en="6 integrated platforms creating powerful network effects and exponential value growth opportunities.">
-                        6大整合平台創造強大的網絡效應,形成指數級價值增長的生態系統。
+                <div style="background: rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1.5rem;">
+                    <p style="color: var(--gold); font-weight: 700; margin-bottom: 1rem;">
+                        📊 <span data-translate="track_progress">追蹤進度:</span>
                     </p>
-                </div>
-                
-                <div class="card scroll-animate" style="animation-delay: 0.2s;">
-                    <div class="icon-box">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4" data-en="Growth Potential">增長潛力</h3>
-                    <p class="text-gray-300" data-en="Positioned in a massive $370B+ AI content market with 54% annual growth rate through 2030.">
-                        立足於3,700億美元+的AI內容市場,預計到2030年保持54%年增長率。
+                    <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 1rem; line-height: 1.7;" data-translate="track_desc">
+                        通過Solana官方瀏覽器隨時關注AIF錢包地址激活情況:
                     </p>
-                </div>
-            </div>
-
-            <!-- 核心优势 -->
-            <div class="bg-gradient-to-r from-blue-900/20 to-purple-900/20 rounded-3xl p-8 md:p-12 scroll-animate">
-                <h3 class="text-3xl font-bold mb-8 text-center" data-en="Why AIF Token?">為什麼選擇AIF代幣?</h3>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="flex items-start gap-4">
-                        <div class="text-3xl text-accent">✓</div>
-                        <div>
-                            <h4 class="text-xl font-bold mb-2" data-en="First-Mover Advantage">先發優勢</h4>
-                            <p class="text-gray-300" data-en="World's first comprehensive AI-native film ecosystem with established infrastructure.">全球首個綜合AI原生電影生態,搶佔市場先機與標準制定權。</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <div class="text-3xl text-accent">✓</div>
-                        <div>
-                            <h4 class="text-xl font-bold mb-2" data-en="Strong Tokenomics">強勁代幣經濟">強勁代幣經濟</h4>
-                            <p class="text-gray-300" data-en="Deflationary mechanisms with 10.5% supply burn over 5 years and revenue sharing model.">通縮機制配合收益分享,5年內銷毀10.5%供應量,價值持續提升。</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <div class="text-3xl text-accent">✓</div>
-                        <div>
-                            <h4 class="text-xl font-bold mb-2" data-en="Geographic Advantage">地理優勢</h4>
-                            <p class="text-gray-300" data-en="Hong Kong as Asia-Pacific creative and financial hub connecting East and West markets.">香港作為亞太創意金融中心,連接東西方市場的戰略要地。</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <div class="text-3xl text-accent">✓</div>
-                        <div>
-                            <h4 class="text-xl font-bold mb-2" data-en="Multiple Utility">多重實用性</h4>
-                            <p class="text-gray-300" data-en="Used across 6 platforms for governance, staking, payments, and exclusive access.">跨6大平台應用於治理、質押、支付與專屬權益等多種場景。</p>
-                        </div>
-                    </div>
+                    <a href="https://solscan.io" target="_blank" style="display: inline-block; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 0.8rem 2rem; border-radius: 10px; text-decoration: none; font-weight: 700;">
+                        <i class="fas fa-external-link-alt"></i> Solscan.io
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 生态系统 Section -->
-    <section id="ecosystem" class="py-20 bg-gradient-to-b from-transparent to-blue-900/10">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16 scroll-animate">
-                <h2 class="text-4xl md:text-5xl font-black mb-6 gradient-text" data-en="HKAIIFF Ecosystem">HKAIIFF生態系統</h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto" data-en="A comprehensive '4+1+1' model creating a complete value chain from education to distribution.">
-                    「4+1+1」模式打造從教育到分發的完整價值鏈
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- 平台1 -->
-                <div class="card scroll-animate">
-                    <div class="text-4xl mb-4">🎬</div>
-                    <h3 class="text-2xl font-bold mb-3" data-en="HKAIIFF Film Festival">香港AI國際電影節</h3>
-                    <p class="text-gray-300 mb-4" data-en="World's premier AI-native film competition and exhibition platform with revolutionary judging standards.">
-                        全球首創AI原生電影競賽與展映平台,制定行業評審新標準。
-                    </p>
-                    <ul class="text-sm text-gray-400 space-y-2">
-                        <li data-en="• Annual competition with $1M+ prizes">• 年度競賽獎金超100萬美元</li>
-                        <li data-en="• Multiple categories and awards">• 多類別獎項設置</li>
-                        <li data-en="• Global audience participation">• 全球觀眾參與機制</li>
-                    </ul>
+    <!-- FAQ -->
+    <section id="faq">
+        <h2 class="section-title" data-translate="faq_title">常見問題</h2>
+        <p class="section-subtitle" data-translate="faq_subtitle">
+            關於創世會員計劃的常見疑問解答
+        </p>
+        
+        <div style="max-width: 900px; margin: 0 auto;">
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    <span data-translate="faq_q1">什麼是創世會員計劃？</span>
+                    <i class="fas fa-chevron-down"></i>
                 </div>
-
-                <!-- 平台2 -->
-                <div class="card scroll-animate" style="animation-delay: 0.1s;">
-                    <div class="text-4xl mb-4">🎓</div>
-                    <h3 class="text-2xl font-bold mb-3" data-en="AIF Academy">AI電影學院</h3>
-                    <p class="text-gray-300 mb-4" data-en="Professional training and education platform cultivating next-generation AI-native creators.">
-                        專業培訓教育平台,培養新一代AI原生創作者與技術人才。
-                    </p>
-                    <ul class="text-sm text-gray-400 space-y-2">
-                        <li data-en="• Comprehensive course system">• 完整課程體系</li>
-                        <li data-en="• Industry expert instruction">• 行業專家授課</li>
-                        <li data-en="• Certification programs">• 專業認證計劃</li>
-                    </ul>
-                </div>
-
-                <!-- 平台3 -->
-                <div class="card scroll-animate" style="animation-delay: 0.2s;">
-                    <div class="text-4xl mb-4">🛍️</div>
-                    <h3 class="text-2xl font-bold mb-3" data-en="AIF Market">AI電影市場</h3>
-                    <p class="text-gray-300 mb-4" data-en="Decentralized marketplace for AI-native content trading, licensing and distribution.">
-                        去中心化AI原生內容交易、授權與分發市場平台。
-                    </p>
-                    <ul class="text-sm text-gray-400 space-y-2">
-                        <li data-en="• Content trading and licensing">• 內容交易與授權</li>
-                        <li data-en="• Smart contract automation">• 智能合約自動化</li>
-                        <li data-en="• Creator revenue sharing">• 創作者收益分成</li>
-                    </ul>
-                </div>
-
-                <!-- 平台4 -->
-                <div class="card scroll-animate" style="animation-delay: 0.3s;">
-                    <div class="text-4xl mb-4">🎮</div>
-                    <h3 class="text-2xl font-bold mb-3" data-en="404.World Platform">404.World平台</h3>
-                    <p class="text-gray-300 mb-4" data-en="Immersive entertainment platform combining AI characters, interactive narratives and virtual experiences.">
-                        沉浸式娛樂平台,融合AI角色、互動敘事與虛擬體驗。
-                    </p>
-                    <ul class="text-sm text-gray-400 space-y-2">
-                        <li data-en="• AI character interaction">• AI角色互動</li>
-                        <li data-en="• Interactive storytelling">• 互動式敘事</li>
-                        <li data-en="• Virtual world experiences">• 虛擬世界體驗</li>
-                    </ul>
-                </div>
-
-                <!-- 平台5 -->
-                <div class="card scroll-animate" style="animation-delay: 0.4s;">
-                    <div class="text-4xl mb-4">📝</div>
-                    <h3 class="text-2xl font-bold mb-3" data-en="Submission Center">徵片中心</h3>
-                    <p class="text-gray-300 mb-4" data-en="Centralized platform for content submission, review and distribution across the ecosystem.">
-                        集中化內容提交、審核與分發平台,連接整個生態系統。
-                    </p>
-                    <ul class="text-sm text-gray-400 space-y-2">
-                        <li data-en="• Easy submission process">• 便捷提交流程</li>
-                        <li data-en="• Professional review">• 專業審核機制</li>
-                        <li data-en="• Multi-platform distribution">• 多平台分發</li>
-                    </ul>
-                </div>
-
-                <!-- 平台6 -->
-                <div class="card scroll-animate" style="animation-delay: 0.5s;">
-                    <div class="text-4xl mb-4">💱</div>
-                    <h3 class="text-2xl font-bold mb-3" data-en="AIF Exchange">AIF交易所</h3>
-                    <p class="text-gray-300 mb-4" data-en="Dedicated exchange for AIF tokens and ecosystem asset trading with liquidity support.">
-                        專屬AIF代幣與生態資產交易所,提供流動性支持。
-                    </p>
-                    <ul class="text-sm text-gray-400 space-y-2">
-                        <li data-en="• Token trading">• 代幣交易</li>
-                        <li data-en="• Liquidity pools">• 流動性池</li>
-                        <li data-en="• Staking rewards">• 質押獎勵</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 代币经济学 Section -->
-    <section id="tokenomics" class="py-20">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16 scroll-animate">
-                <h2 class="text-4xl md:text-5xl font-black mb-6 gradient-text" data-en="Token Economics">代幣經濟學</h2>
-                <p class="text-xl text-gray-300" data-en="Sustainable and deflationary model designed for long-term value growth.">
-                    可持續的通縮模型,旨在實現長期價值增長
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
-                <div class="scroll-animate">
-                    <h3 class="text-3xl font-bold mb-6" data-en="Token Distribution">代幣分配</h3>
-                    <div class="space-y-4">
-                        <div class="flex justify-between items-center p-4 bg-white/5 rounded-lg">
-                            <span data-en="Ecosystem Development">生態系統發展</span>
-                            <span class="text-accent font-bold">30%</span>
-                        </div>
-                        <div class="flex justify-between items-center p-4 bg-white/5 rounded-lg">
-                            <span data-en="Team & Advisors">團隊與顧問</span>
-                            <span class="text-accent font-bold">20%</span>
-                        </div>
-                        <div class="flex justify-between items-center p-4 bg-white/5 rounded-lg">
-                            <span data-en="Private Sale">私募</span>
-                            <span class="text-accent font-bold">15%</span>
-                        </div>
-                        <div class="flex justify-between items-center p-4 bg-white/5 rounded-lg">
-                            <span data-en="Community Incentives">社區激勵</span>
-                            <span class="text-accent font-bold">15%</span>
-                        </div>
-                        <div class="flex justify-between items-center p-4 bg-white/5 rounded-lg">
-                            <span data-en="Public Sale">公募</span>
-                            <span class="text-accent font-bold">10%</span>
-                        </div>
-                        <div class="flex justify-between items-center p-4 bg-white/5 rounded-lg">
-                            <span data-en="Strategic Partners">戰略合作夥伴</span>
-                            <span class="text-accent font-bold">5%</span>
-                        </div>
-                        <div class="flex justify-between items-center p-4 bg-white/5 rounded-lg">
-                            <span data-en="Reserve Fund">儲備基金</span>
-                            <span class="text-accent font-bold">5%</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="scroll-animate">
-                    <div class="card">
-                        <h3 class="text-2xl font-bold mb-6" data-en="Key Metrics">關鍵指標</h3>
-                        <div class="space-y-6">
-                            <div>
-                                <div class="flex justify-between mb-2">
-                                    <span data-en="Total Supply">總供應量</span>
-                                    <span class="font-bold">10,000,000,000 AIF</span>
-                                </div>
-                                <p class="text-sm text-gray-400" data-en="Fixed maximum supply with deflationary mechanisms">
-                                    固定最大供應量,配合通縮機制
-                                </p>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-2">
-                                    <span data-en="Private Sale Price">私募價格</span>
-                                    <span class="font-bold text-accent">$0.05/AIF</span>
-                                </div>
-                                <p class="text-sm text-gray-400" data-en="Early investor opportunity with significant discount">
-                                    早期投資者機會,享有顯著折扣
-                                </p>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-2">
-                                    <span data-en="Expected Public Price">預期公募價格</span>
-                                    <span class="font-bold">$0.10/AIF</span>
-                                </div>
-                                <p class="text-sm text-gray-400" data-en="100% premium for private sale participants">
-                                    私募參與者可享100%溢價空間
-                                </p>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-2">
-                                    <span data-en="Burn Mechanism">銷毀機制</span>
-                                    <span class="font-bold text-red-400">10.5% / 5年</span>
-                                </div>
-                                <p class="text-sm text-gray-400" data-en="Quarterly token burns from platform fees">
-                                    季度性從平台費用中銷毀代幣
-                                </p>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-2">
-                                    <span data-en="Revenue Sharing">收益分享</span>
-                                    <span class="font-bold text-accent">30-50%</span>
-                                </div>
-                                <p class="text-sm text-gray-400" data-en="Platform revenue distributed to token holders">
-                                    平台收益分配給代幣持有者
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 代币实用性 -->
-            <div class="scroll-animate">
-                <h3 class="text-3xl font-bold mb-8 text-center" data-en="Token Utility">代幣實用性</h3>
-                <div class="grid md:grid-cols-4 gap-6">
-                    <div class="card text-center">
-                        <div class="text-4xl mb-4">🗳️</div>
-                        <h4 class="text-xl font-bold mb-2" data-en="Governance">治理權</h4>
-                        <p class="text-sm text-gray-400" data-en="Vote on ecosystem decisions and proposals">
-                            參與生態系統決策投票
-                        </p>
-                    </div>
-                    <div class="card text-center">
-                        <div class="text-4xl mb-4">🔒</div>
-                        <h4 class="text-xl font-bold mb-2" data-en="Staking">質押獎勵</h4>
-                        <p class="text-sm text-gray-400" data-en="Earn passive income through staking">
-                            質押獲取被動收益
-                        </p>
-                    </div>
-                    <div class="card text-center">
-                        <div class="text-4xl mb-4">💳</div>
-                        <h4 class="text-xl font-bold mb-2" data-en="Payments">支付工具</h4>
-                        <p class="text-sm text-gray-400" data-en="Access premium content and services">
-                            訪問優質內容與服務
-                        </p>
-                    </div>
-                    <div class="card text-center">
-                        <div class="text-4xl mb-4">👑</div>
-                        <h4 class="text-xl font-bold mb-2" data-en="Exclusive Access">專屬權益</h4>
-                        <p class="text-sm text-gray-400" data-en="VIP access to events and features">
-                            電影節VIP專屬權益
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 发展路线图 Section -->
-    <section id="roadmap" class="py-20 bg-gradient-to-b from-purple-900/10 to-transparent">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16 scroll-animate">
-                <h2 class="text-4xl md:text-5xl font-black mb-6 gradient-text" data-en="Development Roadmap">發展路線圖</h2>
-                <p class="text-xl text-gray-300" data-en="Strategic milestones from foundation to ecosystem maturity.">
-                    從基礎建設到生態成熟的戰略里程碑
-                </p>
-            </div>
-
-            <div class="timeline max-w-5xl mx-auto">
-                <!-- 2025 Q1 -->
-                <div class="timeline-item scroll-animate">
-                    <div class="timeline-dot"></div>
-                    <div class="md:grid md:grid-cols-2 md:gap-8">
-                        <div class="md:text-right mb-4 md:mb-0">
-                            <h3 class="text-2xl font-bold text-accent mb-2" data-en="2025 Q1 - Genesis Launch">2025 Q1 - 創世發布</h3>
-                            <p class="text-gray-400" data-en="Foundation establishment and private sale">基礎建設與私募啟動</p>
-                        </div>
-                        <div class="card">
-                            <ul class="space-y-2 text-gray-300">
-                                <li data-en="✓ Smart contract deployment">✓ 智能合約部署與審計</li>
-                                <li data-en="✓ Core team assembly">✓ 核心團隊組建</li>
-                                <li data-en="✓ Private sale execution ($75M target)">✓ 私募執行(目標7500萬美元)</li>
-                                <li data-en="✓ Strategic AI partnerships">✓ 與AI公司戰略合作</li>
-                                <li data-en="✓ Alpha platform development">✓ Alpha平台開發</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2025 Q2 -->
-                <div class="timeline-item scroll-animate">
-                    <div class="timeline-dot"></div>
-                    <div class="md:grid md:grid-cols-2 md:gap-8">
-                        <div class="md:text-right mb-4 md:mb-0 md:order-1">
-                            <h3 class="text-2xl font-bold text-accent mb-2" data-en="2025 Q2 - Platform Beta">2025 Q2 - 平台測試</h3>
-                            <p class="text-gray-400" data-en="Core platform launch and testing">核心平台上線測試</p>
-                        </div>
-                        <div class="card md:order-2">
-                            <ul class="space-y-2 text-gray-300">
-                                <li data-en="✓ AI Film Academy beta (1,000 students)">✓ AI電影學院測試版(1000名學生)</li>
-                                <li data-en="✓ Exhibition platform development">✓ 展映平台開發</li>
-                                <li data-en="✓ Submission Center MVP">✓ 徵片中心最小可行產品</li>
-                                <li data-en="✓ First HKAIIFF announcement">✓ 首屆香港AI電影節公告</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2025 Q3 -->
-                <div class="timeline-item scroll-animate">
-                    <div class="timeline-dot"></div>
-                    <div class="md:grid md:grid-cols-2 md:gap-8">
-                        <div class="md:text-right mb-4 md:mb-0">
-                            <h3 class="text-2xl font-bold text-accent mb-2" data-en="2025 Q3 - Public Launch">2025 Q3 - 公開發布</h3>
-                            <p class="text-gray-400" data-en="Token public sale and exchange listings">代幣公募與交易所上線</p>
-                        </div>
-                        <div class="card">
-                            <ul class="space-y-2 text-gray-300">
-                                <li data-en="✓ IDO across platforms ($80M target)">✓ 多平台IDO(目標8000萬美元)</li>
-                                <li data-en="✓ AIF Exchange launch">✓ AIF交易所啟動</li>
-                                <li data-en="✓ Major exchange listings">✓ 主要交易所上線</li>
-                                <li data-en="✓ Community governance activation">✓ 社區治理激活</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2025 Q4 -->
-                <div class="timeline-item scroll-animate">
-                    <div class="timeline-dot"></div>
-                    <div class="md:grid md:grid-cols-2 md:gap-8">
-                        <div class="md:text-right mb-4 md:mb-0 md:order-1">
-                            <h3 class="text-2xl font-bold text-accent mb-2" data-en="2025 Q4 - Ecosystem Activation">2025 Q4 - 生態激活</h3>
-                            <p class="text-gray-400" data-en="Festival debut and platform integration">電影節首秀與平台整合</p>
-                        </div>
-                        <div class="card md:order-2">
-                            <ul class="space-y-2 text-gray-300">
-                                <li data-en="✓ First HKAIIFF (Dec 2025)">✓ 首屆香港AI電影節(2025年12月)</li>
-                                <li data-en="✓ AIF Market beta launch">✓ AI電影市場測試版發布</li>
-                                <li data-en="✓ 404.world platform MVP">✓ 404.world平台最小可行產品</li>
-                                <li data-en="✓ Global cooperation centers (5 cities)">✓ 全球合作中心建立(5個城市)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2026+ -->
-                <div class="timeline-item scroll-animate">
-                    <div class="timeline-dot"></div>
-                    <div class="md:grid md:grid-cols-2 md:gap-8">
-                        <div class="md:text-right mb-4 md:mb-0">
-                            <h3 class="text-2xl font-bold text-accent mb-2" data-en="2026+ - Expansion & Innovation">2026+ - 擴展與創新</h3>
-                            <p class="text-gray-400" data-en="Global growth and technological advancement">全球擴展與技術突破</p>
-                        </div>
-                        <div class="card">
-                            <ul class="space-y-2 text-gray-300">
-                                <li data-en="✓ Academy expansion (20 centers, 15,000 students)">✓ 學院擴張(20個中心,15000名學生)</li>
-                                <li data-en="✓ First FilmToken projects">✓ 首批FilmToken項目融資</li>
-                                <li data-en="✓ 404.world interactive features">✓ 404.world互動功能發布</li>
-                                <li data-en="✓ Mobile applications">✓ 移動應用發布</li>
-                                <li data-en="✓ Advanced AI integration">✓ 先進AI技術整合</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 参与私募 Section -->
-    <section id="sale" class="py-20 bg-gradient-to-r from-blue-900/20 to-purple-900/20">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto">
-                <div class="text-center mb-12 scroll-animate">
-                    <h2 class="text-4xl md:text-5xl font-black mb-6 gradient-text" data-en="Join Private Sale">參與私募輪次</h2>
-                    <p class="text-xl text-gray-300" data-en="Exclusive opportunity for early investors with significant advantages.">
-                        早期投資者專屬機會,享受顯著優勢
-                    </p>
-                </div>
-
-                <div class="grid md:grid-cols-3 gap-6 mb-12">
-                    <div class="card text-center scroll-animate">
-                        <div class="text-3xl mb-3">💰</div>
-                        <h3 class="text-xl font-bold mb-2" data-en="Private Price">私募價格</h3>
-                        <div class="text-3xl font-black text-accent mb-2">$0.05</div>
-                        <p class="text-sm text-gray-400" data-en="per AIF token">每個AIF代幣</p>
-                    </div>
-                    <div class="card text-center scroll-animate" style="animation-delay: 0.1s;">
-                        <div class="text-3xl mb-3">📈</div>
-                        <h3 class="text-xl font-bold mb-2" data-en="Public Price">公募價格</h3>
-                        <div class="text-3xl font-black mb-2">$0.10</div>
-                        <p class="text-sm text-gray-400" data-en="Expected premium">預期100%溢價</p>
-                    </div>
-                    <div class="card text-center scroll-animate" style="animation-delay: 0.2s;">
-                        <div class="text-3xl mb-3">💎</div>
-                        <h3 class="text-xl font-bold mb-2" data-en="Min Investment">最低投資</h3>
-                        <div class="text-3xl font-black text-accent mb-2">$1,000</div>
-                        <p class="text-sm text-gray-400" data-en="Easy entry threshold">輕鬆進入門檻</p>
-                    </div>
-                </div>
-
-                <div class="card scroll-animate mb-8">
-                    <h3 class="text-2xl font-bold mb-6" data-en="Private Sale Benefits">私募輪次優勢</h3>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="flex items-start gap-3">
-                            <div class="text-2xl text-accent">🎯</div>
-                            <div>
-                                <h4 class="font-bold mb-1" data-en="Lowest Entry Price">最低進入價格</h4>
-                                <p class="text-sm text-gray-400" data-en="50% discount vs public sale price">相比公募價格享50%折扣</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="text-2xl text-accent">⏰</div>
-                            <div>
-                                <h4 class="font-bold mb-1" data-en="Shorter Lock-up">較短鎖定期</h4>
-                                <p class="text-sm text-gray-400" data-en="6-month vesting period">6個月解鎖期,快速流通</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="text-2xl text-accent">🎁</div>
-                            <div>
-                                <h4 class="font-bold mb-1" data-en="Bonus Allocation">額外獎勵分配</h4>
-                                <p class="text-sm text-gray-400" data-en="Additional tokens for early supporters">早期支持者獲額外代幣獎勵</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="text-2xl text-accent">👑</div>
-                            <div>
-                                <h4 class="font-bold mb-1" data-en="VIP Privileges">VIP特權</h4>
-                                <p class="text-sm text-gray-400" data-en="Exclusive access to festival and platforms">電影節與平台專屬權益</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card scroll-animate mb-8">
-                    <h3 class="text-2xl font-bold mb-6" data-en="Investment Details">投資詳情</h3>
-                    <div class="space-y-4">
-                        <div class="flex justify-between border-b border-gray-700 pb-3">
-                            <span data-en="Private Sale Target">私募目標</span>
-                            <span class="font-bold text-accent">$75,000,000 USD</span>
-                        </div>
-                        <div class="flex justify-between border-b border-gray-700 pb-3">
-                            <span data-en="Minimum Investment">最低投資額</span>
-                            <span class="font-bold">$1,000 USD</span>
-                        </div>
-                        <div class="flex justify-between border-b border-gray-700 pb-3">
-                            <span data-en="Token Price">代幣價格</span>
-                            <span class="font-bold">$0.05 / AIF</span>
-                        </div>
-                        <div class="flex justify-between border-b border-gray-700 pb-3">
-                            <span data-en="Lock-up Period">鎖定期</span>
-                            <span class="font-bold">6個月線性解鎖</span>
-                        </div>
-                        <div class="flex justify-between border-b border-gray-700 pb-3">
-                            <span data-en="Payment Methods">支付方式</span>
-                            <span class="font-bold">USDT / USDC / 銀行轉賬</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span data-en="Sale Period">銷售期間</span>
-                            <span class="font-bold text-accent">2025 Q1 - Q2</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="text-center scroll-animate">
-                    <button class="btn-primary text-xl px-12 py-4 mb-6" onclick="openInvestmentPortal()" data-en="Start Investment Process">
-                        <i class="fas fa-rocket mr-3"></i>開始投資流程
-                    </button>
-                    <p class="text-sm text-gray-400" data-en="Note: Investment involves risks. Please conduct thorough research and invest responsibly.">
-                        注意:投資涉及風險,請仔細研究並審慎投資。AIF代幣不承諾任何固定回報。
+                <div class="faq-answer">
+                    <p data-translate="faq_a1">
+                        創世會員計劃是HKAIIFF生態系統推出的限量會員招募活動，尋找10,000名創始成員。創世會員將享受9大專屬權益，包括最優惠的AIF代幣購買價格、優先投資權、獎學金、VIP待遇等終身特權。
                     </p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="py-20">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12 scroll-animate">
-                <h2 class="text-4xl md:text-5xl font-black mb-6 gradient-text" data-en="Frequently Asked Questions">常見問題</h2>
-            </div>
-
-            <div class="max-w-3xl mx-auto space-y-4">
-                <div class="card scroll-animate">
-                    <h3 class="text-xl font-bold mb-3" data-en="What is AIF Token?">AIF代幣是什麼?</h3>
-                    <p class="text-gray-300" data-en="AIF is the native utility token powering the HKAIIFF ecosystem, used for governance, payments, staking, and accessing exclusive features across 6 integrated platforms.">
-                        AIF是驅動HKAIIFF生態系統的原生實用代幣,用於治理、支付、質押以及訪問6大整合平台的專屬功能。
-                    </p>
+            
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    <span data-translate="faq_q2">創世會員需要投資多少？</span>
+                    <i class="fas fa-chevron-down"></i>
                 </div>
-
-                <div class="card scroll-animate">
-                    <h3 class="text-xl font-bold mb-3" data-en="How can I participate in the private sale?">如何參與私募?</h3>
-                    <p class="text-gray-300" data-en="Click the 'Start Investment Process' button above. The minimum investment is $1,000 USD, payable in USDT, USDC or bank transfer.">
-                        點擊上方「開始投資流程」按鈕即可參與。最低投資額為1,000美元,可使用USDT、USDC或銀行轉賬支付。
-                    </p>
-                </div>
-
-                <div class="card scroll-animate">
-                    <h3 class="text-xl font-bold mb-3" data-en="What is the token vesting schedule?">代幣解鎖時間表?</h3>
-                    <p class="text-gray-300" data-en="Private sale participants have a 6-month linear vesting period. Team tokens are locked for 12 months with 24-month vesting.">
-                        私募參與者享有6個月線性解鎖期。團隊代幣鎖定12個月,24個月線性解鎖。
-                    </p>
-                </div>
-
-                <div class="card scroll-animate">
-                    <h3 class="text-xl font-bold mb-3" data-en="How does AIF create value?">AIF如何創造價值?</h3>
-                    <p class="text-gray-300" data-en="Through ecosystem growth, deflationary mechanisms (10.5% burn over 5 years), revenue sharing (30-50% to holders), and increasing utility across platforms.">
-                        通過生態增長、通縮機制(5年內銷毀10.5%)、收益分享(30-50%分配給持有者)以及跨平台實用性增加來創造價值。
-                    </p>
-                </div>
-
-                <div class="card scroll-animate">
-                    <h3 class="text-xl font-bold mb-3" data-en="When will AIF be listed on exchanges?">AIF何時上交易所?</h3>
-                    <p class="text-gray-300" data-en="AIF Exchange launches in Q3 2025, followed by listings on major exchanges like Binance and Coinbase.">
-                        AIF交易所將於2025年第三季度啟動,隨後在幣安、Coinbase等主要交易所上線。
+                <div class="faq-answer">
+                    <p data-translate="faq_a2">
+                        創世會員的最低投資額為購買10,000個AIF代幣，按照$0.05/AIF的價格計算，最低投資為$500美元。您可以選擇投資更多，但建議根據個人財務狀況合理配置。
                     </p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Newsletter Section -->
-    <section class="py-20 bg-gradient-to-r from-blue-900/30 to-purple-900/30">
-        <div class="container mx-auto px-4">
-            <div class="max-w-2xl mx-auto text-center scroll-animate">
-                <h2 class="text-3xl md:text-4xl font-black mb-6" data-en="Stay Updated">獲取最新資訊</h2>
-                <p class="text-gray-300 mb-8" data-en="Subscribe to receive exclusive updates on private sale, platform launches, and investment opportunities.">
-                    訂閱接收私募、平台上線和投資機會的獨家更新
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <input type="email" placeholder="輸入您的郵箱" class="px-6 py-4 rounded-full bg-white/10 border border-white/20 text-white focus:outline-none focus:border-accent flex-1 max-w-md" data-en-placeholder="Enter your email">
-                    <button class="btn-primary" onclick="subscribe()" data-en="Subscribe Now">
-                        立即訂閱
-                    </button>
+            
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    <span data-translate="faq_q3">創世會員權益可以轉讓嗎？</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p data-translate="faq_a3">
+                        創世會員身份與您的錢包地址綁定，通過創世會員NFT徽章認證。NFT可以轉讓，但我們建議您長期持有以享受完整的生態權益。轉讓後，新持有者將繼承所有創世會員權益。
+                    </p>
+                </div>
+            </div>
+            
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    <span data-translate="faq_q4">如何確保創世會員權益得到履行？</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p data-translate="faq_a4">
+                        所有創世會員權益都通過智能合約和區塊鏈技術保證，具有透明性和不可篡改性。您的創世會員NFT徽章就是您的權益憑證，系統會自動識別並提供相應特權。
+                    </p>
+                </div>
+            </div>
+            
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    <span data-translate="faq_q5">10,000個名額滿了之後還能加入嗎？</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p data-translate="faq_a5">
+                        一旦10,000個創世會員名額招滿，創世會員計劃將永久關閉。後續用戶只能通過公開發售以$0.20/AIF的價格購買代幣，並且無法享受創世會員的9大專屬權益。因此建議盡早加入。
+                    </p>
+                </div>
+            </div>
+            
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    <span data-translate="faq_q6">AIF代幣何時可以交易？</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p data-translate="faq_a6">
+                        AIF代幣將在10,000個創世會員名額招滿後，通過AIF Exchange上市交易。具體時間將提前通知所有創世會員。在此之前，代幣主要用於生態系統內的各種功能和權益。
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 border-t border-white/10">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div>
-                    <div class="logo-font text-2xl mb-4">AIF TOKEN</div>
-                    <p class="text-gray-400 text-sm" data-en="Building the future of AI-native entertainment.">
-                        構建AI原生娛樂的未來
-                    </p>
-                </div>
-                
-                <div>
-                    <h4 class="font-bold mb-4" data-en="Quick Links">快速鏈接</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="#about" class="hover:text-accent transition" data-en="About">關於</a></li>
-                        <li><a href="#ecosystem" class="hover:text-accent transition" data-en="Ecosystem">生態系統</a></li>
-                        <li><a href="#tokenomics" class="hover:text-accent transition" data-en="Tokenomics">代幣經濟</a></li>
-                        <li><a href="#roadmap" class="hover:text-accent transition" data-en="Roadmap">路線圖</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-bold mb-4" data-en="Resources">資源</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="#" onclick="downloadWhitepaper(); return false;" class="hover:text-accent transition" data-en="Whitepaper">白皮書</a></li>
-                        <li><a href="#" class="hover:text-accent transition" data-en="Documentation">技術文檔</a></li>
-                        <li><a href="#" class="hover:text-accent transition" data-en="Audit Reports">審計報告</a></li>
-                        <li><a href="#" class="hover:text-accent transition" data-en="Legal">法律聲明</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-bold mb-4" data-en="Community">社區</h4>
-                    <div class="flex gap-4">
-                        <a href="#" class="text-2xl hover:text-accent transition"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-2xl hover:text-accent transition"><i class="fab fa-telegram"></i></a>
-                        <a href="#" class="text-2xl hover:text-accent transition"><i class="fab fa-discord"></i></a>
-                        <a href="#" class="text-2xl hover:text-accent transition"><i class="fab fa-medium"></i></a>
-                    </div>
-                </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 data-translate="footer_ecosystem">HKAIIFF生態系統</h3>
+                <ul>
+                    <li><a href="http://www.hkaiiff.org" target="_blank">HKAIIFF</a></li>
+                    <li><a href="http://www.hkaifa.academy" target="_blank">AIF.Academy</a></li>
+                    <li><a href="http://www.aif.market" target="_blank">AIF.Market</a></li>
+                    <li><a href="http://www.404.world" target="_blank">404.world</a></li>
+                </ul>
             </div>
             
-            <div class="border-t border-white/10 pt-8 text-center text-sm text-gray-400">
-                <p data-en="© 2025 AIF Token. All rights reserved. Investment involves risks.">
-                    © 2025 AIF代幣。版權所有。投資涉及風險,請謹慎投資。
-                </p>
+            <div class="footer-section">
+                <h3 data-translate="footer_genesis">創世會員</h3>
+                <ul>
+                    <li><a href="#benefits" data-translate="footer_benefits">9大權益</a></li>
+                    <li><a href="#purchase" data-translate="footer_purchase">購買流程</a></li>
+                    <li><a href="#faq" data-translate="footer_faq">常見問題</a></li>
+                    <li><a href="mailto:Genesis@aif.market" data-translate="footer_apply">申請加入</a></li>
+                </ul>
             </div>
+            
+            <div class="footer-section">
+                <h3 data-translate="footer_resources">資源</h3>
+                <ul>
+                    <li><a href="#" data-translate="footer_whitepaper">白皮書</a></li>
+                    <li><a href="#" data-translate="footer_docs">技術文檔</a></li>
+                    <li><a href="#" data-translate="footer_roadmap">路線圖</a></li>
+                    <li><a href="#" data-translate="footer_team">團隊介紹</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 GENESIS - Hong Kong AI International Film Festival. All rights reserved.</p>
+            <p style="margin-top: 0.5rem;">
+                <a href="#" style="color: rgba(255, 255, 255, 0.6); margin: 0 1rem;" data-translate="footer_privacy">隱私政策</a>
+                <a href="#" style="color: rgba(255, 255, 255, 0.6); margin: 0 1rem;" data-translate="footer_terms">服務條款</a>
+            </p>
         </div>
     </footer>
 
+    <!-- 加密货币支付Modal -->
+    <div class="modal" id="cryptoModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeCryptoModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <h3 style="font-size: 2rem; font-weight: 800; color: var(--gold); margin-bottom: 1.5rem; text-align: center;">
+                <i class="fas fa-wallet"></i> <span data-translate="crypto_title">加密貨幣支付</span>
+            </h3>
+            <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 1.5rem; text-align: center;" data-translate="crypto_desc">
+                請將 USDT 或 USDC 發送到以下 Solana 錢包地址：
+            </p>
+            <div class="wallet-address-box">
+                <p style="color: var(--gold); font-weight: 700; margin-bottom: 0.8rem; text-align: center;" data-translate="wallet_label">
+                    Solana 錢包地址：
+                </p>
+                <p id="walletAddress" style="color: white; font-size: 1rem; word-break: break-all; text-align: center;">
+                    3QBgQiHC743ER9beX74bp8K7xrURQR2t5myfcG6tSTLv
+                </p>
+            </div>
+            <button class="copy-btn" onclick="copyWalletAddress()" style="width: 100%;">
+                <i class="fas fa-copy"></i> <span data-translate="copy_address">複製錢包地址</span>
+            </button>
+            <div style="background: rgba(255, 215, 0, 0.1); border: 1px solid var(--gold); border-radius: 12px; padding: 1rem; margin-top: 1.5rem;">
+                <p style="color: var(--gold); font-size: 0.95rem; line-height: 1.7;" data-translate="crypto_note">
+                    💡 支付完成後，請將交易憑證和您的 Solana 錢包地址發送至 Genesis@aif.market
+                </p>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // 语言切换系统
-        let currentLanguage = 'zh';
-        
+        // 翻译字典
         const translations = {
-            en: {
-                'currentLang': 'English',
-                'mobileLang': 'Switch Language'
+            'zh-TW': {
+                banner: '限量10,000名創世會員招募中 | 僅剩 <span id="remaining">9,500</span> 個名額',
+                nav_benefits: '權益詳情',
+                nav_purchase: '購買流程',
+                nav_faq: '常見問題',
+                btn_buy_aif: '購買AIF',
+                badge: 'GENESIS 創世會員計劃',
+                hero_title: '成為創世會員',
+                hero_subtitle: '尋找10,000名HKAIIFF生態系統的創始成員',
+                hero_desc: '加入全球首個綜合性AI原生電影生態系統的創世之旅，享受9大獨家權益，共同塑造AI娛樂的未來',
+                hero_btn: '購買AIF',
+                stat_1: '限量名額',
+                stat_2: 'AIF原始價格',
+                stat_3: '專屬權益',
+                stat_4: '潛在收益倍數',
+                progress_title: '創世會員招募進度',
+                progress_desc: '已有 500 名創世會員加入，還剩 9,500 個名額',
+                progress_max: '10,000名額已滿',
+                benefits_title: '創世會員9大專屬權益',
+                benefits_subtitle: '成為HKAIIFF生態系統的創始成員，終身享受獨家特權',
+                benefit_1_title: '原始代幣購買權',
+                benefit_1_desc: '以 $0.05/AIF 的創世價格購買AIF代幣，這是最初的私募輪價格，比公開發售價格低75%',
+                benefit_1_value: '價值：$0.05/AIF (公開發售 $0.20/AIF)',
+                benefit_2_title: '公開上市前優先購買權',
+                benefit_2_desc: '在公開發售前，獲得一次額外的 $0.05/AIF 優先購買機會，鎖定最優惠價格',
+                benefit_2_value: '獨家：公開上市前最後優惠價',
+                benefit_3_title: '生態項目優先推送',
+                benefit_3_desc: 'HKAIIFF生態系統內所有新項目、活動、合作機會優先推送給創世會員，搶先參與',
+                benefit_3_value: '特權：永久優先訪問權',
+                benefit_4_title: '電影市場項目優先購買',
+                benefit_4_desc: '在HKAIFM香港電影市場，比普通用戶提前12小時優先購買上市項目的FilmToken',
+                benefit_4_value: '時間優勢：提前12小時',
+                benefit_5_title: '交易手續費減半',
+                benefit_5_desc: '在HKAIFM香港電影市場進行FilmToken交易，永久享受50%手續費折扣',
+                benefit_5_value: '節省：交易手續費減半 (終身)',
+                benefit_6_title: '電影學院獎學金',
+                benefit_6_desc: '獲得HKAIFA香港電影學院獎學金，根據職業認證不同，獎學金從1萬到10萬AIF不等',
+                benefit_6_value: '獎學金：10,000 - 100,000 AIF',
+                benefit_7_title: '生態活動VIP權益',
+                benefit_7_desc: '參加HKAIIFF電影節及所有生態活動時，享受VIP待遇，包括優先座位、專屬社交活動等',
+                benefit_7_value: '尊享：永久VIP待遇',
+                benefit_8_title: 'A2CLUB會費減半',
+                benefit_8_desc: '加入A2CLUB高端社群，創世會員享受50%會費折扣，與行業精英建立深度連接',
+                benefit_8_value: '優惠：A2CLUB會費減半',
+                benefit_9_title: 'AIFcard聯名卡年費減半',
+                benefit_9_desc: 'AIFcard x Mastercard聯名Ucard年費享受50%折扣，尊享全球支付便利和專屬權益',
+                benefit_9_value: '優惠：AIFcard年費減半',
+                purchase_title: 'AIF代幣獲取流程',
+                purchase_subtitle: '簡單3步驟完成AIF代幣購買',
+                step1_title: '支付訂單',
+                step1_intro: '選擇您的支付幣種，點擊按鈕完成支付：',
+                accept_cards: '接受 MASTERCARD、VISA 和 APPLE PAY',
+                payment_info: '在線收款。手續費低，免費註冊，不凍結資金。這是運作方式',
+                fee_info: '手續費一目了然，基於所用銀行卡：',
+                fee_domestic: '國內卡2.78% + 1.98 HKD',
+                fee_foreign: '境外卡3.58% + 1.98 HKD',
+                fee_business: '商務卡3.58% + 1.98 HKD',
+                crypto_pay: 'USDT/USDC',
+                usd_pay: '美元支付 ($518.18)',
+                hkd_pay: '港元支付 (HK$4,026)',
+                cny_pay: '人民币支付 (¥3,690)',
+                jpy_pay: '日元支付 (¥79,214)',
+                wise_redirect: '点击支付按钮后，您将跳转到Wise安全支付页面完成支付',
+                step2_title: '發送憑證及錢包地址',
+                step2_desc: '將支付憑證和接收AIF代幣的錢包地址發送至：',
+                email_label: '郵件發送至:',
+                important_note: '重要提示：',
+                solana_address: '錢包地址必須為 Solana地址',
+                step3_title: '接收AIF代幣',
+                step3_intro: '郵件信息驗證後：',
+                delivery_time: '10-30分鐘左右AIF代幣發送至用戶錢包',
+                network_note: '(跟隨Solana網絡情況略有浮動)',
+                track_progress: '追蹤進度:',
+                track_desc: '通過Solana官方瀏覽器隨時關注AIF錢包地址激活情況:',
+                faq_title: '常見問題',
+                faq_subtitle: '關於創世會員計劃的常見疑問解答',
+                faq_q1: '什麼是創世會員計劃？',
+                faq_a1: '創世會員計劃是HKAIIFF生態系統推出的限量會員招募活動，尋找10,000名創始成員。創世會員將享受9大專屬權益，包括最優惠的AIF代幣購買價格、優先投資權、獎學金、VIP待遇等終身特權。',
+                faq_q2: '創世會員需要投資多少？',
+                faq_a2: '創世會員的最低投資額為購買10,000個AIF代幣，按照$0.05/AIF的價格計算，最低投資為$500美元。您可以選擇投資更多，但建議根據個人財務狀況合理配置。',
+                faq_q3: '創世會員權益可以轉讓嗎？',
+                faq_a3: '創世會員身份與您的錢包地址綁定，通過創世會員NFT徽章認證。NFT可以轉讓，但我們建議您長期持有以享受完整的生態權益。轉讓後，新持有者將繼承所有創世會員權益。',
+                faq_q4: '如何確保創世會員權益得到履行？',
+                faq_a4: '所有創世會員權益都通過智能合約和區塊鏈技術保證，具有透明性和不可篡改性。您的創世會員NFT徽章就是您的權益憑證，系統會自動識別並提供相應特權。',
+                faq_q5: '10,000個名額滿了之後還能加入嗎？',
+                faq_a5: '一旦10,000個創世會員名額招滿，創世會員計劃將永久關閉。後續用戶只能通過公開發售以$0.20/AIF的價格購買代幣，並且無法享受創世會員的9大專屬權益。因此建議盡早加入。',
+                faq_q6: 'AIF代幣何時可以交易？',
+                faq_a6: 'AIF代幣將在10,000個創世會員名額招滿後，通過AIF Exchange上市交易。具體時間將提前通知所有創世會員。在此之前，代幣主要用於生態系統內的各種功能和權益。',
+                crypto_title: '加密貨幣支付',
+                crypto_desc: '請將 USDT 或 USDC 發送到以下 Solana 錢包地址：',
+                wallet_label: 'Solana 錢包地址：',
+                copy_address: '複製錢包地址',
+                crypto_note: '💡 支付完成後，請將交易憑證和您的 Solana 錢包地址發送至 Genesis@aif.market',
+                footer_ecosystem: 'HKAIIFF生態系統',
+                footer_genesis: '創世會員',
+                footer_benefits: '9大權益',
+                footer_purchase: '購買流程',
+                footer_faq: '常見問題',
+                footer_apply: '申請加入',
+                footer_resources: '資源',
+                footer_whitepaper: '白皮書',
+                footer_docs: '技術文檔',
+                footer_roadmap: '路線圖',
+                footer_team: '團隊介紹',
+                footer_privacy: '隱私政策',
+                footer_terms: '服務條款'
             },
-            zh: {
-                'currentLang': '繁體中文',
-                'mobileLang': '切換語言'
+            'en': {
+                banner: 'Limited 10,000 Genesis Members Recruiting | Only <span id="remaining">9,500</span> Spots Left',
+                nav_benefits: 'Benefits',
+                nav_purchase: 'Purchase',
+                nav_faq: 'FAQ',
+                btn_buy_aif: 'Buy AIF',
+                badge: 'GENESIS Member Program',
+                hero_title: 'Become a Genesis Member',
+                hero_subtitle: 'Seeking 10,000 Founding Members of HKAIIFF Ecosystem',
+                hero_desc: 'Join the Genesis journey of the world\'s first comprehensive AI-native film ecosystem, enjoy 9 exclusive benefits, and shape the future of AI entertainment together',
+                hero_btn: 'Buy AIF',
+                stat_1: 'Limited Spots',
+                stat_2: 'AIF Original Price',
+                stat_3: 'Exclusive Benefits',
+                stat_4: 'Potential ROI Multiple',
+                progress_title: 'Genesis Member Recruitment Progress',
+                progress_desc: '500 Genesis members have joined, 9,500 spots remaining',
+                progress_max: '10,000 Spots Filled',
+                benefits_title: '9 Exclusive Genesis Member Benefits',
+                benefits_subtitle: 'Become a founding member of the HKAIIFF ecosystem and enjoy lifetime exclusive privileges',
+                benefit_1_title: 'Original Token Purchase Rights',
+                benefit_1_desc: 'Purchase AIF tokens at the Genesis price of $0.05/AIF, the initial private sale price, 75% lower than public sale',
+                benefit_1_value: 'Value: $0.05/AIF (Public Sale $0.20/AIF)',
+                benefit_2_title: 'Pre-IPO Priority Purchase',
+                benefit_2_desc: 'Get one additional $0.05/AIF priority purchase opportunity before public sale, locking in the best price',
+                benefit_2_value: 'Exclusive: Last Best Price Before IPO',
+                benefit_3_title: 'Ecosystem Project Priority',
+                benefit_3_desc: 'All new projects, events, and partnership opportunities within HKAIIFF ecosystem are pushed to Genesis members first',
+                benefit_3_value: 'Privilege: Permanent Priority Access',
+                benefit_4_title: 'Film Market Priority Purchase',
+                benefit_4_desc: 'At HKAIFM Hong Kong Film Market, purchase listed project FilmTokens 12 hours earlier than regular users',
+                benefit_4_value: 'Time Advantage: 12 Hours Early',
+                benefit_5_title: 'Trading Fee 50% Off',
+                benefit_5_desc: 'Permanently enjoy 50% discount on transaction fees when trading FilmTokens on HKAIFM',
+                benefit_5_value: 'Save: 50% Trading Fee (Lifetime)',
+                benefit_6_title: 'Film Academy Scholarship',
+                benefit_6_desc: 'Receive HKAIFA scholarship ranging from 10,000 to 100,000 AIF based on professional certification',
+                benefit_6_value: 'Scholarship: 10,000 - 100,000 AIF',
+                benefit_7_title: 'Ecosystem VIP Benefits',
+                benefit_7_desc: 'Enjoy VIP treatment at HKAIIFF festival and all ecosystem events, including priority seating and exclusive networking',
+                benefit_7_value: 'Premium: Lifetime VIP Treatment',
+                benefit_8_title: 'A2CLUB Membership 50% Off',
+                benefit_8_desc: 'Join A2CLUB premium community with 50% membership discount, connect deeply with industry elites',
+                benefit_8_value: 'Discount: A2CLUB 50% Off',
+                benefit_9_title: 'AIFcard Annual Fee 50% Off',
+                benefit_9_desc: 'AIFcard x Mastercard co-branded Ucard annual fee 50% discount, enjoy global payment convenience and exclusive benefits',
+                benefit_9_value: 'Discount: AIFcard 50% Off',
+                purchase_title: 'AIF Token Acquisition Process',
+                purchase_subtitle: 'Complete AIF token purchase in 3 simple steps',
+                step1_title: 'Payment',
+                step1_intro: 'Select your payment currency and click the button to complete payment:',
+                accept_cards: 'Accept MASTERCARD, VISA and APPLE PAY',
+                payment_info: 'Online payments. Low fees, free registration, no frozen funds. This is how it works',
+                fee_info: 'Transaction fees at a glance, based on card used:',
+                fee_domestic: 'Domestic card 2.78% + 1.98 HKD',
+                fee_foreign: 'Foreign card 3.58% + 1.98 HKD',
+                fee_business: 'Business card 3.58% + 1.98 HKD',
+                crypto_pay: 'USDT/USDC',
+                usd_pay: 'USD Payment ($518.18)',
+                hkd_pay: 'HKD Payment (HK$4,026)',
+                cny_pay: 'CNY Payment (¥3,690)',
+                jpy_pay: 'JPY Payment (¥79,214)',
+                wise_redirect: 'After clicking the payment button, you will be redirected to Wise secure payment page',
+                step2_title: 'Send Receipt & Wallet Address',
+                step2_desc: 'Send payment receipt and AIF token receiving wallet address to:',
+                email_label: 'Email to:',
+                important_note: 'Important Note:',
+                solana_address: 'Wallet address must be a Solana address',
+                step3_title: 'Receive AIF Tokens',
+                step3_intro: 'After email verification:',
+                delivery_time: 'AIF tokens sent to user wallet within 10-30 minutes',
+                network_note: '(May vary slightly with Solana network conditions)',
+                track_progress: 'Track Progress:',
+                track_desc: 'Track AIF wallet address activation via Solana official explorer anytime:',
+                faq_title: 'Frequently Asked Questions',
+                faq_subtitle: 'Common questions about the Genesis Member Program',
+                faq_q1: 'What is the Genesis Member Program?',
+                faq_a1: 'The Genesis Member Program is a limited membership recruitment campaign launched by the HKAIIFF ecosystem, seeking 10,000 founding members. Genesis members will enjoy 9 exclusive benefits including the best AIF token purchase price, priority investment rights, scholarships, VIP treatment and other lifetime privileges.',
+                faq_q2: 'How much investment is required for Genesis membership?',
+                faq_a2: 'The minimum investment for Genesis membership is to purchase 10,000 AIF tokens. At $0.05/AIF, the minimum investment is $500. You can choose to invest more, but it is recommended to allocate reasonably according to your personal financial situation.',
+                faq_q3: 'Can Genesis membership benefits be transferred?',
+                faq_a3: 'Genesis membership is bound to your wallet address and certified through the Genesis Member NFT badge. The NFT can be transferred, but we recommend long-term holding to enjoy complete ecosystem benefits. After transfer, the new holder will inherit all Genesis member benefits.',
+                faq_q4: 'How to ensure Genesis member benefits are fulfilled?',
+                faq_a4: 'All Genesis member benefits are guaranteed through smart contracts and blockchain technology, with transparency and immutability. Your Genesis Member NFT badge is your benefit credential, and the system will automatically recognize and provide corresponding privileges.',
+                faq_q5: 'Can I still join after 10,000 spots are filled?',
+                faq_a5: 'Once the 10,000 Genesis member spots are filled, the Genesis Member Program will be permanently closed. Subsequent users can only purchase tokens at $0.20/AIF through public sale, and cannot enjoy the 9 exclusive benefits of Genesis members. Therefore, it is recommended to join early.',
+                faq_q6: 'When can AIF tokens be traded?',
+                faq_a6: 'AIF tokens will be listed for trading on AIF Exchange after the 10,000 Genesis member spots are filled. The specific time will be notified to all Genesis members in advance. Before that, tokens are mainly used for various functions and benefits within the ecosystem.',
+                crypto_title: 'Cryptocurrency Payment',
+                crypto_desc: 'Please send USDT or USDC to the following Solana wallet address:',
+                wallet_label: 'Solana Wallet Address:',
+                copy_address: 'Copy Wallet Address',
+                crypto_note: '💡 After payment completion, please send the transaction receipt and your Solana wallet address to Genesis@aif.market',
+                footer_ecosystem: 'HKAIIFF Ecosystem',
+                footer_genesis: 'Genesis Member',
+                footer_benefits: '9 Benefits',
+                footer_purchase: 'Purchase Process',
+                footer_faq: 'FAQ',
+                footer_apply: 'Apply',
+                footer_resources: 'Resources',
+                footer_whitepaper: 'Whitepaper',
+                footer_docs: 'Documentation',
+                footer_roadmap: 'Roadmap',
+                footer_team: 'Team',
+                footer_privacy: 'Privacy Policy',
+                footer_terms: 'Terms of Service'
             }
         };
-        
+
+        let currentLang = 'zh-TW';
+
         function toggleLanguage() {
-            currentLanguage = currentLanguage === 'zh' ? 'en' : 'zh';
-            
-            // 更新语言显示
-            document.getElementById('currentLang').textContent = translations[currentLanguage].currentLang;
-            document.getElementById('mobileLang').textContent = translations[currentLanguage].mobileLang;
-            
-            // 切换所有带data-en属性的元素
-            document.querySelectorAll('[data-en]').forEach(el => {
-                if (currentLanguage === 'en') {
-                    el.setAttribute('data-original-text', el.textContent);
-                    el.textContent = el.getAttribute('data-en');
-                } else {
-                    if (el.hasAttribute('data-original-text')) {
-                        el.textContent = el.getAttribute('data-original-text');
-                    }
-                }
-            });
-            
-            // 切换placeholder
-            document.querySelectorAll('[data-en-placeholder]').forEach(el => {
-                if (currentLanguage === 'en') {
-                    el.setAttribute('data-original-placeholder', el.placeholder);
-                    el.placeholder = el.getAttribute('data-en-placeholder');
-                } else {
-                    if (el.hasAttribute('data-original-placeholder')) {
-                        el.placeholder = el.getAttribute('data-original-placeholder');
-                    }
-                }
-            });
+            currentLang = currentLang === 'zh-TW' ? 'en' : 'zh-TW';
+            updateLanguage();
         }
-        
-        // 汉堡菜单
-        function toggleMenu() {
-            const hamburger = document.querySelector('.hamburger');
-            const mobileMenu = document.getElementById('mobileMenu');
+
+        function updateLanguage() {
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[currentLang][key]) {
+                    if (key === 'banner') {
+                        element.innerHTML = translations[currentLang][key];
+                    } else {
+                        element.textContent = translations[currentLang][key];
+                    }
+                }
+            });
             
-            hamburger.classList.toggle('active');
+            document.getElementById('langText').textContent = currentLang === 'zh-TW' ? 'EN' : '中文';
+            document.getElementById('langTextMobile').textContent = currentLang === 'zh-TW' ? 'EN' : '中文';
+            document.documentElement.lang = currentLang;
+        }
+
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
             mobileMenu.classList.toggle('active');
-            
-            // 防止背景滚动
-            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
         }
-        
-        function closeMenu() {
-            const hamburger = document.querySelector('.hamburger');
-            const mobileMenu = document.getElementById('mobileMenu');
-            
-            hamburger.classList.remove('active');
-            mobileMenu.classList.remove('active');
-            document.body.style.overflow = '';
+
+        function toggleFAQ(element) {
+            element.classList.toggle('active');
+            const icon = element.querySelector('.fa-chevron-down');
+            icon.style.transform = element.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
         }
-        
-        // 滚动到指定section
-        function scrollToSection(id) {
-            const element = document.getElementById(id);
-            if (element) {
-                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-            closeMenu();
+
+        function openPurchaseModal() {
+            window.location.href = '#purchase';
         }
-        
-        // 下载白皮书
-        function downloadWhitepaper() {
-            alert('白皮書下載即將開始...\n\nWhitepaper download will begin shortly...\n\n包含完整的代幣經濟學模型、技術架構、團隊介紹、詳細路線圖和風險披露。');
+
+        function openCryptoModal() {
+            document.getElementById('cryptoModal').classList.add('active');
         }
-        
-        // 打开投资门户
-        function openInvestmentPortal() {
-            alert('正在跳轉到安全投資門戶...\nRedirecting to secure investment portal...\n\n投資詳情:\n• 最低投資額: $1,000\n• 當前價格: $0.05/AIF\n• 鎖定期: 6個月\n• 支付方式: USDT/USDC/銀行轉賬\n\nInvestment Details:\n• Minimum: $1,000\n• Price: $0.05/AIF\n• Lock-up: 6 months\n• Payment: USDT/USDC/Bank Transfer');
+
+        function closeCryptoModal() {
+            document.getElementById('cryptoModal').classList.remove('active');
         }
-        
-        // 订阅
-        function subscribe() {
-            const emailInput = document.querySelector('input[type="email"]');
-            if (emailInput && emailInput.value && emailInput.value.includes('@')) {
-                alert(`感謝訂閱! Thank you for subscribing!\n\n郵箱 Email: ${emailInput.value}\n\n您將收到 You will receive:\n• 私募輪次開放通知\n• 平台里程碑更新\n• 獨家投資機會\n• AI電影行業洞察`);
-                emailInput.value = '';
-            } else {
-                alert('請輸入有效的郵箱地址\nPlease enter a valid email address');
-                if (emailInput) emailInput.focus();
-            }
+
+        function copyWalletAddress() {
+            const address = document.getElementById('walletAddress').textContent;
+            navigator.clipboard.writeText(address).then(() => {
+                alert(currentLang === 'zh-TW' ? '錢包地址已複製！' : 'Wallet address copied!');
+            });
         }
-        
-        // 滚动动画
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    const mobileMenu = document.getElementById('mobileMenu');
+                    if (mobileMenu.classList.contains('active')) {
+                        mobileMenu.classList.remove('active');
+                    }
                 }
             });
-        }, observerOptions);
-        
-        // 导航栏滚动效果
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
         });
-        
-        // 创建粒子效果
-        function createParticles() {
-            const particlesContainer = document.getElementById('particles');
-            const particleCount = 50;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 15 + 's';
-                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
-                particlesContainer.appendChild(particle);
+
+        // 点击Modal外部关闭
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('active');
             }
         }
-        
-        // 初始化
-        document.addEventListener('DOMContentLoaded', () => {
-            // 观察所有需要动画的元素
-            document.querySelectorAll('.scroll-animate').forEach(el => {
-                observer.observe(el);
-            });
-            
-            // 创建粒子
-            createParticles();
-            
-            // 平滑滚动
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        closeMenu();
-                    }
-                });
-            });
-            
-            console.log('🚀 AIF Token Website Loaded Successfully');
-            console.log('💎 Private Sale: $0.05 per AIF');
-            console.log('🌐 Language: 繁體中文 / English');
+
+        // 点击移动菜单外部关闭
+        document.getElementById('mobileMenu').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.remove('active');
+            }
         });
+
+        // 模拟剩余名额倒计时
+        let remaining = 9500;
+        setInterval(() => {
+            if (remaining > 0 && Math.random() > 0.7) {
+                remaining -= Math.floor(Math.random() * 3) + 1;
+                const elements = document.querySelectorAll('#remaining');
+                elements.forEach(el => el.textContent = remaining);
+            }
+        }, 5000);
     </script>
 </body>
 </html>
